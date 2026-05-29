@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXIOM — Engineered Beyond</title>
+  <meta name="description" content="AXIOM designs the world's most advanced silicon. CPU, GPU, and Neural processing reimagined from first principles." />
+  <meta property="og:title" content="AXIOM — Engineered Beyond" />
+  <meta property="og:description" content="The world's most sophisticated silicon architecture." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236e40c9'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-weight='900' font-family='system-ui'>AX</text></svg>" />
+</head>
+<body>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" role="progressbar" aria-label="Reading progress"></div>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" aria-label="Close menu">✕</button>
+  <a href="#products">Products</a>
+  <a href="#technology">Technology</a>
+  <a href="#benchmark">Performance</a>
+  <a href="#philosophy">Philosophy</a>
+  <a href="#specs">Specs</a>
+</nav>
+
+<!-- ── Navigation ── -->
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="AXIOM home">
+      <div class="nav-logo-mark" aria-hidden="true">AX</div>
+      <span>AXIOM</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#products">Products</a>
+      <a href="#technology">Technology</a>
+      <a href="#benchmark">Performance</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#specs">Specs</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">☀️</button>
+      <a href="#" class="nav-btn">Developers</a>
+      <a href="#" class="nav-btn nav-btn-primary">Buy Now</a>
+      <button class="nav-mobile-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
+<section class="hero" id="home" aria-labelledby="hero-headline">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+    <div class="hero-bg-orb orb-3"></div>
+    <div class="hero-grid-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">
+      <span class="hero-eyebrow-dot"></span>
+      Introducing AXIOM X1 Ultra
+    </div>
+    <h1 class="hero-headline reveal reveal-delay-1" id="hero-headline">
+      <em class="gradient-text">Silicon</em><br/>
+      Reimagined.
+    </h1>
+    <p class="hero-subline reveal reveal-delay-2">
+      The world's first 2nm unified compute architecture.
+      CPU, GPU, and Neural Engine fused into a single, breathtaking die.
+    </p>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="#products" class="btn-primary">
+        Explore Products
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="#technology" class="btn-secondary">
+        Learn the Science
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+
+    <!-- Chip Visual -->
+    <div class="hero-chip-visual reveal-scale reveal-delay-4" aria-hidden="true">
+      <div class="hero-chip-ring"></div>
+      <div class="hero-chip-ring"></div>
+      <div class="hero-chip-ring"></div>
+      <div class="chip-svg-wrapper">
+        <svg class="chip-circuit" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AXIOM chip diagram">
+          <defs>
+            <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#6e40c9"/>
+              <stop offset="50%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+            <linearGradient id="traceGrad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#6e40c9" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#6e40c9" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- PCB substrate -->
+          <rect x="20" y="20" width="200" height="200" rx="16" class="chip-body"/>
+
+          <!-- Grid traces -->
+          <g opacity="0.3">
+            <line x1="60" y1="20" x2="60" y2="220" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="100" y1="20" x2="100" y2="220" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="140" y1="20" x2="140" y2="220" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="180" y1="20" x2="180" y2="220" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="20" y1="60" x2="220" y2="60" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="20" y1="100" x2="220" y2="100" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="20" y1="140" x2="220" y2="140" stroke="#6e40c9" stroke-width="0.5"/>
+            <line x1="20" y1="180" x2="220" y2="180" stroke="#6e40c9" stroke-width="0.5"/>
+          </g>
+
+          <!-- Core die -->
+          <rect x="75" y="75" width="90" height="90" rx="8" class="chip-core" filter="url(#glow)"/>
+
+          <!-- Sub blocks inside core -->
+          <rect x="80" y="80" width="38" height="38" rx="4" fill="rgba(255,255,255,0.08)"/>
+          <rect x="122" y="80" width="38" height="38" rx="4" fill="rgba(6,182,212,0.15)"/>
+          <rect x="80" y="122" width="38" height="38" rx="4" fill="rgba(245,158,11,0.15)"/>
+          <rect x="122" y="122" width="38" height="38" rx="4" fill="rgba(255,255,255,0.05)"/>
+
+          <!-- Animated traces -->
+          <path class="chip-trace" stroke="url(#traceGrad1)" d="M20 120 H75"/>
+          <path class="chip-trace" stroke="url(#traceGrad1)" d="M165 120 H220" style="animation-delay:-1s"/>
+          <path class="chip-trace" stroke="url(#traceGrad1)" d="M120 20 V75"/>
+          <path class="chip-trace" stroke="url(#traceGrad1)" d="M120 165 V220" style="animation-delay:-0.5s"/>
+
+          <!-- Corner pads -->
+          <g fill="rgba(168,85,247,0.5)">
+            <rect x="26" y="50" width="8" height="3" rx="1.5"/>
+            <rect x="26" y="57" width="8" height="3" rx="1.5"/>
+            <rect x="26" y="64" width="8" height="3" rx="1.5"/>
+            <rect x="26" y="71" width="8" height="3" rx="1.5"/>
+            <rect x="206" y="50" width="8" height="3" rx="1.5"/>
+            <rect x="206" y="57" width="8" height="3" rx="1.5"/>
+            <rect x="206" y="64" width="8" height="3" rx="1.5"/>
+            <rect x="206" y="71" width="8" height="3" rx="1.5"/>
+            <rect x="50" y="26" width="3" height="8" rx="1.5"/>
+            <rect x="57" y="26" width="3" height="8" rx="1.5"/>
+            <rect x="64" y="26" width="3" height="8" rx="1.5"/>
+            <rect x="71" y="26" width="3" height="8" rx="1.5"/>
+            <rect x="50" y="206" width="3" height="8" rx="1.5"/>
+            <rect x="57" y="206" width="3" height="8" rx="1.5"/>
+            <rect x="64" y="206" width="3" height="8" rx="1.5"/>
+            <rect x="71" y="206" width="3" height="8" rx="1.5"/>
+          </g>
+
+          <!-- Center AXIOM label -->
+          <text x="120" y="123" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="7" font-weight="700" font-family="system-ui" letter-spacing="1">AXIOM</text>
+          <text x="120" y="133" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="5" font-family="system-ui" letter-spacing="0.5">X1 ULTRA</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     METRICS
+═══════════════════════════════════════════════════════ -->
+<section class="metrics" aria-label="Key performance metrics">
+  <div class="container">
+    <div class="metrics-inner">
+      <div class="metric-item reveal">
+        <div class="metric-value gradient-text">
+          <span class="counter" data-target="2" data-suffix="nm" data-decimals="0">0nm</span>
+        </div>
+        <div class="metric-label">Process Node</div>
+        <div class="metric-sublabel">Industry-first 2nm TSMC N2</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-1">
+        <div class="metric-value gradient-text">
+          <span class="counter" data-target="48" data-suffix="" data-decimals="0">0</span>B
+        </div>
+        <div class="metric-label">Transistors</div>
+        <div class="metric-sublabel">Unified die architecture</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-2">
+        <div class="metric-value gradient-text">
+          <span class="counter" data-target="320" data-suffix="+" data-decimals="0">0+</span>
+        </div>
+        <div class="metric-label">TFLOPS (FP32)</div>
+        <div class="metric-sublabel">GPU peak compute</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-3">
+        <div class="metric-value gradient-text">
+          <span class="counter" data-target="4.8" data-suffix="x" data-decimals="1">0x</span>
+        </div>
+        <div class="metric-label">Performance/Watt</div>
+        <div class="metric-sublabel">vs. previous generation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRODUCTS
+═══════════════════════════════════════════════════════ -->
+<section class="products" id="products" aria-labelledby="products-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow reveal">Product Lineup</span>
+      <h2 class="section-title reveal reveal-delay-1" id="products-title">
+        A chip for every<br/>
+        <em class="gradient-text">dimension of work.</em>
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        From edge computing to datacenter-scale AI, AXIOM has the architecture that fits your ambition.
+      </p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- X1 Ultra — Featured -->
+      <article class="product-card product-card-featured reveal" tabindex="0" aria-label="AXIOM X1 Ultra chip">
+        <div class="product-card-inner">
+          <span class="product-badge badge-ultra">⚡ Ultra</span>
+          <span class="product-icon" aria-hidden="true">💎</span>
+          <h3 class="product-name">X1 <em class="gradient-text">Ultra</em></h3>
+          <p class="product-tagline">
+            Two X1 Max dies fused with our UltraFabric interconnect at 4TB/s. The most powerful chip ever put into a workstation.
+          </p>
+
+          <div class="perf-bars" aria-label="Performance metrics">
+            <div class="perf-bar-row">
+              <span class="perf-bar-label">CPU</span>
+              <div class="perf-bar-track"><div class="perf-bar-fill" data-width="98" style="background: var(--gradient-accent)"></div></div>
+              <span class="perf-bar-val">98%</span>
+            </div>
+            <div class="perf-bar-row">
+              <span class="perf-bar-label">GPU</span>
+              <div class="perf-bar-track"><div class="perf-bar-fill" data-width="96" style="background: linear-gradient(90deg, #06b6d4, #a855f7)"></div></div>
+              <span class="perf-bar-val">96%</span>
+            </div>
+            <div class="perf-bar-row">
+              <span class="perf-bar-label">Neural</span>
+              <div class="perf-bar-track"><div class="perf-bar-fill" data-width="100" style="background: linear-gradient(90deg, #f59e0b, #ec4899)"></div></div>
+              <span class="perf-bar-val">100%</span>
+            </div>
+          </div>
+
+          <div class="product-specs" aria-label="Specifications">
+            <div class="product-spec">
+              <span class="spec-key">CPU Cores</span>
+              <span class="spec-val">40-core (32P + 8E)</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">GPU Cores</span>
+              <span class="spec-val">128-core</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">Neural Engine</span>
+              <span class="spec-val">64-core · 38 TOPS</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">Memory Bandwidth</span>
+              <span class="spec-val">1.6 TB/s</span>
+            </div>
+          </div>
+
+          <div class="product-price">From $2,799 <span>/ workstation</span></div>
+          <a href="#" class="product-cta" aria-label="Learn more about X1 Ultra">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+        <span class="product-visual" aria-hidden="true">💎</span>
+      </article>
+
+      <!-- X1 Max -->
+      <article class="product-card reveal reveal-delay-1" tabindex="0" aria-label="AXIOM X1 Max chip">
+        <div class="product-card-inner">
+          <span class="product-badge badge-pro">Pro</span>
+          <span class="product-icon" aria-hidden="true">🔷</span>
+          <h3 class="product-name">X1 <em style="color: var(--accent-cyan-2); font-style:normal">Max</em></h3>
+          <p class="product-tagline">
+            The crown jewel for creators. Unmatched GPU performance for 8K video, 3D rendering, and ML training.
+          </p>
+
+          <div class="product-specs">
+            <div class="product-spec">
+              <span class="spec-key">CPU Cores</span>
+              <span class="spec-val">16-core (14P + 2E)</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">GPU Cores</span>
+              <span class="spec-val">64-core</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">Memory Bandwidth</span>
+              <span class="spec-val">800 GB/s</span>
+            </div>
+          </div>
+
+          <div class="product-price">From $1,999 <span>/ workstation</span></div>
+          <a href="#" class="product-cta" aria-label="Learn more about X1 Max">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+        <span class="product-visual" aria-hidden="true">🔷</span>
+      </article>
+
+      <!-- X1 Pro -->
+      <article class="product-card reveal reveal-delay-2" tabindex="0" aria-label="AXIOM X1 Pro chip">
+        <div class="product-card-inner">
+          <span class="product-badge badge-new">New</span>
+          <span class="product-icon" aria-hidden="true">✦</span>
+          <h3 class="product-name">X1 <em class="gradient-text" style="font-style:normal">Pro</em></h3>
+          <p class="product-tagline">
+            Power without compromise for the mobile professional. All-day efficiency, desktop-class performance.
+          </p>
+
+          <div class="product-specs">
+            <div class="product-spec">
+              <span class="spec-key">CPU Cores</span>
+              <span class="spec-val">12-core (10P + 2E)</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">GPU Cores</span>
+              <span class="spec-val">20-core</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">Memory Bandwidth</span>
+              <span class="spec-val">200 GB/s</span>
+            </div>
+          </div>
+
+          <div class="product-price">From $1,299 <span>/ laptop</span></div>
+          <a href="#" class="product-cta" aria-label="Learn more about X1 Pro">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+        <span class="product-visual" aria-hidden="true">✦</span>
+      </article>
+
+      <!-- AX DataCenter -->
+      <article class="product-card reveal reveal-delay-3" tabindex="0" aria-label="AXIOM AX-DC datacenter chip">
+        <div class="product-card-inner">
+          <span class="product-badge badge-ultra">🏢 DC</span>
+          <span class="product-icon" aria-hidden="true">🧠</span>
+          <h3 class="product-name" style="font-size: 26px;">AX <em class="gradient-text" style="font-style:normal">DataCenter</em></h3>
+          <p class="product-tagline">
+            Exascale AI inference. 320 TFLOPS per card, purpose-built for LLM serving and scientific compute.
+          </p>
+
+          <div class="product-specs">
+            <div class="product-spec">
+              <span class="spec-key">GPU Cores</span>
+              <span class="spec-val">256-core cluster</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">HBM4 Capacity</span>
+              <span class="spec-val">192 GB</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">TDP</span>
+              <span class="spec-val">350W</span>
+            </div>
+          </div>
+
+          <div class="product-price">Contact sales</div>
+          <a href="#" class="product-cta">Talk to an expert <span aria-hidden="true">→</span></a>
+        </div>
+        <span class="product-visual" aria-hidden="true">🧠</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     TECHNOLOGY
+═══════════════════════════════════════════════════════ -->
+<section class="technology" id="technology" aria-labelledby="tech-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow reveal">Deep Dive</span>
+      <h2 class="section-title reveal reveal-delay-1" id="tech-title">
+        The science behind<br/>
+        <em class="gradient-text">AXIOM architecture.</em>
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        Every transistor placed with intent. Every circuit path optimized for the physics of tomorrow.
+      </p>
+    </div>
+
+    <!-- Tech Showcase 1: Architecture -->
+    <div class="tech-showcase">
+      <div class="tech-content reveal">
+        <span class="tech-eyebrow">Unified Architecture</span>
+        <h3 class="tech-title">
+          One die.<br/>Every workload.
+        </h3>
+        <p class="tech-desc">
+          Traditional architectures waste bandwidth routing data between discrete chips. AXIOM's unified die places CPU, GPU, Neural Engine, and memory controllers within nanometers of each other — eliminating the PCIe bottleneck entirely.
+        </p>
+        <div class="tech-features">
+          <div class="tech-feature">
+            <div class="tech-feature-icon" aria-hidden="true">⚡</div>
+            <div class="tech-feature-text">
+              <div class="tech-feature-name">UltraFabric Interconnect</div>
+              <div class="tech-feature-desc">4TB/s die-to-die bandwidth using photonic waveguides. Zero latency between compute units.</div>
+            </div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon" aria-hidden="true">🧬</div>
+            <div class="tech-feature-text">
+              <div class="tech-feature-name">Shared Memory Architecture</div>
+              <div class="tech-feature-desc">CPU and GPU share a unified memory pool. No copies, no stalls, no wasted cycles.</div>
+            </div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon" aria-hidden="true">🔋</div>
+            <div class="tech-feature-text">
+              <div class="tech-feature-name">Adaptive Power Mesh</div>
+              <div class="tech-feature-desc">Real-time per-core voltage regulation at 1MHz. 40% better efficiency under mixed workloads.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-visual reveal reveal-delay-2">
+        <div class="tech-visual-inner">
+          <div class="arch-grid" role="img" aria-label="AXIOM chip architecture diagram">
+            <div class="arch-block arch-block-cpu">CPU P-Core</div>
+            <div class="arch-block arch-block-cpu">CPU P-Core</div>
+            <div class="arch-block arch-block-gpu">GPU Cluster</div>
+            <div class="arch-block arch-block-gpu">GPU Cluster</div>
+            <div class="arch-block arch-block-mem">HBM4</div>
+            <div class="arch-block arch-block-neural">Neural<br/>Engine</div>
+            <div class="arch-block arch-block-io">I/O</div>
+            <div class="arch-block arch-block-cache">L3 Cache</div>
+            <div class="arch-block arch-block-pmu">PMU</div>
+            <div class="arch-block arch-block-fabric">UltraFabric Interconnect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Showcase 2: Neural Engine -->
+    <div class="tech-showcase reverse">
+      <div class="tech-content reveal">
+        <span class="tech-eyebrow">Neural Engine</span>
+        <h3 class="tech-title">
+          AI isn't a feature.<br/>It's the foundation.
+        </h3>
+        <p class="tech-desc">
+          The AXIOM Neural Engine isn't bolted on — it's woven through the architecture. Sparse matrix operations, transformer attention, and quantization happen in dedicated silicon running alongside every CPU and GPU instruction.
+        </p>
+        <div class="tech-features">
+          <div class="tech-feature">
+            <div class="tech-feature-icon" aria-hidden="true">🤖</div>
+            <div class="tech-feature-text">
+              <div class="tech-feature-name">38 TOPS per chip</div>
+              <div class="tech-feature-desc">Run 70B parameter models locally at full speed, no cloud required.</div>
+            </div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon" aria-hidden="true">🔐</div>
+            <div class="tech-feature-text">
+              <div class="tech-feature-name">Private AI</div>
+              <div class="tech-feature-desc">All inference happens on-chip inside the Secure Enclave. Your data never leaves the device.</div>
+            </div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon" aria-hidden="true">🎯</div>
+            <div class="tech-feature-text">
+              <div class="tech-feature-name">Sparse Acceleration</div>
+              <div class="tech-feature-desc">2× throughput on pruned models via hardware-native structured sparsity support.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-visual reveal reveal-delay-2" style="position: relative;">
+        <canvas id="neuralCanvas" aria-label="Animated neural network visualization"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BENCHMARK
+═══════════════════════════════════════════════════════ -->
+<section class="benchmark" id="benchmark" aria-labelledby="bench-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow reveal">Independent Testing</span>
+      <h2 class="section-title reveal reveal-delay-1" id="bench-title">
+        The numbers<br/>
+        <em class="gradient-text">speak for themselves.</em>
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        Cinebench 2025 Multi-Core · Tested by AnandTech Labs, Feb 2026.
+      </p>
+    </div>
+
+    <div class="bench-legend reveal">
+      <div class="bench-legend-item">
+        <div class="bench-legend-dot" style="background: var(--gradient-accent)"></div>
+        <span>Multi-Core Score</span>
+      </div>
+      <div class="bench-legend-item">
+        <div class="bench-legend-dot" style="background: #4ade80"></div>
+        <span>Lead vs. Competition</span>
+      </div>
+    </div>
+
+    <div class="benchmark-chart reveal reveal-delay-1">
+      <div class="bench-row highlighted">
+        <div class="bench-company">AXIOM X1 Ultra</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="100" style="background: var(--gradient-accent)"></div>
+          </div>
+        </div>
+        <div class="bench-score gradient-text">9,840</div>
+        <div class="bench-delta">Baseline</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">Intel Core i9</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="61" style="background: #3b82f6"></div>
+          </div>
+        </div>
+        <div class="bench-score">5,980</div>
+        <div class="bench-delta" style="color: var(--text-tertiary)">−39%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">AMD Ryzen 9</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="67" style="background: #ef4444"></div>
+          </div>
+        </div>
+        <div class="bench-score">6,620</div>
+        <div class="bench-delta" style="color: var(--text-tertiary)">−33%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">Apple M4 Ultra</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="81" style="background: #8b5cf6"></div>
+          </div>
+        </div>
+        <div class="bench-score">7,940</div>
+        <div class="bench-delta" style="color: var(--text-tertiary)">−19%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">Qualcomm X Elite</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="49" style="background: #f59e0b"></div>
+          </div>
+        </div>
+        <div class="bench-score">4,790</div>
+        <div class="bench-delta" style="color: var(--text-tertiary)">−51%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">NVIDIA H100</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="88" style="background: #84cc16"></div>
+          </div>
+        </div>
+        <div class="bench-score">8,630 <span style="font-size:11px;color:var(--text-tertiary)">GPU</span></div>
+        <div class="bench-delta" style="color: var(--text-tertiary)">−12%</div>
+      </div>
+    </div>
+
+    <p class="section-desc reveal" style="margin-top: 32px; font-size: 13px; color: var(--text-tertiary);">
+      * GPU benchmark for H100. All other scores are CPU multi-threaded. Testing conditions available at axiom.silicon/benchmarks.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PHILOSOPHY
+═══════════════════════════════════════════════════════ -->
+<section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow reveal">Our Beliefs</span>
+      <h2 class="section-title reveal reveal-delay-1" id="philosophy-title">
+        What we believe<br/>
+        <em class="gradient-text">about the future.</em>
+      </h2>
+    </div>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card reveal">
+        <span class="philosophy-icon" aria-hidden="true">🎨</span>
+        <h3 class="philosophy-title">Design is physics.</h3>
+        <p class="philosophy-text">
+          Beautiful products and efficient circuits share the same principle: nothing wasted. Every unnecessary gate removed, every redundant path eliminated — that's not minimalism, that's engineering philosophy.
+        </p>
+      </div>
+      <div class="philosophy-card reveal reveal-delay-1">
+        <span class="philosophy-icon" aria-hidden="true">🌍</span>
+        <h3 class="philosophy-title">Performance has a responsibility.</h3>
+        <p class="philosophy-text">
+          A chip that consumes twice the power for 10% more performance isn't progress — it's waste. We optimize efficiency first, performance second. Every joule saved is a commitment to the planet.
+        </p>
+      </div>
+      <div class="philosophy-card reveal reveal-delay-2">
+        <span class="philosophy-icon" aria-hidden="true">🔮</span>
+        <h3 class="philosophy-title">Vertical integration wins.</h3>
+        <p class="philosophy-text">
+          When you design the silicon, the architecture, and the compiler stack together, you unlock performance impossible with commodity parts. We control the full stack — from transistor to tensor operation.
+        </p>
+      </div>
+    </div>
+
+    <div class="manifesto reveal reveal-delay-3">
+      <blockquote>
+        <p class="manifesto-quote">
+          "The best chip is the one you forget is there — because it just <em class="gradient-text">does</em> everything you imagine, before you finish imagining it."
+        </p>
+        <footer class="manifesto-attr">— Kaito Yamamoto, Founder & Chief Architect, AXIOM</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SPECS TABLE
+═══════════════════════════════════════════════════════ -->
+<section class="specs" id="specs" aria-labelledby="specs-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow reveal">Technical Specs</span>
+      <h2 class="section-title reveal reveal-delay-1" id="specs-title">
+        Every detail,<br/>
+        <em class="gradient-text">fully disclosed.</em>
+      </h2>
+    </div>
+
+    <div class="specs-tabs reveal" role="tablist" aria-label="Chip family selector">
+      <button class="specs-tab active" id="tab-x1-ultra" data-panel="specs-x1-ultra" role="tab" aria-selected="true" aria-controls="specs-x1-ultra">X1 Ultra</button>
+      <button class="specs-tab" id="tab-x1-max" data-panel="specs-x1-max" role="tab" aria-selected="false" aria-controls="specs-x1-max">X1 Max</button>
+      <button class="specs-tab" id="tab-x1-pro" data-panel="specs-x1-pro" role="tab" aria-selected="false" aria-controls="specs-x1-pro">X1 Pro</button>
+    </div>
+
+    <!-- X1 Ultra Specs -->
+    <div class="specs-panel active reveal" id="specs-x1-ultra" role="tabpanel" aria-labelledby="tab-x1-ultra">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Specification</th>
+            <th>AXIOM X1 Ultra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Process</strong><div class="spec-label">Fabrication node</div></td>
+            <td>TSMC N2 (2nm)</td>
+            <td>2nm <span class="spec-highlight">✦ First in class</span></td>
+          </tr>
+          <tr>
+            <td><strong>Transistors</strong></td>
+            <td>48 billion</td>
+            <td>48B</td>
+          </tr>
+          <tr>
+            <td><strong>CPU</strong><div class="spec-label">Total cores / P+E split</div></td>
+            <td>40 cores</td>
+            <td>32P + 8E</td>
+          </tr>
+          <tr>
+            <td><strong>CPU Clock</strong><div class="spec-label">P-core boost</div></td>
+            <td>Up to 5.8 GHz</td>
+            <td>5.8 GHz <span class="spec-highlight">✦ Fastest single-core</span></td>
+          </tr>
+          <tr>
+            <td><strong>GPU</strong><div class="spec-label">Shader cores</div></td>
+            <td>128-core</td>
+            <td>128-core</td>
+          </tr>
+          <tr>
+            <td><strong>GPU Peak</strong></td>
+            <td>320 TFLOPS</td>
+            <td>320 TFLOPS FP32</td>
+          </tr>
+          <tr>
+            <td><strong>Neural Engine</strong></td>
+            <td>64-core</td>
+            <td>38 TOPS</td>
+          </tr>
+          <tr>
+            <td><strong>Memory</strong><div class="spec-label">Unified / HBM4</div></td>
+            <td>Up to 512 GB</td>
+            <td>192 / 320 GB</td>
+          </tr>
+          <tr>
+            <td><strong>Memory BW</strong></td>
+            <td>1.6 TB/s</td>
+            <td>1.6 TB/s <span class="spec-highlight">✦ Industry max</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cache</strong><div class="spec-label">L2 + L3 total</div></td>
+            <td>256 MB</td>
+            <td>64 + 192 MB</td>
+          </tr>
+          <tr>
+            <td><strong>TDP</strong></td>
+            <td>120W (nominal)</td>
+            <td>80–150W (adaptive)</td>
+          </tr>
+          <tr>
+            <td><strong>Interconnect</strong></td>
+            <td>UltraFabric</td>
+            <td>4 TB/s die-to-die</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- X1 Max Specs -->
+    <div class="specs-panel" id="specs-x1-max" role="tabpanel" aria-labelledby="tab-x1-max">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Specification</th>
+            <th>AXIOM X1 Max</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Process</strong></td>
+            <td>TSMC N2 (2nm)</td>
+            <td>2nm</td>
+          </tr>
+          <tr>
+            <td><strong>Transistors</strong></td>
+            <td>28 billion</td>
+            <td>28B</td>
+          </tr>
+          <tr>
+            <td><strong>CPU</strong></td>
+            <td>16 cores</td>
+            <td>14P + 2E</td>
+          </tr>
+          <tr>
+            <td><strong>CPU Clock</strong></td>
+            <td>Up to 5.2 GHz</td>
+            <td>5.2 GHz</td>
+          </tr>
+          <tr>
+            <td><strong>GPU</strong></td>
+            <td>64-core</td>
+            <td>64-core</td>
+          </tr>
+          <tr>
+            <td><strong>GPU Peak</strong></td>
+            <td>160 TFLOPS</td>
+            <td>160 TFLOPS FP32</td>
+          </tr>
+          <tr>
+            <td><strong>Neural Engine</strong></td>
+            <td>32-core</td>
+            <td>19 TOPS</td>
+          </tr>
+          <tr>
+            <td><strong>Memory</strong></td>
+            <td>Up to 256 GB</td>
+            <td>64–256 GB HBM4</td>
+          </tr>
+          <tr>
+            <td><strong>Memory BW</strong></td>
+            <td>800 GB/s</td>
+            <td>800 GB/s</td>
+          </tr>
+          <tr>
+            <td><strong>TDP</strong></td>
+            <td>60W (nominal)</td>
+            <td>45–80W (adaptive)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- X1 Pro Specs -->
+    <div class="specs-panel" id="specs-x1-pro" role="tabpanel" aria-labelledby="tab-x1-pro">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Specification</th>
+            <th>AXIOM X1 Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Process</strong></td>
+            <td>TSMC N2 (2nm)</td>
+            <td>2nm</td>
+          </tr>
+          <tr>
+            <td><strong>Transistors</strong></td>
+            <td>16 billion</td>
+            <td>16B</td>
+          </tr>
+          <tr>
+            <td><strong>CPU</strong></td>
+            <td>12 cores</td>
+            <td>10P + 2E</td>
+          </tr>
+          <tr>
+            <td><strong>CPU Clock</strong></td>
+            <td>Up to 4.8 GHz</td>
+            <td>4.8 GHz</td>
+          </tr>
+          <tr>
+            <td><strong>GPU</strong></td>
+            <td>20-core</td>
+            <td>20-core</td>
+          </tr>
+          <tr>
+            <td><strong>GPU Peak</strong></td>
+            <td>38 TFLOPS</td>
+            <td>38 TFLOPS FP32</td>
+          </tr>
+          <tr>
+            <td><strong>Neural Engine</strong></td>
+            <td>16-core</td>
+            <td>9.5 TOPS</td>
+          </tr>
+          <tr>
+            <td><strong>Memory</strong></td>
+            <td>Up to 64 GB</td>
+            <td>16–64 GB LPDDR5X</td>
+          </tr>
+          <tr>
+            <td><strong>Memory BW</strong></td>
+            <td>200 GB/s</td>
+            <td>200 GB/s</td>
+          </tr>
+          <tr>
+            <td><strong>TDP</strong></td>
+            <td>25W (nominal)</td>
+            <td>15–35W (adaptive)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRESS / TESTIMONIALS
+═══════════════════════════════════════════════════════ -->
+<section class="press" aria-label="Press coverage and testimonials">
+  <div class="container">
+    <div class="press-logos reveal" aria-hidden="true">
+      <span class="press-logo">The Verge</span>
+      <span class="press-logo">Wired</span>
+      <span class="press-logo">AnandTech</span>
+      <span class="press-logo">IEEE Spectrum</span>
+      <span class="press-logo">Tom's Hardware</span>
+      <span class="press-logo">Hot Hardware</span>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"The X1 Ultra redefined what I thought was possible on a workstation. 8K ProRes editing in real time, no proxies, no dropped frames. It's witchcraft."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">MK</div>
+          <div>
+            <div class="testimonial-name">Maya Krishnamurthy</div>
+            <div class="testimonial-title">Senior VFX Supervisor, Industrial Light & Magic</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"We cut our LLM training time by 64% switching from an H100 cluster to AXIOM AX DataCenter cards. The memory bandwidth difference is not subtle."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">TL</div>
+          <div>
+            <div class="testimonial-name">Dr. Takeshi Lin</div>
+            <div class="testimonial-title">Head of Infrastructure, Sakura AI Research</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"I've reviewed chips for 15 years. AXIOM is the first time I wrote 'this changes everything' and meant every word. The perf-per-watt curve is genuinely historic."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">RV</div>
+          <div>
+            <div class="testimonial-name">Ryan Voss</div>
+            <div class="testimonial-title">Principal Reviewer, AnandTech</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════════ -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <h2 class="cta-title reveal" id="cta-title">
+    Ready to compute<br/>
+    <em class="gradient-text">beyond limits?</em>
+  </h2>
+  <p class="cta-desc reveal reveal-delay-1">
+    Join thousands of engineers, researchers, and creators who've already made the switch.
+  </p>
+  <div class="cta-buttons reveal reveal-delay-2">
+    <a href="#products" class="btn-primary">Shop AXIOM Chips</a>
+    <a href="#technology" class="btn-secondary">Explore Architecture</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="nav-logo-mark" aria-hidden="true">AX</div>
+          <span>AXIOM</span>
+        </div>
+        <p class="footer-brand-desc">
+          Designing the world's most advanced silicon since 2021. Headquartered in Tokyo. Fabricated at TSMC.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="footer-social-link" aria-label="GitHub">⌥</a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Products</h3>
+        <ul class="footer-links">
+          <li><a href="#">X1 Ultra</a></li>
+          <li><a href="#">X1 Max</a></li>
+          <li><a href="#">X1 Pro</a></li>
+          <li><a href="#">AX DataCenter</a></li>
+          <li><a href="#">Compare</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Developers</h3>
+        <ul class="footer-links">
+          <li><a href="#">AXIOM SDK</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Open Source</a></li>
+          <li><a href="#">Benchmarks</a></li>
+          <li><a href="#">API Reference</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Investors</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Support</h3>
+        <ul class="footer-links">
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Knowledge Base</a></li>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright © 2026 AXIOM Silicon K.K. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
