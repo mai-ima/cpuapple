@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>リリースノート — AXIOM</title>
+  <meta name="description" content="AXIOM ウェブサイトのリリースノート。各バージョンで追加・改善された機能を記録します。" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236e40c9'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-weight='900' font-family='system-ui'>AX</text></svg>" />
+  <style>
+    .nav-inner { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+  </style>
+</head>
+<body>
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="scroll-progress" role="progressbar" aria-label="読み込み進捗"></div>
+
+<nav class="mobile-menu" role="navigation" aria-label="モバイルナビゲーション">
+  <button class="mobile-menu-close" aria-label="メニューを閉じる">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <a href="../">ホーム</a>
+  <a href="../consumer/">コンシューマー</a>
+  <a href="../enterprise/">エンタープライズ</a>
+  <a href="./">リリースノート</a>
+</nav>
+
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" aria-label="AXIOM ホーム">
+      <div class="nav-logo-mark" aria-hidden="true">AX</div>
+      <span>AXIOM</span>
+    </a>
+    <nav class="nav-links" aria-label="主要ナビゲーション">
+      <a href="../#split">製品</a>
+      <a href="../#technology">テクノロジー</a>
+      <a href="../consumer/">コンシューマー</a>
+      <a href="../enterprise/">エンタープライズ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="ダーク/ライトモード切替"></button>
+      <a href="../consumer/" class="nav-btn">コンシューマー</a>
+      <a href="../enterprise/" class="nav-btn nav-btn-primary">エンタープライズ</a>
+      <button class="nav-mobile-toggle" aria-label="ナビゲーションメニューを開く">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="currentColor" aria-hidden="true">
+          <rect y="0" width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="changelog-hero">
+  <div class="container">
+    <span class="changelog-version-badge">リリースノート</span>
+    <h1 class="section-title reveal" style="font-size: clamp(40px,6vw,72px); letter-spacing:-2px; margin-bottom:16px;">
+      すべての変更を、<br/><em class="gradient-text">透明に記録する。</em>
+    </h1>
+    <p class="section-desc reveal reveal-delay-1">
+      AXIOM ウェブサイトの各バージョンで追加・改善・修正した内容を詳細に記録しています。
+    </p>
+  </div>
+</section>
+
+<!-- CHANGELOG ENTRIES -->
+<div class="changelog-list">
+
+  <!-- v2.0.0 -->
+  <article class="changelog-entry reveal">
+    <div class="changelog-entry-version">v2.0.0</div>
+    <div class="changelog-entry-date">2026年5月30日</div>
+    <h2 class="changelog-entry-title">大規模リニューアル — 日本語完全対応・新製品・スマホ最適化</h2>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>新製品 X1 Air 追加</strong> — 超薄型ノート向けの新チップ。8コア CPU（6P+2E）、12コア GPU、わずか 8W の TDP。省電力と薄型設計を両立し、学生・ビジネスパーソン向けエントリーラインとして新設。コンシューマーページに製品カード・スペックを追加。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>リリースノートページ新設</strong> — 本ページ（<code>changelog/index.html</code>）。ウェブサイト更新のたびに変更内容を具体的に記録します。バージョン番号・日付・タグ付き変更項目を掲載。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>スマホ向けボトムナビゲーション実装</strong> — 768px 以下の端末でフッター固定のボトムナビバーを表示。ホーム・製品・テクノロジー・スペックの各セクションにタップ1回でアクセス可能。Safe Area 対応済み。スクロール位置に応じてアクティブ状態が自動更新。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-improve">改善</span>
+      <div class="changelog-item-text">
+        <strong>完全日本語化</strong> — コンシューマーページ（consumer/index.html）を含む全ページを完全日本語化。製品名・説明文・ナビゲーション・フッター・スペック表のすべてを日本語に統一。<code>lang="ja"</code>属性を全ページに設定済み。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-improve">改善</span>
+      <div class="changelog-item-text">
+        <strong>ライトモード完全実装</strong> — システム設定（<code>prefers-color-scheme</code>）を自動検出し、初回アクセス時に適切なテーマを適用。手動切替後は <code>localStorage</code> に保存。製品カード・ベンチマーク・スペック表・ボタン・ナビゲーションすべてのライトモード対応を強化。テーマトグルボタンのアクセシブルな <code>aria-label</code> をテーマ変更時に動的更新。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-improve">改善</span>
+      <div class="changelog-item-text">
+        <strong>スマホ UI 全体的な最適化</strong> — タッチターゲット最小 44px を全インタラクティブ要素に適用。iPhone のノッチ・Dynamic Island 対応（<code>viewport-fit=cover</code>、<code>env(safe-area-inset-*)</code>）。ボトムナビとコンテンツが重ならないよう <code>body</code> に <code>padding-bottom</code> を自動付与。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-improve">改善</span>
+      <div class="changelog-item-text">
+        <strong>価格セレクターのスタイル統合</strong> — コンシューマーページの価格セレクター CSS を <code>style.css</code> に統合。`.price-selector`・`.price-tier-btn`・`.price-display` クラスを共通スタイルシートで管理するよう変更。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-fix">修正</span>
+      <div class="changelog-item-text">
+        <strong>HTML ファイルが空だった問題を修正</strong> — 初回コミット時に <code>index.html</code>・<code>consumer/index.html</code>・<code>enterprise/index.html</code> が空文字列でプッシュされていた問題を修正。すべてのページに実際のコンテンツを書き込み再プッシュ（コミット <code>692b2b88</code>）。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-perf">性能</span>
+      <div class="changelog-item-text">
+        <strong>システムダークモード変更の自動追従</strong> — <code>window.matchMedia</code> の <code>change</code> イベントを監視し、ユーザーが OS のダーク/ライト設定を変更した場合、ページを再読み込みせずにリアルタイムでテーマを切り替え。ただし手動でテーマを変更した場合は <code>localStorage</code> の設定を優先。
+      </div>
+    </div>
+  </article>
+
+  <!-- v1.0.0 -->
+  <article class="changelog-entry reveal">
+    <div class="changelog-entry-version">v1.0.0</div>
+    <div class="changelog-entry-date">2026年5月30日</div>
+    <h2 class="changelog-entry-title">初回リリース — マルチページアーキテクチャ展開</h2>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>ハブページ（index.html）新設</strong> — スプリットパネル（コンシューマー/エンタープライズ）、ダイ系譜 Canvas アニメーション（X1 Pro → X1 Max → X1 Ultra）、ヒーロー、メトリクス、テクノロジー、ベンチマーク、スペックタブを含む日本語ハブページを構築。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>コンシューマーページ（consumer/index.html）新設</strong> — X1 Pro と X1 Max の製品ページ。スクロールストーリー（CSS Scroll-driven Animations + JS フォールバック）、価格セレクター、ベンチマーク比較を実装。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>エンタープライズページ（enterprise/index.html）新設</strong> — X1 Ultra と AX DataCenter の製品ページ。ROI 計算機（aria-live 対応、300ms デバウンス）、ケーススタディ3件、スペック比較表を実装。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>イースターエッグ実装</strong> — コナミコマンド（↑↑↓↓←→←→BA）でシークレットポップアップ表示。HTML ソースに隠しコメント3箇所。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-new">新機能</span>
+      <div class="changelog-item-text">
+        <strong>iPhone 最適化</strong> — <code>viewport-fit=cover</code>、<code>apple-mobile-web-app-capable</code>、Safe Area インセット対応、<code>navigator.vibrate(1)</code> ハプティックフィードバックを実装。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-perf">性能</span>
+      <div class="changelog-item-text">
+        <strong>will-change ライフサイクル管理</strong> — CSS に静的な <code>will-change</code> を一切書かず、IntersectionObserver でビューポート進入時に付与・<code>transitionend</code> で除去。モバイル GPU レイヤー爆発を防止。
+      </div>
+    </div>
+
+    <div class="changelog-item">
+      <span class="changelog-item-tag tag-perf">性能</span>
+      <div class="changelog-item-text">
+        <strong>prefers-reduced-motion 完全対応</strong> — CSS <code>@media (prefers-reduced-motion: reduce)</code> ですべてのアニメーションを無効化。JS 側でも <code>window.matchMedia</code> チェックを実装しカウンターアニメーションをスキップ。
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><div class="nav-logo-mark" aria-hidden="true">AX</div><span>AXIOM</span></div>
+        <p class="footer-brand-desc">世界最先端のシリコンを、第一原理から設計する。</p>
+      </div>
+      <div>
+        <h3 class="footer-col-title">製品</h3>
+        <ul class="footer-links">
+          <li><a href="../consumer/">X1 Air</a></li>
+          <li><a href="../consumer/">X1 Pro / Max</a></li>
+          <li><a href="../enterprise/">X1 Ultra</a></li>
+          <li><a href="../enterprise/">AX DataCenter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">情報</h3>
+        <ul class="footer-links">
+          <li><a href="../#technology">テクノロジー</a></li>
+          <li><a href="../#philosophy">フィロソフィー</a></li>
+          <li><a href="./">リリースノート</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">会社情報</h3>
+        <ul class="footer-links">
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">プレス</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&#169; 2026 AXIOM Silicon Inc. All rights reserved.</p>
+      <nav class="footer-legal"><a href="#">プライバシーポリシー</a><a href="#">利用規約</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav" aria-label="ボトムナビゲーション">
+  <div class="bottom-nav-inner">
+    <a href="../" class="bottom-nav-item" aria-label="ホーム">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+      <span>ホーム</span>
+    </a>
+    <a href="../consumer/" class="bottom-nav-item" aria-label="コンシューマー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <span>一般向け</span>
+    </a>
+    <a href="../enterprise/" class="bottom-nav-item" aria-label="エンタープライズ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M6 7V5a2 2 0 014 0v2"/></svg>
+      <span>法人向け</span>
+    </a>
+    <a href="./" class="bottom-nav-item active" aria-label="リリースノート">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span>更新履歴</span>
+    </a>
+  </div>
+</nav>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

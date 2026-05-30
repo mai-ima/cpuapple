@@ -233,36 +233,36 @@
 <!-- ═══════════════════════════════════════════════════════
      METRICS
 ═══════════════════════════════════════════════════════ -->
-<section class="metrics" aria-label="Key performance metrics">
+<section class="metrics" aria-label="主要性能指標">
   <div class="container">
     <div class="metrics-inner">
       <div class="metric-item reveal">
         <div class="metric-value gradient-text">
           <span class="counter" data-target="2" data-suffix="nm" data-decimals="0">0nm</span>
         </div>
-        <div class="metric-label">Process Node</div>
-        <div class="metric-sublabel">Industry-first 2nm TSMC N2</div>
+        <div class="metric-label">プロセスノード</div>
+        <div class="metric-sublabel">業界初 2nm TSMC N2</div>
       </div>
       <div class="metric-item reveal reveal-delay-1">
         <div class="metric-value gradient-text">
           <span class="counter" data-target="48" data-suffix="" data-decimals="0">0</span>B
         </div>
-        <div class="metric-label">Transistors</div>
-        <div class="metric-sublabel">Unified die architecture</div>
+        <div class="metric-label">トランジスタ数</div>
+        <div class="metric-sublabel">統合ダイアーキテクチャ</div>
       </div>
       <div class="metric-item reveal reveal-delay-2">
         <div class="metric-value gradient-text">
           <span class="counter" data-target="320" data-suffix="+" data-decimals="0">0+</span>
         </div>
         <div class="metric-label">TFLOPS (FP32)</div>
-        <div class="metric-sublabel">GPU peak compute</div>
+        <div class="metric-sublabel">GPU ピーク性能</div>
       </div>
       <div class="metric-item reveal reveal-delay-3">
         <div class="metric-value gradient-text">
           <span class="counter" data-target="4.8" data-suffix="x" data-decimals="1">0x</span>
         </div>
-        <div class="metric-label">Performance/Watt</div>
-        <div class="metric-sublabel">vs. previous generation</div>
+        <div class="metric-label">性能 / ワット</div>
+        <div class="metric-sublabel">前世代比</div>
       </div>
     </div>
   </div>
@@ -534,33 +534,33 @@
     <!-- Tech Showcase 1: Architecture -->
     <div class="tech-showcase">
       <div class="tech-content reveal">
-        <span class="tech-eyebrow">Unified Architecture</span>
+        <span class="tech-eyebrow">統合アーキテクチャ</span>
         <h3 class="tech-title">
-          One die.<br/>Every workload.
+          一つのダイ。<br/>あらゆるワークロード。
         </h3>
         <p class="tech-desc">
-          Traditional architectures waste bandwidth routing data between discrete chips. AXIOM's unified die places CPU, GPU, Neural Engine, and memory controllers within nanometers of each other — eliminating the PCIe bottleneck entirely.
+          従来のアーキテクチャは、個別チップ間のデータ転送で帯域幅を無駄にする。AXIOMの統合ダイは、CPU・GPU・Neural Engine・メモリコントローラーをナノメートル単位で近接配置し、PCIeボトルネックを完全に排除する。
         </p>
         <div class="tech-features">
           <div class="tech-feature">
             <div class="tech-feature-icon" aria-hidden="true">⚡</div>
             <div class="tech-feature-text">
-              <div class="tech-feature-name">UltraFabric Interconnect</div>
-              <div class="tech-feature-desc">4TB/s die-to-die bandwidth using photonic waveguides. Zero latency between compute units.</div>
+              <div class="tech-feature-name">UltraFabric インターコネクト</div>
+              <div class="tech-feature-desc">フォトニック導波路を使ったダイ間 4TB/s 帯域幅。コンピュートユニット間のレイテンシーはゼロ。</div>
             </div>
           </div>
           <div class="tech-feature">
             <div class="tech-feature-icon" aria-hidden="true">🧬</div>
             <div class="tech-feature-text">
-              <div class="tech-feature-name">Shared Memory Architecture</div>
-              <div class="tech-feature-desc">CPU and GPU share a unified memory pool. No copies, no stalls, no wasted cycles.</div>
+              <div class="tech-feature-name">統合メモリアーキテクチャ</div>
+              <div class="tech-feature-desc">CPU と GPU が統合メモリプールを共有。コピーなし、ストールなし、無駄なサイクルなし。</div>
             </div>
           </div>
           <div class="tech-feature">
             <div class="tech-feature-icon" aria-hidden="true">🔋</div>
             <div class="tech-feature-text">
-              <div class="tech-feature-name">Adaptive Power Mesh</div>
-              <div class="tech-feature-desc">Real-time per-core voltage regulation at 1MHz. 40% better efficiency under mixed workloads.</div>
+              <div class="tech-feature-name">アダプティブ電力メッシュ</div>
+              <div class="tech-feature-desc">1MHz でのリアルタイムコア単位電圧調整。混合ワークロードで 40% の効率向上。</div>
             </div>
           </div>
         </div>
@@ -588,31 +588,31 @@
       <div class="tech-content reveal">
         <span class="tech-eyebrow">Neural Engine</span>
         <h3 class="tech-title">
-          AI isn't a feature.<br/>It's the foundation.
+          AI は機能ではない。<br/>それが土台だ。
         </h3>
         <p class="tech-desc">
-          The AXIOM Neural Engine isn't bolted on — it's woven through the architecture. Sparse matrix operations, transformer attention, and quantization happen in dedicated silicon running alongside every CPU and GPU instruction.
+          AXIOM Neural Engine は後付けではない。アーキテクチャ全体に織り込まれている。スパース行列演算・Transformer アテンション・量子化が、すべての CPU/GPU 命令と並列で専用シリコン上で実行される。
         </p>
         <div class="tech-features">
           <div class="tech-feature">
             <div class="tech-feature-icon" aria-hidden="true">🤖</div>
             <div class="tech-feature-text">
-              <div class="tech-feature-name">38 TOPS per chip</div>
-              <div class="tech-feature-desc">Run 70B parameter models locally at full speed, no cloud required.</div>
+              <div class="tech-feature-name">チップあたり 38 TOPS</div>
+              <div class="tech-feature-desc">700 億パラメータモデルをフルスピードでローカル実行。クラウド不要。</div>
             </div>
           </div>
           <div class="tech-feature">
             <div class="tech-feature-icon" aria-hidden="true">🔐</div>
             <div class="tech-feature-text">
-              <div class="tech-feature-name">Private AI</div>
-              <div class="tech-feature-desc">All inference happens on-chip inside the Secure Enclave. Your data never leaves the device.</div>
+              <div class="tech-feature-name">プライベート AI</div>
+              <div class="tech-feature-desc">全ての推論はセキュアエンクレーブ内のオンチップで処理。データはデバイス外に出ない。</div>
             </div>
           </div>
           <div class="tech-feature">
             <div class="tech-feature-icon" aria-hidden="true">🎯</div>
             <div class="tech-feature-text">
-              <div class="tech-feature-name">Sparse Acceleration</div>
-              <div class="tech-feature-desc">2× throughput on pruned models via hardware-native structured sparsity support.</div>
+              <div class="tech-feature-name">スパースアクセラレーション</div>
+              <div class="tech-feature-desc">ハードウェアネイティブの構造的スパーシティで、プルーニングモデルのスループット 2 倍。</div>
             </div>
           </div>
         </div>
@@ -630,24 +630,24 @@
 <section class="benchmark" id="benchmark" aria-labelledby="bench-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow reveal">Independent Testing</span>
+      <span class="section-eyebrow reveal">独立性能テスト</span>
       <h2 class="section-title reveal reveal-delay-1" id="bench-title">
-        The numbers<br/>
-        <em class="gradient-text">speak for themselves.</em>
+        数字が<br/>
+        <em class="gradient-text">全てを語る。</em>
       </h2>
       <p class="section-desc reveal reveal-delay-2">
-        Cinebench 2025 Multi-Core · Tested by AnandTech Labs, Feb 2026.
+        Cinebench 2025 マルチコア · AnandTech Labs 計測、2026年2月。
       </p>
     </div>
 
     <div class="bench-legend reveal">
       <div class="bench-legend-item">
         <div class="bench-legend-dot" style="background: var(--gradient-accent)"></div>
-        <span>Multi-Core Score</span>
+        <span>マルチコアスコア</span>
       </div>
       <div class="bench-legend-item">
         <div class="bench-legend-dot" style="background: #4ade80"></div>
-        <span>Lead vs. Competition</span>
+        <span>競合比リード</span>
       </div>
     </div>
 
@@ -660,7 +660,7 @@
           </div>
         </div>
         <div class="bench-score gradient-text">9,840</div>
-        <div class="bench-delta">Baseline</div>
+        <div class="bench-delta">基準値</div>
       </div>
 
       <div class="bench-row">
@@ -720,7 +720,7 @@
     </div>
 
     <p class="section-desc reveal" style="margin-top: 32px; font-size: 13px; color: var(--text-tertiary);">
-      * GPU benchmark for H100. All other scores are CPU multi-threaded. Testing conditions available at axiom.silicon/benchmarks.
+      * H100 は GPU ベンチマーク。その他はすべて CPU マルチスレッド。テスト条件の詳細は axiom.silicon/benchmarks をご参照ください。
     </p>
   </div>
 </section>
@@ -731,33 +731,33 @@
 <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow reveal">Our Beliefs</span>
+      <span class="section-eyebrow reveal">私たちが信じること</span>
       <h2 class="section-title reveal reveal-delay-1" id="philosophy-title">
-        What we believe<br/>
-        <em class="gradient-text">about the future.</em>
+        未来について、<br/>
+        <em class="gradient-text">私たちが確信すること。</em>
       </h2>
     </div>
 
     <div class="philosophy-grid">
       <div class="philosophy-card reveal">
         <span class="philosophy-icon" aria-hidden="true">🎨</span>
-        <h3 class="philosophy-title">Design is physics.</h3>
+        <h3 class="philosophy-title">設計は物理学だ。</h3>
         <p class="philosophy-text">
-          Beautiful products and efficient circuits share the same principle: nothing wasted. Every unnecessary gate removed, every redundant path eliminated — that's not minimalism, that's engineering philosophy.
+          美しいプロダクトと効率的な回路は同じ原理を持つ：無駄がないこと。不要なゲートをすべて除去し、冗長なパスをすべて排除する。それはミニマリズムではなく、エンジニアリング哲学だ。
         </p>
       </div>
       <div class="philosophy-card reveal reveal-delay-1">
         <span class="philosophy-icon" aria-hidden="true">🌍</span>
-        <h3 class="philosophy-title">Performance has a responsibility.</h3>
+        <h3 class="philosophy-title">性能には責任が伴う。</h3>
         <p class="philosophy-text">
-          A chip that consumes twice the power for 10% more performance isn't progress — it's waste. We optimize efficiency first, performance second. Every joule saved is a commitment to the planet.
+          10% の性能向上のために消費電力を2倍にするチップは進歩ではない — それは無駄だ。私たちはまず効率を、次に性能を最適化する。節約されたジュールのひとつひとつが、地球への誓約だ。
         </p>
       </div>
       <div class="philosophy-card reveal reveal-delay-2">
         <span class="philosophy-icon" aria-hidden="true">🔮</span>
-        <h3 class="philosophy-title">Vertical integration wins.</h3>
+        <h3 class="philosophy-title">垂直統合が勝つ。</h3>
         <p class="philosophy-text">
-          When you design the silicon, the architecture, and the compiler stack together, you unlock performance impossible with commodity parts. We control the full stack — from transistor to tensor operation.
+          シリコン・アーキテクチャ・コンパイラスタックを一緒に設計すると、コモディティパーツでは不可能な性能が解放される。私たちはトランジスタからテンソル演算まで、フルスタックを掌握する。
         </p>
       </div>
     </div>
@@ -765,9 +765,9 @@
     <div class="manifesto reveal reveal-delay-3">
       <blockquote>
         <p class="manifesto-quote">
-          "The best chip is the one you forget is there — because it just <em class="gradient-text">does</em> everything you imagine, before you finish imagining it."
+          「最高のチップとは、その存在を忘れさせるもの — 想像し終わる前に、あらゆることを<em class="gradient-text">実現している</em>から。」
         </p>
-        <footer class="manifesto-attr">— Kaito Yamamoto, Founder & Chief Architect, AXIOM</footer>
+        <footer class="manifesto-attr">— 山本海斗、創業者 &amp; チーフアーキテクト、AXIOM</footer>
       </blockquote>
     </div>
   </div>
@@ -779,14 +779,14 @@
 <section class="specs" id="specs" aria-labelledby="specs-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow reveal">Technical Specs</span>
+      <span class="section-eyebrow reveal">技術仕様</span>
       <h2 class="section-title reveal reveal-delay-1" id="specs-title">
-        Every detail,<br/>
-        <em class="gradient-text">fully disclosed.</em>
+        すべてのディテールを、<br/>
+        <em class="gradient-text">完全に開示する。</em>
       </h2>
     </div>
 
-    <div class="specs-tabs reveal" role="tablist" aria-label="Chip family selector">
+    <div class="specs-tabs reveal" role="tablist" aria-label="チップファミリー選択">
       <button class="specs-tab active" id="tab-x1-ultra" data-panel="specs-x1-ultra" role="tab" aria-selected="true" aria-controls="specs-x1-ultra">X1 Ultra</button>
       <button class="specs-tab" id="tab-x1-max" data-panel="specs-x1-max" role="tab" aria-selected="false" aria-controls="specs-x1-max">X1 Max</button>
       <button class="specs-tab" id="tab-x1-pro" data-panel="specs-x1-pro" role="tab" aria-selected="false" aria-controls="specs-x1-pro">X1 Pro</button>
@@ -797,71 +797,71 @@
       <table class="specs-table">
         <thead>
           <tr>
-            <th>Category</th>
-            <th>Specification</th>
+            <th>カテゴリ</th>
+            <th>仕様</th>
             <th>AXIOM X1 Ultra</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Process</strong><div class="spec-label">Fabrication node</div></td>
+            <td><strong>プロセス</strong><div class="spec-label">製造ノード</div></td>
             <td>TSMC N2 (2nm)</td>
-            <td>2nm <span class="spec-highlight">✦ First in class</span></td>
+            <td>2nm <span class="spec-highlight">✦ 業界初</span></td>
           </tr>
           <tr>
-            <td><strong>Transistors</strong></td>
-            <td>48 billion</td>
-            <td>48B</td>
+            <td><strong>トランジスタ数</strong></td>
+            <td>480億</td>
+            <td>480億</td>
           </tr>
           <tr>
-            <td><strong>CPU</strong><div class="spec-label">Total cores / P+E split</div></td>
-            <td>40 cores</td>
+            <td><strong>CPU</strong><div class="spec-label">総コア数 / P+E</div></td>
+            <td>40コア</td>
             <td>32P + 8E</td>
           </tr>
           <tr>
-            <td><strong>CPU Clock</strong><div class="spec-label">P-core boost</div></td>
-            <td>Up to 5.8 GHz</td>
-            <td>5.8 GHz <span class="spec-highlight">✦ Fastest single-core</span></td>
+            <td><strong>CPU クロック</strong><div class="spec-label">Pコア ブースト</div></td>
+            <td>最大 5.8 GHz</td>
+            <td>5.8 GHz <span class="spec-highlight">✦ 最速シングルコア</span></td>
           </tr>
           <tr>
-            <td><strong>GPU</strong><div class="spec-label">Shader cores</div></td>
-            <td>128-core</td>
-            <td>128-core</td>
+            <td><strong>GPU</strong><div class="spec-label">シェーダーコア</div></td>
+            <td>128コア</td>
+            <td>128コア</td>
           </tr>
           <tr>
-            <td><strong>GPU Peak</strong></td>
+            <td><strong>GPU ピーク性能</strong></td>
             <td>320 TFLOPS</td>
             <td>320 TFLOPS FP32</td>
           </tr>
           <tr>
             <td><strong>Neural Engine</strong></td>
-            <td>64-core</td>
-            <td>38 TOPS</td>
+            <td>64コア</td>
+            <td>76 TOPS</td>
           </tr>
           <tr>
-            <td><strong>Memory</strong><div class="spec-label">Unified / HBM4</div></td>
-            <td>Up to 512 GB</td>
+            <td><strong>メモリ</strong><div class="spec-label">統合 / HBM4</div></td>
+            <td>最大 512 GB</td>
             <td>192 / 320 GB</td>
           </tr>
           <tr>
-            <td><strong>Memory BW</strong></td>
+            <td><strong>メモリ帯域幅</strong></td>
             <td>1.6 TB/s</td>
-            <td>1.6 TB/s <span class="spec-highlight">✦ Industry max</span></td>
+            <td>1.6 TB/s <span class="spec-highlight">✦ 業界最大</span></td>
           </tr>
           <tr>
-            <td><strong>Cache</strong><div class="spec-label">L2 + L3 total</div></td>
+            <td><strong>キャッシュ</strong><div class="spec-label">L2 + L3 合計</div></td>
             <td>256 MB</td>
             <td>64 + 192 MB</td>
           </tr>
           <tr>
             <td><strong>TDP</strong></td>
-            <td>120W (nominal)</td>
-            <td>80–150W (adaptive)</td>
+            <td>120W（定格）</td>
+            <td>80〜150W（アダプティブ）</td>
           </tr>
           <tr>
-            <td><strong>Interconnect</strong></td>
+            <td><strong>インターコネクト</strong></td>
             <td>UltraFabric</td>
-            <td>4 TB/s die-to-die</td>
+            <td>4 TB/s ダイ間</td>
           </tr>
         </tbody>
       </table>
@@ -872,62 +872,22 @@
       <table class="specs-table">
         <thead>
           <tr>
-            <th>Category</th>
-            <th>Specification</th>
+            <th>カテゴリ</th>
+            <th>仕様</th>
             <th>AXIOM X1 Max</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>Process</strong></td>
-            <td>TSMC N2 (2nm)</td>
-            <td>2nm</td>
-          </tr>
-          <tr>
-            <td><strong>Transistors</strong></td>
-            <td>28 billion</td>
-            <td>28B</td>
-          </tr>
-          <tr>
-            <td><strong>CPU</strong></td>
-            <td>16 cores</td>
-            <td>14P + 2E</td>
-          </tr>
-          <tr>
-            <td><strong>CPU Clock</strong></td>
-            <td>Up to 5.2 GHz</td>
-            <td>5.2 GHz</td>
-          </tr>
-          <tr>
-            <td><strong>GPU</strong></td>
-            <td>64-core</td>
-            <td>64-core</td>
-          </tr>
-          <tr>
-            <td><strong>GPU Peak</strong></td>
-            <td>160 TFLOPS</td>
-            <td>160 TFLOPS FP32</td>
-          </tr>
-          <tr>
-            <td><strong>Neural Engine</strong></td>
-            <td>32-core</td>
-            <td>19 TOPS</td>
-          </tr>
-          <tr>
-            <td><strong>Memory</strong></td>
-            <td>Up to 256 GB</td>
-            <td>64–256 GB HBM4</td>
-          </tr>
-          <tr>
-            <td><strong>Memory BW</strong></td>
-            <td>800 GB/s</td>
-            <td>800 GB/s</td>
-          </tr>
-          <tr>
-            <td><strong>TDP</strong></td>
-            <td>60W (nominal)</td>
-            <td>45–80W (adaptive)</td>
-          </tr>
+          <tr><td><strong>プロセス</strong></td><td>TSMC N2 (2nm)</td><td>2nm</td></tr>
+          <tr><td><strong>トランジスタ数</strong></td><td>240億</td><td>240億</td></tr>
+          <tr><td><strong>CPU</strong></td><td>16コア</td><td>14P + 2E</td></tr>
+          <tr><td><strong>CPU クロック</strong></td><td>最大 5.4 GHz</td><td>5.4 GHz</td></tr>
+          <tr><td><strong>GPU</strong></td><td>64コア</td><td>64コア</td></tr>
+          <tr><td><strong>GPU ピーク性能</strong></td><td>160 TFLOPS</td><td>160 TFLOPS FP32</td></tr>
+          <tr><td><strong>Neural Engine</strong></td><td>32コア</td><td>38 TOPS</td></tr>
+          <tr><td><strong>メモリ</strong></td><td>最大 128 GB</td><td>32〜128 GB LPDDR5X</td></tr>
+          <tr><td><strong>メモリ帯域幅</strong></td><td>800 GB/s</td><td>800 GB/s</td></tr>
+          <tr><td><strong>TDP</strong></td><td>60W（定格）</td><td>35〜80W（アダプティブ）</td></tr>
         </tbody>
       </table>
     </div>
@@ -937,62 +897,22 @@
       <table class="specs-table">
         <thead>
           <tr>
-            <th>Category</th>
-            <th>Specification</th>
+            <th>カテゴリ</th>
+            <th>仕様</th>
             <th>AXIOM X1 Pro</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>Process</strong></td>
-            <td>TSMC N2 (2nm)</td>
-            <td>2nm</td>
-          </tr>
-          <tr>
-            <td><strong>Transistors</strong></td>
-            <td>16 billion</td>
-            <td>16B</td>
-          </tr>
-          <tr>
-            <td><strong>CPU</strong></td>
-            <td>12 cores</td>
-            <td>10P + 2E</td>
-          </tr>
-          <tr>
-            <td><strong>CPU Clock</strong></td>
-            <td>Up to 4.8 GHz</td>
-            <td>4.8 GHz</td>
-          </tr>
-          <tr>
-            <td><strong>GPU</strong></td>
-            <td>20-core</td>
-            <td>20-core</td>
-          </tr>
-          <tr>
-            <td><strong>GPU Peak</strong></td>
-            <td>38 TFLOPS</td>
-            <td>38 TFLOPS FP32</td>
-          </tr>
-          <tr>
-            <td><strong>Neural Engine</strong></td>
-            <td>16-core</td>
-            <td>9.5 TOPS</td>
-          </tr>
-          <tr>
-            <td><strong>Memory</strong></td>
-            <td>Up to 64 GB</td>
-            <td>16–64 GB LPDDR5X</td>
-          </tr>
-          <tr>
-            <td><strong>Memory BW</strong></td>
-            <td>200 GB/s</td>
-            <td>200 GB/s</td>
-          </tr>
-          <tr>
-            <td><strong>TDP</strong></td>
-            <td>25W (nominal)</td>
-            <td>15–35W (adaptive)</td>
-          </tr>
+          <tr><td><strong>プロセス</strong></td><td>TSMC N2 (2nm)</td><td>2nm</td></tr>
+          <tr><td><strong>トランジスタ数</strong></td><td>120億</td><td>120億</td></tr>
+          <tr><td><strong>CPU</strong></td><td>12コア</td><td>10P + 2E</td></tr>
+          <tr><td><strong>CPU クロック</strong></td><td>最大 5.2 GHz</td><td>5.2 GHz</td></tr>
+          <tr><td><strong>GPU</strong></td><td>20コア</td><td>20コア</td></tr>
+          <tr><td><strong>GPU ピーク性能</strong></td><td>40 TFLOPS</td><td>40 TFLOPS FP32</td></tr>
+          <tr><td><strong>Neural Engine</strong></td><td>16コア</td><td>19 TOPS</td></tr>
+          <tr><td><strong>メモリ</strong></td><td>最大 32 GB</td><td>16〜32 GB LPDDR5X</td></tr>
+          <tr><td><strong>メモリ帯域幅</strong></td><td>200 GB/s</td><td>200 GB/s</td></tr>
+          <tr><td><strong>TDP</strong></td><td>25W（定格）</td><td>15〜35W（アダプティブ）</td></tr>
         </tbody>
       </table>
     </div>
@@ -1009,43 +929,43 @@
       <span class="press-logo">Wired</span>
       <span class="press-logo">AnandTech</span>
       <span class="press-logo">IEEE Spectrum</span>
+      <span class="press-logo">日経テック</span>
       <span class="press-logo">Tom's Hardware</span>
-      <span class="press-logo">Hot Hardware</span>
     </div>
 
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
-        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-        <p class="testimonial-text">"The X1 Ultra redefined what I thought was possible on a workstation. 8K ProRes editing in real time, no proxies, no dropped frames. It's witchcraft."</p>
+        <div class="testimonial-stars" aria-label="5つ星">★★★★★</div>
+        <p class="testimonial-text">「X1 Ultra はワークステーションで可能なことの概念を完全に塗り替えた。プロキシなし、フレーム落ちなしで 8K ProRes をリアルタイム編集。魔法としか言いようがない。」</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar" aria-hidden="true">MK</div>
           <div>
             <div class="testimonial-name">Maya Krishnamurthy</div>
-            <div class="testimonial-title">Senior VFX Supervisor, Industrial Light & Magic</div>
+            <div class="testimonial-title">VFX スーパーバイザー、ILM</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial-card reveal reveal-delay-1">
-        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-        <p class="testimonial-text">"We cut our LLM training time by 64% switching from an H100 cluster to AXIOM AX DataCenter cards. The memory bandwidth difference is not subtle."</p>
+        <div class="testimonial-stars" aria-label="5つ星">★★★★★</div>
+        <p class="testimonial-text">「H100 クラスターから AXIOM AX DataCenter に切り替えて、LLM 学習時間を 64% 削減しました。メモリ帯域幅の差は圧倒的です。」</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar" aria-hidden="true">TL</div>
           <div>
-            <div class="testimonial-name">Dr. Takeshi Lin</div>
-            <div class="testimonial-title">Head of Infrastructure, Sakura AI Research</div>
+            <div class="testimonial-name">林 武氏</div>
+            <div class="testimonial-title">インフラ責任者、Sakura AI Research</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial-card reveal reveal-delay-2">
-        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-        <p class="testimonial-text">"I've reviewed chips for 15 years. AXIOM is the first time I wrote 'this changes everything' and meant every word. The perf-per-watt curve is genuinely historic."</p>
+        <div class="testimonial-stars" aria-label="5つ星">★★★★★</div>
+        <p class="testimonial-text">「15年チップをレビューしてきた。AXIOMは初めて『これは全てを変える』と書いて、その言葉を本気で意味した瞬間だった。性能/ワットの曲線は歴史的だ。」</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar" aria-hidden="true">RV</div>
           <div>
             <div class="testimonial-name">Ryan Voss</div>
-            <div class="testimonial-title">Principal Reviewer, AnandTech</div>
+            <div class="testimonial-title">主任レビュアー、AnandTech</div>
           </div>
         </div>
       </div>
@@ -1058,15 +978,15 @@
 ═══════════════════════════════════════════════════════ -->
 <section class="cta-section" aria-labelledby="cta-title">
   <h2 class="cta-title reveal" id="cta-title">
-    Ready to compute<br/>
-    <em class="gradient-text">beyond limits?</em>
+    限界を超えた<br/>
+    <em class="gradient-text">コンピューティングへ。</em>
   </h2>
   <p class="cta-desc reveal reveal-delay-1">
-    Join thousands of engineers, researchers, and creators who've already made the switch.
+    すでに切り替えた何千ものエンジニア、研究者、クリエイターに加わりましょう。
   </p>
   <div class="cta-buttons reveal reveal-delay-2">
-    <a href="#products" class="btn-primary">Shop AXIOM Chips</a>
-    <a href="#technology" class="btn-secondary">Explore Architecture</a>
+    <a href="consumer/" class="btn-primary">コンシューマー製品を見る</a>
+    <a href="enterprise/" class="btn-secondary">エンタープライズへ</a>
   </div>
 </section>
 
@@ -1082,7 +1002,7 @@
           <span>AXIOM</span>
         </div>
         <p class="footer-brand-desc">
-          Designing the world's most advanced silicon since 2021. Headquartered in Tokyo. Fabricated at TSMC.
+          2021年から世界最先端のシリコンを設計。東京本社、TSMC 製造。
         </p>
         <div class="footer-social">
           <a href="#" class="footer-social-link" aria-label="Twitter">𝕏</a>
@@ -1093,60 +1013,101 @@
       </div>
 
       <div>
-        <h3 class="footer-col-title">Products</h3>
+        <h3 class="footer-col-title">製品</h3>
         <ul class="footer-links">
-          <li><a href="#">X1 Ultra</a></li>
-          <li><a href="#">X1 Max</a></li>
-          <li><a href="#">X1 Pro</a></li>
-          <li><a href="#">AX DataCenter</a></li>
-          <li><a href="#">Compare</a></li>
+          <li><a href="enterprise/">X1 Ultra</a></li>
+          <li><a href="consumer/">X1 Max</a></li>
+          <li><a href="consumer/">X1 Pro</a></li>
+          <li><a href="consumer/">X1 Air</a></li>
+          <li><a href="enterprise/">AX DataCenter</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="footer-col-title">Developers</h3>
+        <h3 class="footer-col-title">開発者向け</h3>
         <ul class="footer-links">
           <li><a href="#">AXIOM SDK</a></li>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Open Source</a></li>
-          <li><a href="#">Benchmarks</a></li>
-          <li><a href="#">API Reference</a></li>
+          <li><a href="#">ドキュメント</a></li>
+          <li><a href="#">オープンソース</a></li>
+          <li><a href="#">ベンチマーク</a></li>
+          <li><a href="#">API リファレンス</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="footer-col-title">Company</h3>
+        <h3 class="footer-col-title">会社情報</h3>
         <ul class="footer-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Investors</a></li>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">プレス</a></li>
+          <li><a href="#">ブログ</a></li>
+          <li><a href="changelog/">リリースノート</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="footer-col-title">Support</h3>
+        <h3 class="footer-col-title">サポート</h3>
         <ul class="footer-links">
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Knowledge Base</a></li>
-          <li><a href="#">Status</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Security</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">ナレッジベース</a></li>
+          <li><a href="#">システム状況</a></li>
+          <li><a href="#">コミュニティ</a></li>
+          <li><a href="#">セキュリティ</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
       <p class="footer-copy">Copyright © 2026 AXIOM Silicon K.K. All rights reserved.</p>
-      <nav class="footer-legal" aria-label="Legal links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Cookie Policy</a>
+      <nav class="footer-legal" aria-label="法的情報リンク">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">利用規約</a>
+        <a href="#">クッキーポリシー</a>
       </nav>
     </div>
   </div>
 </footer>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav" aria-label="モバイルボトムナビゲーション">
+  <div class="bottom-nav-inner">
+    <a href="#home" class="bottom-nav-item" data-section="home" aria-label="ホーム">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 9l7-7 7 7v9a1 1 0 01-1 1H4a1 1 0 01-1-1V9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 19V13h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>ホーム</span>
+    </a>
+    <a href="#split" class="bottom-nav-item" data-section="split" aria-label="製品">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="11" y="3" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="3" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="11" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span>製品</span>
+    </a>
+    <a href="#technology" class="bottom-nav-item" data-section="technology" aria-label="テクノロジー">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>技術</span>
+    </a>
+    <a href="#benchmark" class="bottom-nav-item" data-section="benchmark" aria-label="性能比較">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 14l4-4 3 3 4-6 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>性能</span>
+    </a>
+    <a href="#specs" class="bottom-nav-item" data-section="specs" aria-label="仕様">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M4 6h12M4 10h12M4 14h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>仕様</span>
+    </a>
+  </div>
+</nav>
 
 <script src="js/main.js"></script>
 <script>
