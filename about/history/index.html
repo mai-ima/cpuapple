@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>沿革 — AXIOM Silicon</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .history-hero {
+      padding: calc(var(--nav-height) + 80px) 24px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(110,64,201,0.18) 0%, transparent 70%), var(--bg);
+    }
+    .history-hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 20px;
+    }
+    .history-hero h1 {
+      font-size: var(--type-title);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+    .history-hero p {
+      color: var(--text-secondary);
+      font-size: 18px;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Timeline ── */
+    .timeline-section {
+      padding: 100px 24px 140px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    .timeline {
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 80px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--accent) 10%, var(--accent) 90%, transparent);
+      opacity: 0.4;
+    }
+    @media (max-width: 600px) {
+      .timeline::before { left: 20px; }
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 48px;
+      padding-bottom: 72px;
+      position: relative;
+    }
+    @media (max-width: 600px) { .timeline-item { grid-template-columns: 20px 1fr; gap: 24px; } }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-year-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-top: 4px;
+      position: relative;
+    }
+    @media (max-width: 600px) { .timeline-year-col { align-items: center; } }
+    .timeline-year {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-2);
+      letter-spacing: 0.05em;
+      writing-mode: horizontal-tb;
+    }
+    @media (max-width: 600px) { .timeline-year { display: none; } }
+    .timeline-dot {
+      position: absolute;
+      right: -25px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 16px var(--accent);
+    }
+    @media (max-width: 600px) { .timeline-dot { right: -5px; } }
+    .timeline-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s;
+    }
+    .timeline-content:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(110,64,201,0.3);
+    }
+    .timeline-content-year {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-2);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .timeline-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .timeline-content p {
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    .timeline-tag {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .tag-founding { background: rgba(110,64,201,0.15); color: var(--accent-3); border: 1px solid rgba(110,64,201,0.3); }
+    .tag-funding { background: rgba(245,158,11,0.12); color: var(--gold-2); border: 1px solid rgba(245,158,11,0.3); }
+    .tag-product { background: rgba(6,182,212,0.12); color: var(--accent-cyan-2); border: 1px solid rgba(6,182,212,0.3); }
+    .tag-partnership { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .tag-expansion { background: rgba(239,68,68,0.1); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+
+    /* ── Navigation back ── */
+    .breadcrumb {
+      padding: 24px 24px 0;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    .breadcrumb-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb-inner a { color: var(--text-secondary); transition: color 0.2s; }
+    .breadcrumb-inner a:hover { color: var(--accent-2); }
+    .breadcrumb-sep { color: var(--text-tertiary); }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">AXIOM</a>
+      <div class="nav-links">
+        <a href="../../consumer/">コンシューマー</a>
+        <a href="../../enterprise/">エンタープライズ</a>
+        <a href="../../memory/">メモリ</a>
+        <a href="../../about/" class="active">会社情報</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-icon" aria-label="テーマ切り替え" id="themeToggle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="../../about/">会社情報</a>
+      <span class="breadcrumb-sep">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </span>
+      <span>沿革</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="history-hero">
+    <p class="history-hero-eyebrow">会社の歩み</p>
+    <h1>AXIOM Silicon の沿革</h1>
+    <p>東京大学の一室から世界へ。5年間で半導体業界のルールを書き換えてきた AXIOM Silicon の軌跡。</p>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-year-col">
+          <span class="timeline-year">2021</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-year">2021年 4月</div>
+          <h3>AXIOM Silicon 設立</h3>
+          <p>山本海斗が東京大学大学院情報理工学系研究科の研究室から独立し、AXIOM Silicon を設立。「既存の巨人が見落としているアーキテクチャ上の根本的な問題を解決する」という明確なビジョンのもと、渋谷区の小さなオフィスで7名のチームが動き出した。</p>
+          <span class="timeline-tag tag-founding">設立</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year-col">
+          <span class="timeline-year">2022</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-year">2022年 3月</div>
+          <h3>シードラウンド 50億円調達・エンジニアチーム結成</h3>
+          <p>国内外の有力 VC から総額50億円のシードラウンド調達に成功。この資金を元に、元 ARM・Intel・TSMC 出身の精鋭エンジニア30名を採用。設計ツール環境の整備と第一世代プロセスの研究開発を本格化。UltraFabric の基礎概念がこの時期に生まれた。</p>
+          <span class="timeline-tag tag-funding">資金調達</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year-col">
+          <span class="timeline-year">2023</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-year">2023年 9月</div>
+          <h3>X1 Pro 初代（4nm）発表——業界に衝撃</h3>
+          <p>4nm プロセスで製造された X1 Pro 初代を Hot Chips シンポジウムで発表。単コアおよびマルチコア性能で競合製品を最大40%上回り、業界に衝撃を与えた。特に Neural Engine の TOPS/W 効率は世界最高水準として注目を集め、国内外メディアで大きく取り上げられた。</p>
+          <span class="timeline-tag tag-product">製品発表</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year-col">
+          <span class="timeline-year">2024</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-year">2024年 2月</div>
+          <h3>TSMC と 2nm プロセスの独占製造契約を締結</h3>
+          <p>世界最先端の半導体受託製造会社 TSMC との間で、N2（2nm）プロセスノードにおける優先製造枠の独占契約を締結。シリーズA 150億円の追加調達とあわせ、次世代プロセスへの移行を加速。この決断が翌年の X1 Ultra 誕生に直結することになる。</p>
+          <span class="timeline-tag tag-partnership">戦略提携</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year-col">
+          <span class="timeline-year">2025</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-year">2025年 6月 / 10月</div>
+          <h3>X1 Ultra 発表・AX DataCenter 事業開始</h3>
+          <p>2nm プロセスと UltraFabric を組み合わせた X1 Ultra を発表。76 TOPS Neural Engine、4TB/s ダイ間帯域幅という前例のないスペックは世界の研究者・エンジニアに衝撃を与えた。同年10月には AX DataCenter シリーズを正式発表し、エンタープライズ市場への本格参入を宣言。シリーズB 300億円調達も完了。</p>
+          <span class="timeline-tag tag-product">製品発表</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year-col">
+          <span class="timeline-year">2026</span>
+          <div class="timeline-dot" style="background: var(--accent-cyan-2); box-shadow: 0 0 16px var(--accent-cyan);"></div>
+        </div>
+        <div class="timeline-content" style="border-color: rgba(6,182,212,0.25);">
+          <div class="timeline-content-year" style="color: var(--accent-cyan-2);">2026年 — 現在</div>
+          <h3>AX Memory・AX Network 事業開始</h3>
+          <p>メモリ（AX Memory M1/M2）およびネットワーク（AX Network N1）の新規事業を開始し、半導体設計の垂直統合を強化。HBM4 を採用した M1 が業界最高の 6.4TB/s 帯域幅を達成し、X1 Ultra と組み合わせたシステムが TOP500 スーパーコンピューターランキングにランクイン。東京発の半導体スタートアップとして、世界市場での地位を確立。</p>
+          <span class="timeline-tag" style="background: rgba(6,182,212,0.12); color: var(--accent-cyan-2); border: 1px solid rgba(6,182,212,0.3);">事業拡大</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">AXIOM Silicon</div>
+      <p class="footer-copy">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="モバイルナビゲーション">
+    <div class="bottom-nav-inner">
+      <a href="../../index.html" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>ホーム</span>
+      </a>
+      <a href="../../consumer/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        <span>製品</span>
+      </a>
+      <a href="../../technology/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+        <span>技術</span>
+      </a>
+      <a href="../../about/" class="bottom-nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        <span>会社</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

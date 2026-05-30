@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AX Memory — AXIOM Silicon</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Hero ── */
+    .mem-hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-height) + 80px) 24px 80px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,182,212,0.18) 0%, transparent 70%),
+                  radial-gradient(ellipse 60% 40% at 80% 100%, rgba(110,64,201,0.15) 0%, transparent 60%),
+                  var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .mem-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(255,255,255,0.02) 39px,
+        rgba(255,255,255,0.02) 40px
+      );
+      pointer-events: none;
+    }
+    .mem-hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+    }
+    .mem-hero-title {
+      font-size: var(--type-hero);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #22d3ee 0%, #a5f3fc 40%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .mem-hero-sub {
+      font-size: clamp(18px, 2.5vw, 26px);
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .mem-hero-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1px solid rgba(6,182,212,0.35);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--accent-cyan-2);
+      margin-top: 24px;
+    }
+
+    /* ── Stats strip ── */
+    .mem-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .mem-stat {
+      background: var(--bg-2);
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .mem-stat-num {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #22d3ee, #a5f3fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .mem-stat-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-top: 8px;
+    }
+
+    /* ── Product cards ── */
+    .mem-products {
+      padding: 120px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .mem-products-title {
+      font-size: var(--type-title);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .mem-products-sub {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 72px;
+    }
+    .mem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 680px) { .mem-grid { grid-template-columns: 1fr; } }
+    .mem-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+    }
+    .mem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg), 0 0 80px rgba(6,182,212,0.12);
+    }
+    .mem-card-header {
+      padding: 48px 40px 32px;
+      position: relative;
+    }
+    .mem-card-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .badge-dc { background: rgba(6,182,212,0.15); color: var(--accent-cyan-2); border: 1px solid rgba(6,182,212,0.3); }
+    .badge-consumer { background: rgba(168,85,247,0.15); color: var(--accent-3); border: 1px solid rgba(168,85,247,0.3); }
+    .mem-card-name {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .mem-card-desc {
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .mem-card-vis {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(180deg, transparent, var(--bg-3));
+    }
+    .mem-chip-svg { filter: drop-shadow(0 0 24px rgba(6,182,212,0.5)); }
+    .mem-card-specs {
+      padding: 32px 40px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .mem-spec-item {}
+    .mem-spec-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+    .mem-spec-value {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .mem-spec-value.cyan { color: var(--accent-cyan-2); }
+    .mem-spec-value.purple { color: var(--accent-3); }
+
+    /* ── Bandwidth chart ── */
+    .bw-chart {
+      padding: 120px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .bw-chart-title {
+      font-size: var(--type-title);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .bw-chart-sub {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 64px;
+    }
+    .bw-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .bw-bar-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 80px;
+      align-items: center;
+      gap: 16px;
+    }
+    @media (max-width: 600px) { .bw-bar-row { grid-template-columns: 120px 1fr 60px; gap: 10px; } }
+    .bw-bar-label {
+      font-size: 14px;
+      font-weight: 500;
+      text-align: right;
+      color: var(--text-secondary);
+    }
+    .bw-bar-track {
+      height: 32px;
+      background: var(--bg-card);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .bw-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      animation: barGrow 1.2s var(--ease-out) forwards;
+      transform-origin: left;
+    }
+    @keyframes barGrow { from { width: 0 !important; } }
+    .bw-bar-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    .fill-m1 { background: linear-gradient(90deg, #06b6d4, #22d3ee); width: 100%; }
+    .fill-m2 { background: linear-gradient(90deg, #8b5cf6, #a855f7); width: 12.5%; }
+    .fill-hbm3 { background: linear-gradient(90deg, #374151, #4b5563); width: 62.5%; }
+    .fill-lpddr5 { background: linear-gradient(90deg, #374151, #4b5563); width: 6.5%; }
+    .fill-ddr5 { background: linear-gradient(90deg, #374151, #4b5563); width: 3%; }
+    .chart-note {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-align: center;
+    }
+
+    /* ── Feature detail ── */
+    .mem-detail {
+      padding: 100px 24px;
+      background: var(--bg-2);
+    }
+    .mem-detail-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .mem-detail-inner { grid-template-columns: 1fr; gap: 40px; } }
+    .mem-detail-text h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .mem-detail-text p {
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .mem-detail-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .mem-pill {
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border-strong);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .mem-detail-vis {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── CTA ── */
+    .mem-cta {
+      padding: 120px 24px;
+      text-align: center;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(6,182,212,0.1) 0%, transparent 70%);
+    }
+    .mem-cta h2 {
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+    }
+    .mem-cta p {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--accent-cyan);
+      color: #000;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.25s var(--ease-out);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--accent-cyan-2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(6,182,212,0.4); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text-secondary);
+      transition: all 0.25s var(--ease-out);
+      text-decoration: none;
+      margin-left: 12px;
+    }
+    .btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">AXIOM</a>
+      <div class="nav-links">
+        <a href="../consumer/">コンシューマー</a>
+        <a href="../enterprise/">エンタープライズ</a>
+        <a href="../memory/" class="active">メモリ</a>
+        <a href="../about/">会社情報</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-icon" aria-label="テーマ切り替え" id="themeToggle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="mem-hero">
+    <p class="mem-hero-eyebrow">AX Memory</p>
+    <h1 class="mem-hero-title">帯域幅を、<br>再定義する。</h1>
+    <p class="mem-hero-sub">次世代 HBM4 と LPDDR5X が拓く、<br>新たなメモリアーキテクチャ。</p>
+    <span class="mem-hero-tag">2026年 新製品ラインアップ</span>
+  </section>
+
+  <!-- Stats -->
+  <div class="mem-stats">
+    <div class="mem-stat">
+      <div class="mem-stat-num">6.4 TB/s</div>
+      <div class="mem-stat-label">AX Memory M1 帯域幅</div>
+    </div>
+    <div class="mem-stat">
+      <div class="mem-stat-num">192 GB</div>
+      <div class="mem-stat-label">AX Memory M1 最大容量</div>
+    </div>
+    <div class="mem-stat">
+      <div class="mem-stat-num">800 GB/s</div>
+      <div class="mem-stat-label">AX Memory M2 帯域幅</div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section class="mem-products">
+    <h2 class="mem-products-title">2つのラインアップ</h2>
+    <p class="mem-products-sub">データセンターからコンシューマー機器まで、<br>あらゆる用途に最適なメモリソリューション。</p>
+    <div class="mem-grid">
+
+      <!-- M1 -->
+      <article class="mem-card">
+        <div class="mem-card-header">
+          <span class="mem-card-badge badge-dc">データセンター向け</span>
+          <div class="mem-card-name">AX Memory M1</div>
+          <p class="mem-card-desc">HBM4 テクノロジーを採用した旗艦メモリモジュール。AI学習・HPC・ハイパースケールデータセンター向けに設計された究極の帯域幅を実現します。</p>
+        </div>
+        <div class="mem-card-vis">
+          <svg class="mem-chip-svg" width="200" height="120" viewBox="0 0 200 120">
+            <defs>
+              <linearGradient id="chipGradM1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#06b6d4"/>
+                <stop offset="100%" stop-color="#0e7490"/>
+              </linearGradient>
+            </defs>
+            <rect x="30" y="20" width="140" height="80" rx="8" fill="url(#chipGradM1)" opacity="0.9"/>
+            <rect x="40" y="30" width="120" height="60" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <rect x="50" y="40" width="100" height="40" rx="2" fill="rgba(0,0,0,0.4)"/>
+            <text x="100" y="65" text-anchor="middle" fill="#fff" font-size="12" font-weight="700" font-family="system-ui">M1</text>
+            <!-- pins -->
+            <rect x="20" y="35" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="20" y="45" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="20" y="55" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="20" y="65" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="20" y="75" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="170" y="35" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="170" y="45" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="170" y="55" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="170" y="65" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="170" y="75" width="10" height="4" rx="2" fill="#334155"/>
+          </svg>
+        </div>
+        <div class="mem-card-specs">
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">テクノロジー</div>
+            <div class="mem-spec-value cyan">HBM4</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">最大帯域幅</div>
+            <div class="mem-spec-value cyan">6.4 TB/s</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">最大容量</div>
+            <div class="mem-spec-value">192 GB</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">インターフェース</div>
+            <div class="mem-spec-value">8192-bit</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">動作電圧</div>
+            <div class="mem-spec-value">1.1 V</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">スタック数</div>
+            <div class="mem-spec-value">16-Hi</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- M2 -->
+      <article class="mem-card">
+        <div class="mem-card-header">
+          <span class="mem-card-badge badge-consumer">コンシューマー向け</span>
+          <div class="mem-card-name">AX Memory M2</div>
+          <p class="mem-card-desc">LPDDR5X を採用したコンシューマー向けメモリ。X1 シリーズとのシームレスな統合により、モバイル・デスクトップ環境で最高のユーザー体験を提供します。</p>
+        </div>
+        <div class="mem-card-vis">
+          <svg class="mem-chip-svg" width="200" height="120" viewBox="0 0 200 120" style="filter: drop-shadow(0 0 24px rgba(168,85,247,0.5));">
+            <defs>
+              <linearGradient id="chipGradM2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+            </defs>
+            <rect x="50" y="20" width="100" height="80" rx="8" fill="url(#chipGradM2)" opacity="0.9"/>
+            <rect x="58" y="28" width="84" height="64" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <rect x="66" y="38" width="68" height="44" rx="2" fill="rgba(0,0,0,0.4)"/>
+            <text x="100" y="65" text-anchor="middle" fill="#fff" font-size="12" font-weight="700" font-family="system-ui">M2</text>
+            <rect x="40" y="38" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="40" y="48" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="40" y="58" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="40" y="68" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="150" y="38" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="150" y="48" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="150" y="58" width="10" height="4" rx="2" fill="#334155"/>
+            <rect x="150" y="68" width="10" height="4" rx="2" fill="#334155"/>
+          </svg>
+        </div>
+        <div class="mem-card-specs">
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">テクノロジー</div>
+            <div class="mem-spec-value purple">LPDDR5X</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">最大帯域幅</div>
+            <div class="mem-spec-value purple">800 GB/s</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">最大容量</div>
+            <div class="mem-spec-value">64 GB</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">データレート</div>
+            <div class="mem-spec-value">9600 MT/s</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">動作電圧</div>
+            <div class="mem-spec-value">0.9 V</div>
+          </div>
+          <div class="mem-spec-item">
+            <div class="mem-spec-label">消費電力</div>
+            <div class="mem-spec-value">業界最低水準</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Bandwidth chart -->
+  <section class="bw-chart">
+    <h2 class="bw-chart-title">圧倒的な帯域幅</h2>
+    <p class="bw-chart-sub">業界標準との比較（最大帯域幅、GB/s）</p>
+    <div class="bw-bars">
+      <div class="bw-bar-row">
+        <div class="bw-bar-label">AX Memory M1</div>
+        <div class="bw-bar-track"><div class="bw-bar-fill fill-m1" style="animation-delay:0.1s"></div></div>
+        <div class="bw-bar-value">6,400 GB/s</div>
+      </div>
+      <div class="bw-bar-row">
+        <div class="bw-bar-label">業界標準 HBM3</div>
+        <div class="bw-bar-track"><div class="bw-bar-fill fill-hbm3" style="animation-delay:0.2s"></div></div>
+        <div class="bw-bar-value">4,000 GB/s</div>
+      </div>
+      <div class="bw-bar-row">
+        <div class="bw-bar-label">AX Memory M2</div>
+        <div class="bw-bar-track"><div class="bw-bar-fill fill-m2" style="animation-delay:0.3s"></div></div>
+        <div class="bw-bar-value">800 GB/s</div>
+      </div>
+      <div class="bw-bar-row">
+        <div class="bw-bar-label">業界標準 LPDDR5X</div>
+        <div class="bw-bar-track"><div class="bw-bar-fill fill-lpddr5" style="animation-delay:0.4s"></div></div>
+        <div class="bw-bar-value">418 GB/s</div>
+      </div>
+      <div class="bw-bar-row">
+        <div class="bw-bar-label">業界標準 DDR5</div>
+        <div class="bw-bar-track"><div class="bw-bar-fill fill-ddr5" style="animation-delay:0.5s"></div></div>
+        <div class="bw-bar-value">192 GB/s</div>
+      </div>
+    </div>
+    <p class="chart-note">※ 各製品の最大仕様値に基づく比較。2026年5月時点の情報。</p>
+  </section>
+
+  <!-- Detail -->
+  <section class="mem-detail">
+    <div class="mem-detail-inner">
+      <div class="mem-detail-text">
+        <h2>UltraFabric との<br>深い統合</h2>
+        <p>AX Memory は AXIOM 独自の UltraFabric ダイ間インターコネクト技術と緊密に統合されています。X1 Ultra と組み合わせることで、システム全体のレイテンシを最小化しながら最大帯域幅を引き出します。</p>
+        <p>CoWoS-L パッケージング技術により、メモリダイと SoC を同一パッケージ内に集積。信号伝播遅延をピコ秒単位で制御します。</p>
+        <div class="mem-detail-pills">
+          <span class="mem-pill">CoWoS-L パッケージング</span>
+          <span class="mem-pill">ECC 対応</span>
+          <span class="mem-pill">オンダイ温度監視</span>
+          <span class="mem-pill">JEDEC 準拠</span>
+        </div>
+      </div>
+      <div class="mem-detail-vis">
+        <svg width="320" height="280" viewBox="0 0 320 280">
+          <defs>
+            <linearGradient id="sysGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+          <!-- SoC -->
+          <rect x="90" y="20" width="140" height="90" rx="12" fill="url(#sysGrad)" stroke="rgba(6,182,212,0.4)" stroke-width="1.5"/>
+          <text x="160" y="60" text-anchor="middle" fill="#22d3ee" font-size="13" font-weight="700" font-family="system-ui">X1 Ultra SoC</text>
+          <text x="160" y="78" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">2nm · UltraFabric</text>
+          <!-- UltraFabric lines -->
+          <line x1="100" y1="110" x2="60" y2="160" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4,3" opacity="0.7"/>
+          <line x1="160" y1="110" x2="160" y2="160" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4,3" opacity="0.7"/>
+          <line x1="220" y1="110" x2="260" y2="160" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4,3" opacity="0.7"/>
+          <!-- Memory stacks -->
+          <rect x="20" y="160" width="80" height="50" rx="8" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.5)" stroke-width="1.5"/>
+          <text x="60" y="189" text-anchor="middle" fill="#22d3ee" font-size="11" font-weight="700" font-family="system-ui">M1 #1</text>
+          <rect x="120" y="160" width="80" height="50" rx="8" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.5)" stroke-width="1.5"/>
+          <text x="160" y="189" text-anchor="middle" fill="#22d3ee" font-size="11" font-weight="700" font-family="system-ui">M1 #2</text>
+          <rect x="220" y="160" width="80" height="50" rx="8" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.5)" stroke-width="1.5"/>
+          <text x="260" y="189" text-anchor="middle" fill="#22d3ee" font-size="11" font-weight="700" font-family="system-ui">M1 #3</text>
+          <!-- Label -->
+          <text x="160" y="248" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="system-ui">CoWoS-L パッケージ内部</text>
+          <rect x="10" y="150" width="300" height="120" rx="16" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="6,4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mem-cta">
+    <h2>エンタープライズ向け<br>お問い合わせ</h2>
+    <p>AX Memory の導入・サンプル提供・技術仕様についての詳細は<br>エンタープライズチームまでお問い合わせください。</p>
+    <a href="../enterprise/" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      エンタープライズを見る
+    </a>
+    <a href="../technology/" class="btn-ghost">技術詳細</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">AXIOM Silicon</div>
+      <p class="footer-copy">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="モバイルナビゲーション">
+    <div class="bottom-nav-inner">
+      <a href="../index.html" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>ホーム</span>
+      </a>
+      <a href="../consumer/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        <span>製品</span>
+      </a>
+      <a href="../technology/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+        <span>技術</span>
+      </a>
+      <a href="../about/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        <span>会社</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1836,3 +1836,40 @@ section { position: relative; }
   .changelog-item { flex-direction: column; gap: 6px; }
   .changelog-item-tag { align-self: flex-start; }
 }
+
+/* =========================================================
+   Consumer/Enterprise separation nav buttons
+   ========================================================= */
+.nav-enterprise-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-enterprise-btn:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-strong);
+}
+
+.nav-consumer-exit {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  opacity: 0.6;
+}
+.nav-consumer-exit:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-strong);
+  opacity: 1;
+}
