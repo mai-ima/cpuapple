@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UltraFabric — AXIOM Silicon テクノロジー</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      padding: calc(var(--nav-height) + 32px) 24px 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--text-tertiary); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--text-secondary); }
+
+    /* ── Hero ── */
+    .page-hero {
+      padding: 48px 24px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .page-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-cyan-2);
+      margin-bottom: 20px;
+    }
+    .page-title {
+      font-size: var(--type-hero);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+    .page-title span {
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-lead {
+      font-size: clamp(17px, 2.2vw, 22px);
+      color: var(--text-secondary);
+      max-width: 720px;
+      line-height: 1.75;
+    }
+
+    /* ── Stats ── */
+    .stats-row {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-row-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    @media (max-width: 640px) { .stats-row-inner { grid-template-columns: 1fr; } }
+    .stat-cell { background: var(--bg-2); padding: 32px 24px; text-align: center; }
+    .stat-num {
+      font-size: clamp(36px, 4.5vw, 54px);
+      font-weight: 700;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-lbl { font-size: 14px; color: var(--text-secondary); }
+    .stat-sub { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
+
+    /* ── SVG Animation section ── */
+    .anim-section {
+      padding: 100px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .anim-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .anim-header h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .anim-header p { color: var(--text-secondary); font-size: 17px; }
+
+    .die-anim-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Signal animation on the SVG paths */
+    @keyframes signal-flow {
+      0% { stroke-dashoffset: 120; opacity: 0.2; }
+      30% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { stroke-dashoffset: -120; opacity: 0.2; }
+    }
+    @keyframes signal-flow-2 {
+      0% { stroke-dashoffset: 120; opacity: 0.2; }
+      30% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { stroke-dashoffset: -120; opacity: 0.2; }
+    }
+    .sig-line-1 { animation: signal-flow 2.0s linear infinite; }
+    .sig-line-2 { animation: signal-flow 2.0s linear infinite 0.4s; }
+    .sig-line-3 { animation: signal-flow 2.0s linear infinite 0.8s; }
+    .sig-line-4 { animation: signal-flow 2.0s linear infinite 1.2s; }
+    .sig-line-5 { animation: signal-flow 2.0s linear infinite 1.6s; }
+    @keyframes die-pulse {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(6,182,212,0.3)); }
+      50% { filter: drop-shadow(0 0 20px rgba(6,182,212,0.7)); }
+    }
+    .die-block { animation: die-pulse 3s ease-in-out infinite; }
+
+    /* ── Content grid ── */
+    .content-section {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      padding: 100px 24px;
+    }
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .content-inner { grid-template-columns: 1fr; gap: 40px; } }
+    .content-text h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .content-text h2 span {
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .content-text p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    /* Feature list */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .feature-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(6,182,212,0.15);
+      color: var(--accent-cyan-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .feature-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin: 0; }
+
+    /* ── Spec table ── */
+    .spec-section {
+      padding: 100px 24px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .spec-section h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .spec-table tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .spec-table tr:hover { background: var(--bg-2); }
+    .spec-table td { padding: 18px 16px; }
+    .spec-table td:first-child { color: var(--text-secondary); width: 50%; }
+    .spec-table td:last-child { font-weight: 600; color: var(--text-primary); text-align: right; }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../../" class="nav-logo">
+        <div class="nav-logo-mark">AX</div>
+        <span>AXIOM</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../../consumer/">コンシューマー</a>
+        <a href="../../technology/" class="active">テクノロジー</a>
+        <a href="../../about/">会社情報</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="../../enterprise/" class="nav-enterprise-btn">法人のお客様へ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../../">AXIOM</a>
+    <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+    <a href="../">テクノロジー</a>
+    <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+    <span>UltraFabric</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <p class="page-eyebrow">ダイ間インターコネクト</p>
+    <h1 class="page-title"><span>UltraFabric。</span><br>ダイの境界を消す。</h1>
+    <p class="page-lead">4TB/s のダイ間帯域幅と5ns のレイテンシを実現する AXIOM 独自のインターコネクト技術。CoWoS パッケージングとの組み合わせにより、複数のダイを単一チップのように動作させます。</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stats-row-inner">
+      <div class="stat-cell">
+        <div class="stat-num">4TB/s</div>
+        <div class="stat-lbl">ダイ間帯域幅</div>
+        <div class="stat-sub">双方向合計</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">5ns</div>
+        <div class="stat-lbl">ダイ間レイテンシ</div>
+        <div class="stat-sub">最小値</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">CoWoS</div>
+        <div class="stat-lbl">パッケージング技術</div>
+        <div class="stat-sub">TSMC 協業</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animation section -->
+  <section class="anim-section">
+    <div class="anim-header">
+      <h2>シグナルフロー — リアルタイム可視化</h2>
+      <p>UltraFabric による2ダイ間の高速データ転送の模式図。</p>
+    </div>
+    <div class="die-anim-wrap reveal">
+      <svg width="100%" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+        <defs>
+          <linearGradient id="dieGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e1b4b"/>
+            <stop offset="100%" stop-color="#2e2060"/>
+          </linearGradient>
+          <linearGradient id="dieGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#083344"/>
+            <stop offset="100%" stop-color="#0e4a60"/>
+          </linearGradient>
+          <linearGradient id="connGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#6e40c9" stop-opacity="0.3"/>
+            <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6e40c9" stop-opacity="0.3"/>
+          </linearGradient>
+          <!-- Signal colors -->
+          <linearGradient id="sig1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="sig2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a855f7" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#a855f7"/>
+            <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Substrate / interposer -->
+        <rect x="80" y="220" width="540" height="28" rx="6" fill="rgba(30,30,50,0.9)" stroke="rgba(110,64,201,0.3)" stroke-width="1"/>
+        <text x="350" y="238" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">TSMC CoWoS インターポーザー</text>
+
+        <!-- Die A -->
+        <rect class="die-block" x="80" y="60" width="200" height="150" rx="12" fill="url(#dieGrad1)" stroke="rgba(110,64,201,0.6)" stroke-width="1.5"/>
+        <text x="180" y="95" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="13" fill="rgba(168,85,247,0.9)" font-weight="700">Die A</text>
+        <text x="180" y="113" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.35)">CPU クラスタ</text>
+        <!-- Internal blocks A -->
+        <rect x="100" y="125" width="56" height="32" rx="4" fill="rgba(110,64,201,0.25)" stroke="rgba(110,64,201,0.4)" stroke-width="1"/>
+        <text x="128" y="145" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">P コア</text>
+        <rect x="164" y="125" width="56" height="32" rx="4" fill="rgba(110,64,201,0.2)" stroke="rgba(110,64,201,0.35)" stroke-width="1"/>
+        <text x="192" y="145" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">E コア</text>
+        <rect x="100" y="165" width="120" height="28" rx="4" fill="rgba(110,64,201,0.15)" stroke="rgba(110,64,201,0.3)" stroke-width="1"/>
+        <text x="160" y="183" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">L3 キャッシュ</text>
+        <!-- UF pins A -->
+        <rect x="273" y="85" width="14" height="130" rx="3" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+        <text x="280" y="155" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="8" fill="rgba(6,182,212,0.6)" transform="rotate(-90,280,155)">UF I/O</text>
+
+        <!-- Die B -->
+        <rect class="die-block" x="420" y="60" width="200" height="150" rx="12" fill="url(#dieGrad2)" stroke="rgba(6,182,212,0.6)" stroke-width="1.5" style="animation-delay:1.5s"/>
+        <text x="520" y="95" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="13" fill="rgba(34,211,238,0.9)" font-weight="700">Die B</text>
+        <text x="520" y="113" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.35)">GPU / Neural Engine</text>
+        <!-- Internal blocks B -->
+        <rect x="440" y="125" width="56" height="32" rx="4" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.35)" stroke-width="1"/>
+        <text x="468" y="145" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">GPU</text>
+        <rect x="504" y="125" width="56" height="32" rx="4" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+        <text x="532" y="145" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Neural</text>
+        <rect x="440" y="165" width="120" height="28" rx="4" fill="rgba(6,182,212,0.12)" stroke="rgba(6,182,212,0.25)" stroke-width="1"/>
+        <text x="500" y="183" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">VRAM バッファ</text>
+        <!-- UF pins B -->
+        <rect x="413" y="85" width="14" height="130" rx="3" fill="rgba(110,64,201,0.15)" stroke="rgba(110,64,201,0.4)" stroke-width="1"/>
+        <text x="420" y="155" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="8" fill="rgba(110,64,201,0.6)" transform="rotate(-90,420,155)">UF I/O</text>
+
+        <!-- Connection channel background -->
+        <rect x="287" y="100" width="126" height="100" rx="0" fill="url(#connGrad)"/>
+
+        <!-- Animated signal lines (left to right) -->
+        <line class="sig-line-1" x1="287" y1="120" x2="413" y2="120"
+          stroke="#22d3ee" stroke-width="2" stroke-dasharray="30 90" stroke-dashoffset="120" opacity="0"/>
+        <line class="sig-line-2" x1="287" y1="135" x2="413" y2="135"
+          stroke="#a855f7" stroke-width="2" stroke-dasharray="30 90" stroke-dashoffset="120" opacity="0"/>
+        <line class="sig-line-3" x1="287" y1="150" x2="413" y2="150"
+          stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="25 95" stroke-dashoffset="120" opacity="0"/>
+        <!-- Right to left signals -->
+        <line class="sig-line-4" x1="413" y1="165" x2="287" y2="165"
+          stroke="#a855f7" stroke-width="2" stroke-dasharray="30 90" stroke-dashoffset="120" opacity="0"/>
+        <line class="sig-line-5" x1="413" y1="180" x2="287" y2="180"
+          stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="25 95" stroke-dashoffset="120" opacity="0"/>
+
+        <!-- UltraFabric label -->
+        <text x="350" y="210" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" font-weight="600">UltraFabric — 4TB/s / 5ns</text>
+
+        <!-- Bandwidth arrows indicator -->
+        <path d="M320 100 L320 95 L380 95 L380 100" fill="none" stroke="rgba(34,211,238,0.4)" stroke-width="1"/>
+        <text x="350" y="90" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="10" fill="rgba(34,211,238,0.7)">双方向</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Content + features -->
+  <section class="content-section">
+    <div class="content-inner">
+      <div class="content-text reveal">
+        <h2><span>なぜ UltraFabric</span><br>が必要か</h2>
+        <p>現代のハイパフォーマンスチップは、複数の機能ダイ（CPU・GPU・メモリコントローラ・Neural Engine など）を組み合わせた「チップレット」構成が主流になっています。しかし、ダイ間の通信速度がボトルネックになると、個々のダイの性能を活かしきれません。</p>
+        <p>UltraFabric は AXIOM Silicon が独自設計した高密度ダイ間インターコネクトプロトコルです。TSMC の CoWoS（Chip-on-Wafer-on-Substrate）パッケージング技術と組み合わせることで、従来の PCIe や HBM スタック接続を大幅に超える帯域幅と低レイテンシを実現します。</p>
+      </div>
+      <div class="feature-list reveal reveal-delay-1">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="feature-text">
+            <h3>4TB/s 双方向帯域幅</h3>
+            <p>業界標準 PCIe 5.0 ×16 (128GB/s) の約31倍の帯域幅。大規模 LLM 推論やレンダリングパイプラインのデータ転送ボトルネックを完全に解消します。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="feature-text">
+            <h3>5ns ダイ間レイテンシ</h3>
+            <p>オフパッケージ DRAM の100ns を超えるアクセスレイテンシと比較して、5ns という驚異的な低レイテンシを実現。ダイ間のやり取りがほぼ同一チップ内と変わりません。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div class="feature-text">
+            <h3>CoWoS パッケージング</h3>
+            <p>シリコンインターポーザー上に複数のダイを配置する CoWoS 技術により、ダイ間接続の物理距離を最小化。高密度マイクロバンプで電力効率を最大化します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spec table -->
+  <section class="spec-section">
+    <h2>UltraFabric 仕様</h2>
+    <table class="spec-table">
+      <tbody>
+        <tr><td>ダイ間帯域幅（双方向合計）</td><td>4 TB/s</td></tr>
+        <tr><td>ダイ間レイテンシ（最小）</td><td>5 ns</td></tr>
+        <tr><td>パッケージング技術</td><td>TSMC CoWoS-S</td></tr>
+        <tr><td>インターポーザー材質</td><td>シリコン（Si）</td></tr>
+        <tr><td>マイクロバンプピッチ</td><td>9 µm</td></tr>
+        <tr><td>最大接続ダイ数</td><td>8 ダイ</td></tr>
+        <tr><td>動作電圧（I/O）</td><td>0.6V</td></tr>
+        <tr><td>プロトコル</td><td>AXIOM UF v2.0（独自仕様）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="nav-logo-mark">AX</div>
+            <span>AXIOM Silicon</span>
+          </div>
+          <p class="footer-brand-desc">日本発の半導体イノベーションで、次世代コンピューティングの未来を切り拓く。</p>
+        </div>
+        <div>
+          <div class="footer-col-title">テクノロジー</div>
+          <div class="footer-links">
+            <a href="../../technology/">概要</a>
+            <a href="../../technology/2nm/">2nmプロセス</a>
+            <a href="../../technology/ultrafabric/">UltraFabric</a>
+            <a href="../../technology/neural-engine/">Neural Engine</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">会社情報</div>
+          <div class="footer-links">
+            <a href="../../about/">概要</a>
+            <a href="../../about/leadership/">リーダーシップ</a>
+            <a href="../../newsroom/">ニュースルーム</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">開発者</div>
+          <div class="footer-links">
+            <a href="../../developers/">開発者向け</a>
+            <a href="https://github.com/axiom-silicon" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">法的情報</div>
+          <div class="footer-links">
+            <a href="../../legal/privacy/">プライバシーポリシー</a>
+            <a href="../../legal/terms/">利用規約</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="../../legal/privacy/">プライバシー</a>
+          <a href="../../legal/terms/">利用規約</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="モバイルナビゲーション">
+    <div class="bottom-nav-inner">
+      <a href="../../" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>ホーム</span>
+      </a>
+      <a href="../../consumer/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span>製品</span>
+      </a>
+      <a href="../../technology/" class="bottom-nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+        <span>技術</span>
+      </a>
+      <a href="../../about/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        <span>会社</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
