@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>X1 Ultra — AXIOM Silicon</title>
+  <meta name="description" content="AXIOM X1 Ultra。40コアCPU、128コアGPU。二つのダイが、一つになる。">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/product-page.css">
+  <link rel="stylesheet" href="../../css/enterprise.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236e40c9'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-weight='900' font-family='system-ui'>AX</text></svg>">
+  <style>
+    .nav-inner { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+    @media (pointer: coarse) { .btn { min-height: 44px; } }
+  </style>
+</head>
+<body class="pp-page">
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="scroll-progress" role="progressbar" aria-label="スクロール進捗"></div>
+
+<nav class="mobile-menu" role="navigation" aria-label="モバイルナビゲーション">
+  <button class="mobile-menu-close" aria-label="メニューを閉じる">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <a href="../../index.html">ホーム</a>
+  <a href="#specs">仕様</a>
+  <a href="#features">特徴</a>
+  <a href="#buy">購入</a>
+  <a href="../../consumer/">コンシューマー</a>
+  <a href="../../enterprise/">エンタープライズ</a>
+</nav>
+
+<header class="nav" id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="../../" class="nav-logo" aria-label="AXIOM ホーム">
+      <div class="nav-logo-mark" aria-hidden="true">AX</div>
+      <span>AXIOM</span>
+    </a>
+    <nav class="nav-links" aria-label="主要ナビゲーション">
+      <a href="../../consumer/">コンシューマー</a>
+      <a href="../../technology/">テクノロジー</a>
+      <a href="../../about/">会社情報</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.05 1.05M11.85 11.85l1.05 1.05M3.1 12.9l1.05-1.05M11.85 4.15l1.05-1.05" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="../../enterprise/" class="nav-enterprise-btn">法人のお客様へ</a>
+      <button class="nav-mobile-toggle" aria-label="メニューを開く" onclick="document.querySelector('.mobile-menu').classList.add('open')">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<section class="pp-hero" id="hero">
+  <div class="pp-hero-bg" aria-hidden="true">
+    <div class="pp-hero-orb pp-hero-orb-1"></div>
+    <div class="pp-hero-orb pp-hero-orb-2"></div>
+  </div>
+  <div class="pp-hero-inner container">
+    <div class="pp-chip-wrap pp-reveal-scale">
+      <div class="pp-chip-svg-outer">
+        <!-- Dual-die UltraFabric visualization -->
+        <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="X1 Ultra デュアルダイ チップ図">
+          <circle cx="160" cy="160" r="148" stroke="url(#ultraGlow)" stroke-width="1.2" opacity="0.5" class="pp-chip-glow-ring"/>
+          <rect x="40" y="40" width="240" height="240" rx="20" fill="#0a0a12"/>
+          <rect x="40" y="40" width="240" height="240" rx="20" stroke="url(#ultraBorder)" stroke-width="1.5"/>
+          <!-- Die 1 (left) -->
+          <rect x="52" y="64" width="100" height="192" rx="8" fill="#111122"/>
+          <rect x="52" y="64" width="100" height="192" rx="8" stroke="url(#ultraDie1)" stroke-width="1"/>
+          <text x="102" y="85" text-anchor="middle" fill="#f59e0b" font-size="6.5" font-weight="700" font-family="system-ui">MAX ダイ 1</text>
+          <rect x="62" y="92" width="40" height="30" rx="4" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.4)" stroke-width="0.7"/>
+          <text x="82" y="104" text-anchor="middle" fill="#22d3ee" font-size="6" font-weight="700" font-family="system-ui">CPU</text>
+          <text x="82" y="114" text-anchor="middle" fill="#06b6d4" font-size="5.5" font-family="system-ui">20-core</text>
+          <rect x="108" y="92" width="36" height="30" rx="4" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="0.7"/>
+          <text x="126" y="104" text-anchor="middle" fill="#818cf8" font-size="6" font-weight="700" font-family="system-ui">GPU</text>
+          <text x="126" y="114" text-anchor="middle" fill="#6366f1" font-size="5.5" font-family="system-ui">64-core</text>
+          <rect x="62" y="130" width="82" height="26" rx="4" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.35)" stroke-width="0.7"/>
+          <text x="103" y="141" text-anchor="middle" fill="#fbbf24" font-size="6" font-weight="700" font-family="system-ui">Neural Engine</text>
+          <text x="103" y="151" text-anchor="middle" fill="#f59e0b" font-size="5.5" font-family="system-ui">32-core · 38 TOPS</text>
+          <rect x="62" y="164" width="82" height="24" rx="4" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.35)" stroke-width="0.7"/>
+          <text x="103" y="179" text-anchor="middle" fill="#a855f7" font-size="6" font-weight="700" font-family="system-ui">Unified Mem · 800 GB/s</text>
+          <rect x="62" y="196" width="82" height="20" rx="4" fill="rgba(80,80,100,0.18)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+          <text x="103" y="209" text-anchor="middle" fill="#a1a1a6" font-size="5.5" font-weight="700" font-family="system-ui">Media Engine · ISP · I/O</text>
+          <rect x="62" y="224" width="82" height="20" rx="4" fill="rgba(80,80,100,0.18)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+          <text x="103" y="237" text-anchor="middle" fill="#a1a1a6" font-size="5.5" font-family="system-ui">I/O · PCIe 5 · TB5</text>
+
+          <!-- UltraFabric connector -->
+          <rect x="150" y="120" width="20" height="80" rx="4" fill="url(#ultraFabricBg)" stroke="url(#ultraFabricStroke)" stroke-width="1"/>
+          <text x="160" y="157" text-anchor="middle" fill="#fbbf24" font-size="5" font-weight="700" font-family="system-ui" transform="rotate(-90 160 157)">UltraFabric</text>
+          <!-- Fabric arrows -->
+          <path d="M150 152 L144 158 L150 164" stroke="#fbbf24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M170 152 L176 158 L170 164" stroke="#fbbf24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Die 2 (right) -->
+          <rect x="168" y="64" width="100" height="192" rx="8" fill="#111122"/>
+          <rect x="168" y="64" width="100" height="192" rx="8" stroke="url(#ultraDie2)" stroke-width="1"/>
+          <text x="218" y="85" text-anchor="middle" fill="#f59e0b" font-size="6.5" font-weight="700" font-family="system-ui">MAX ダイ 2</text>
+          <rect x="178" y="92" width="40" height="30" rx="4" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.4)" stroke-width="0.7"/>
+          <text x="198" y="104" text-anchor="middle" fill="#22d3ee" font-size="6" font-weight="700" font-family="system-ui">CPU</text>
+          <text x="198" y="114" text-anchor="middle" fill="#06b6d4" font-size="5.5" font-family="system-ui">20-core</text>
+          <rect x="224" y="92" width="36" height="30" rx="4" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="0.7"/>
+          <text x="242" y="104" text-anchor="middle" fill="#818cf8" font-size="6" font-weight="700" font-family="system-ui">GPU</text>
+          <text x="242" y="114" text-anchor="middle" fill="#6366f1" font-size="5.5" font-family="system-ui">64-core</text>
+          <rect x="178" y="130" width="82" height="26" rx="4" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.35)" stroke-width="0.7"/>
+          <text x="219" y="141" text-anchor="middle" fill="#fbbf24" font-size="6" font-weight="700" font-family="system-ui">Neural Engine</text>
+          <text x="219" y="151" text-anchor="middle" fill="#f59e0b" font-size="5.5" font-family="system-ui">32-core · 38 TOPS</text>
+          <rect x="178" y="164" width="82" height="24" rx="4" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.35)" stroke-width="0.7"/>
+          <text x="219" y="179" text-anchor="middle" fill="#a855f7" font-size="6" font-weight="700" font-family="system-ui">Unified Mem · 800 GB/s</text>
+          <rect x="178" y="196" width="82" height="20" rx="4" fill="rgba(80,80,100,0.18)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+          <text x="219" y="209" text-anchor="middle" fill="#a1a1a6" font-size="5.5" font-weight="700" font-family="system-ui">Media Engine · ISP · I/O</text>
+          <rect x="178" y="224" width="82" height="20" rx="4" fill="rgba(80,80,100,0.18)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+          <text x="219" y="237" text-anchor="middle" fill="#a1a1a6" font-size="5.5" font-family="system-ui">I/O · PCIe 5 · TB5</text>
+
+          <!-- Pins -->
+          <g stroke="rgba(245,158,11,0.5)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="80" y1="40" x2="80" y2="56"/><line x1="104" y1="40" x2="104" y2="56"/>
+            <line x1="128" y1="40" x2="128" y2="56"/><line x1="160" y1="40" x2="160" y2="56"/>
+            <line x1="192" y1="40" x2="192" y2="56"/><line x1="216" y1="40" x2="216" y2="56"/>
+            <line x1="240" y1="40" x2="240" y2="56"/>
+          </g>
+          <g stroke="rgba(245,158,11,0.5)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="80" y1="280" x2="80" y2="264"/><line x1="104" y1="280" x2="104" y2="264"/>
+            <line x1="128" y1="280" x2="128" y2="264"/><line x1="160" y1="280" x2="160" y2="264"/>
+            <line x1="192" y1="280" x2="192" y2="264"/><line x1="216" y1="280" x2="216" y2="264"/>
+            <line x1="240" y1="280" x2="240" y2="264"/>
+          </g>
+          <defs>
+            <linearGradient id="ultraGlow" x1="0" y1="0" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f59e0b"/>
+              <stop offset="50%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+            <linearGradient id="ultraBorder" x1="40" y1="40" x2="280" y2="280" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="0.3"/>
+            </linearGradient>
+            <linearGradient id="ultraDie1" x1="52" y1="64" x2="152" y2="256" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#818cf8" stop-opacity="0.15"/>
+            </linearGradient>
+            <linearGradient id="ultraDie2" x1="168" y1="64" x2="268" y2="256" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#818cf8" stop-opacity="0.15"/>
+            </linearGradient>
+            <linearGradient id="ultraFabricBg" x1="160" y1="120" x2="160" y2="200" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#ec4899" stop-opacity="0.1"/>
+            </linearGradient>
+            <linearGradient id="ultraFabricStroke" x1="160" y1="120" x2="160" y2="200" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#ec4899" stop-opacity="0.4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="pp-hero-text">
+      <p class="pp-eyebrow pp-reveal">AXIOM X1 Ultra</p>
+      <h1 class="pp-headline pp-reveal pp-reveal-delay-1">
+        二つのダイが、<br><span class="grad">一つになる。</span>
+      </h1>
+      <p class="pp-sub pp-reveal pp-reveal-delay-2">UltraFabric 4TB/s。40コアCPU、128コアGPU、480億トランジスタ。</p>
+      <div class="pp-cta-group pp-reveal pp-reveal-delay-3">
+        <a href="#buy" class="btn btn-primary">購入する</a>
+        <a href="#specs" class="btn btn-secondary">仕様を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEY METRICS ═════════════════════════════════════ -->
+<section class="pp-metrics-section" id="metrics">
+  <div class="container">
+    <div class="pp-metrics">
+      <div class="pp-metric pp-reveal">
+        <span class="pp-metric-val counter" data-target="40" data-suffix="コア">40コア</span>
+        <span class="pp-metric-label">CPU</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-1">
+        <span class="pp-metric-val counter" data-target="128" data-suffix="コア">128コア</span>
+        <span class="pp-metric-label">GPU</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-2">
+        <span class="pp-metric-val counter" data-target="76" data-suffix=" TOPS">76 TOPS</span>
+        <span class="pp-metric-label">Neural Engine</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-3">
+        <span class="pp-metric-val">1.6 TB/s</span>
+        <span class="pp-metric-label">メモリ帯域幅</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ULTRAFABRIC SECTION ══════════════════════════════ -->
+<section class="pp-feature-section" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="pp-split">
+      <div class="pp-split-text" style="order:1;">
+        <span class="pp-section-eyebrow pp-reveal">UltraFabric テクノロジー</span>
+        <h2 class="pp-reveal pp-reveal-delay-1" style="font-size: clamp(24px,3vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.1;">二つのMaxが、<br>完全に融合する。</h2>
+        <p class="pp-reveal pp-reveal-delay-2" style="font-size:17px; color:var(--text-secondary); line-height:1.65;">UltraFabricは、2枚のX1 Maxダイをシリコンインターポーザで接続する独自インターコネクト技術。4TB/sの帯域幅で、OSからはひとつのチップとして認識される。分散処理のオーバーヘッドはゼロ。</p>
+        <div class="pp-stat-callout pp-reveal pp-reveal-delay-3">
+          <span class="pp-stat-num">4</span>
+          <span class="pp-stat-unit">TB/s インターコネクト</span>
+        </div>
+        <p class="pp-reveal pp-reveal-delay-3" style="font-size:14px; color:var(--text-tertiary);">業界最高水準のダイ間帯域幅。</p>
+      </div>
+      <div class="pp-split-visual pp-reveal-scale" style="order:2;">
+        <div class="pp-arch-visual">
+          <div class="pp-arch-row pp-arch-row-2">
+            <div class="pp-arch-block pp-arch-cpu">CPU × 2<span class="pp-arch-block-label">計40コア（32P + 8E）</span></div>
+            <div class="pp-arch-block pp-arch-gpu">GPU × 2<span class="pp-arch-block-label">計128コア</span></div>
+          </div>
+          <div class="pp-arch-row">
+            <div class="pp-arch-block" style="background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.4); color:#fbbf24;">UltraFabric<span class="pp-arch-block-label" style="color:#f59e0b;">4 TB/s ダイ間インターコネクト</span></div>
+          </div>
+          <div class="pp-arch-row pp-arch-row-2">
+            <div class="pp-arch-block pp-arch-ne">Neural Engine × 2<span class="pp-arch-block-label">計64コア · 76 TOPS</span></div>
+            <div class="pp-arch-block pp-arch-mem">Unified Memory × 2<span class="pp-arch-block-label">計1.6 TB/s</span></div>
+          </div>
+          <div class="pp-arch-row pp-arch-row-4">
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">TB5 × 8<span class="pp-arch-block-label">120 Gbps</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">PCIe 5<span class="pp-arch-block-label">x32</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">Wi-Fi 7<span class="pp-arch-block-label">6GHz</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">BT 5.4<span class="pp-arch-block-label"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ════════════════════════════════════════ -->
+<section class="pp-feature-section" id="features">
+  <div class="container">
+    <div class="pp-feature-intro">
+      <span class="pp-section-eyebrow pp-reveal">主な特徴</span>
+      <h2 class="pp-section-title pp-reveal pp-reveal-delay-1">あらゆる限界を、<br>一つのチップで超える。</h2>
+      <p class="pp-section-body pp-reveal pp-reveal-delay-2">X1 Ultraは、映画制作・AIトレーニング・大規模科学シミュレーションを単一ワークステーションで完結させる。それが480億トランジスタの使命。</p>
+    </div>
+    <div class="pp-feature-grid">
+      <div class="pp-feature-card pp-reveal">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="13" y="2" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="2" y="13" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="13" y="13" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">40コアCPU</h3>
+        <p class="pp-feature-body">32パフォーマンスコアと8効率コアを搭載。大規模コンパイル・科学計算・映像処理を同時並行で処理できる真のデスクトップ級性能。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">128コアGPU</h3>
+        <p class="pp-feature-body">128コアの統合GPUが映画制作レベルのレンダリングワークロードをリアルタイムで処理。VFX・8K映像編集・大規模シミュレーションに対応。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9.5 2a2.5 2.5 0 0 1 0 5H7a2 2 0 1 0 0 4h10a2 2 0 1 0 0-4h-2.5a2.5 2.5 0 0 1 0-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 11v6M9 17l3 3 3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">Neural Engine 76 TOPS</h3>
+        <p class="pp-feature-body">64コアのNeural Engineが76 TOPSを達成。大規模LLMのローカル実行、動画のリアルタイムAI処理、研究用深層学習を高速にこなす。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">UltraFabric 4 TB/s</h3>
+        <p class="pp-feature-body">2枚のX1 Maxダイをシリコンインターポーザで直結。4TB/sのダイ間帯域幅が、2つのダイを論理的に一つとして動作させる。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">1.6 TB/s メモリ帯域幅</h3>
+        <p class="pp-feature-body">2つの統合メモリコントローラーが合計1.6TB/sの帯域幅を提供。最大192GBの統合メモリ容量で、大規模AIモデルも丸ごとオンチップに収める。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-3">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">480億トランジスタ</h3>
+        <p class="pp-feature-body">2枚のX1 Maxダイ（各240億トランジスタ）をUltraFabricで統合。合計480億個のトランジスタが単一チップとして動作する。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS TABLE ═══════════════════════════════════════ -->
+<section class="pp-specs-section" id="specs">
+  <div class="container">
+    <div class="pp-specs-header">
+      <span class="pp-section-eyebrow pp-reveal">スペック詳細</span>
+      <h2 class="pp-section-title pp-reveal pp-reveal-delay-1">全仕様</h2>
+    </div>
+    <div class="pp-reveal pp-reveal-delay-2">
+      <table class="pp-specs-table" aria-label="X1 Ultra 仕様表">
+        <thead>
+          <tr><th>項目</th><th>仕様</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pp-specs-group-header"><td colspan="2">プロセッサ</td></tr>
+          <tr><td>プロセスノード</td><td>2nm（第1世代AXIOM Silicon）</td></tr>
+          <tr><td>構成</td><td>2×X1 Max（UltraFabric接続）</td></tr>
+          <tr><td>トランジスタ数</td><td>480億（2×240億）</td></tr>
+          <tr><td>CPUコア構成</td><td>40コア（32パフォーマンス + 8効率）</td></tr>
+          <tr><td>TDP</td><td>60W（最大275W オプション冷却時）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">グラフィックス</td></tr>
+          <tr><td>GPUコア数</td><td>128コア（2×64）</td></tr>
+          <tr><td>最大解像度</td><td>8K 120Hz（DisplayPort 2.1）× 4</td></tr>
+          <tr><td>動画デコード</td><td>H.265、H.264、AV1、ProRes RAW（ハードウェア）× 4エンジン</td></tr>
+          <tr><td>動画エンコード</td><td>H.265、H.264、AV1、ProRes RAW（ハードウェア）× 4エンジン</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">Neural Engine</td></tr>
+          <tr><td>Neural Engineコア数</td><td>64コア（2×32）</td></tr>
+          <tr><td>推論性能</td><td>76 TOPS</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">UltraFabric</td></tr>
+          <tr><td>インターコネクト帯域幅</td><td>4 TB/s（双方向）</td></tr>
+          <tr><td>接続方式</td><td>シリコンインターポーザ直結</td></tr>
+          <tr><td>OSの認識</td><td>単一SoCとして認識（透過的統合）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">メモリ</td></tr>
+          <tr><td>メモリ帯域幅</td><td>1.6 TB/s（2×800 GB/s）</td></tr>
+          <tr><td>メモリタイプ</td><td>LPDDR5X（統合）</td></tr>
+          <tr><td>最大メモリ容量</td><td>192 GB</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">接続・I/O</td></tr>
+          <tr><td>Thunderbolt</td><td>Thunderbolt 5（120 Gbps）× 8</td></tr>
+          <tr><td>PCIe</td><td>PCIe 5.0 x32</td></tr>
+          <tr><td>無線LAN</td><td>Wi-Fi 7（IEEE 802.11be）、6 GHz対応</td></tr>
+          <tr><td>Bluetooth</td><td>Bluetooth 5.4</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">電力</td></tr>
+          <tr><td>基本TDP</td><td>60W</td></tr>
+          <tr><td>最大電力（オプション冷却）</td><td>275W</td></tr>
+          <tr><td>冷却方式</td><td>液冷または大型アクティブ冷却必須</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUY ══════════════════════════════════════════════ -->
+<section class="pp-buy-section" id="buy">
+  <div class="container">
+    <div class="pp-buy-inner">
+      <div class="pp-buy-text">
+        <span class="pp-section-eyebrow pp-reveal">購入</span>
+        <h2 class="pp-buy-title pp-reveal pp-reveal-delay-1">X1 Ultraを、<br>今すぐ。</h2>
+        <div class="pp-reveal pp-reveal-delay-2">
+          <p class="pp-buy-price">¥448,000〜</p>
+          <p class="pp-buy-price-sub">税込価格。構成により異なります。</p>
+        </div>
+        <p class="pp-buy-note pp-reveal pp-reveal-delay-3">X1 Ultraを搭載したシステムは、AXIOM認定パートナーおよびAXIOM Storeにてご購入いただけます。法人購入については法人窓口にお問い合わせください。</p>
+      </div>
+      <div class="pp-buy-actions pp-reveal pp-reveal-delay-2">
+        <div class="pp-buy-card pp-buy-card-highlight">
+          <h3 class="pp-buy-card-title">X1 Ultra 標準構成</h3>
+          <p class="pp-buy-card-desc">40コアCPU・128コアGPU・64GB統合メモリ・2TB SSDを搭載した標準モデル。</p>
+          <ul class="pp-buy-list">
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              40コアCPU（32P+8E）
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              128コア統合GPU
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              64GB 統合メモリ（1.6 TB/s）
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              UltraFabric 4 TB/s インターコネクト
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">購入する — ¥448,000</a>
+        </div>
+        <div class="pp-buy-card">
+          <h3 class="pp-buy-card-title">X1 Ultra 最大構成</h3>
+          <p class="pp-buy-card-desc">192GB統合メモリ・8TB SSDを搭載した、あらゆるワークロードに対応する最大構成。</p>
+          <a href="#" class="btn btn-outline" style="width:100%; justify-content:center;">詳細を見る — ¥698,000</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELATED PRODUCTS ═════════════════════════════════ -->
+<section class="pp-related-section">
+  <div class="container">
+    <div class="pp-related-header">
+      <h2 class="pp-related-title pp-reveal">他の X1 シリーズ</h2>
+    </div>
+  </div>
+  <div class="pp-related-scroll">
+    <div class="pp-related-inner">
+      <a href="../x1-pro/" class="pp-related-card pp-reveal">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(110,64,201,0.15)" stroke="rgba(110,64,201,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(110,64,201,0.2)" stroke="rgba(110,64,201,0.4)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#c084fc" font-size="9" font-weight="700" font-family="system-ui">Pro</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Pro</p>
+        <p class="pp-related-card-desc">12コアCPU・20コアGPU。コンシューマーの決定版。</p>
+        <p class="pp-related-card-price">¥178,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../x1-max/" class="pp-related-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.35)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#22d3ee" font-size="9" font-weight="700" font-family="system-ui">Max</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Max</p>
+        <p class="pp-related-card-desc">16コアCPU・64コアGPU。プロフェッショナルの基準。</p>
+        <p class="pp-related-card-price">¥278,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../ax-datacenter/" class="pp-related-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.3)" stroke-width="0.8"/>
+            <text x="24" y="26" text-anchor="middle" fill="#a855f7" font-size="6.5" font-weight="700" font-family="system-ui">DataCtr</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">AX DataCenter</p>
+        <p class="pp-related-card-desc">エンタープライズAI。320 TFLOPS FP32。</p>
+        <p class="pp-related-card-price">お問い合わせ</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../x1-air/" class="pp-related-card pp-reveal pp-reveal-delay-3">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(110,64,201,0.1)" stroke="rgba(110,64,201,0.25)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(110,64,201,0.15)" stroke="rgba(110,64,201,0.35)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#c084fc" font-size="9" font-weight="700" font-family="system-ui">Air</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Air</p>
+        <p class="pp-related-card-desc">8W TDP。ファンレス対応の超薄型チップ。</p>
+        <p class="pp-related-card-price">¥89,800〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOTTOM NAV ════════════════════════════════════════ -->
+<nav class="bottom-nav" aria-label="ページ内ナビゲーション">
+  <div class="bottom-nav-inner">
+    <a href="#hero" class="bottom-nav-item active" data-section="hero">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M3 9.5L11 3l8 6.5V19a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      ホーム
+    </a>
+    <a href="#specs" class="bottom-nav-item" data-section="specs">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7 8h8M7 12h8M7 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      仕様
+    </a>
+    <a href="#features" class="bottom-nav-item" data-section="features">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <polygon points="11,2 13.5,8.5 20.5,9 15.5,13.5 17.2,20.5 11,17 4.8,20.5 6.5,13.5 1.5,9 8.5,8.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      特徴
+    </a>
+    <a href="#buy" class="bottom-nav-item" data-section="buy">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-3-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="3" y1="6" x2="19" y2="6" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M14 10a2 2 0 0 1-4 0" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      購入
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer style="background:var(--bg-1); border-top:1px solid var(--border); padding:48px 0 32px;">
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; margin-bottom:32px;">
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">製品</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../x1-air/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Air</a>
+          <a href="../x1-pro/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Pro</a>
+          <a href="../x1-max/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Max</a>
+          <a href="../x1-ultra/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Ultra</a>
+          <a href="../ax-datacenter/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">AX DataCenter</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">企業情報</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../../about/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">会社情報</a>
+          <a href="../../technology/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">テクノロジー</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">法的情報</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../../legal/privacy" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">プライバシーポリシー</a>
+          <a href="../../legal/terms" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">利用規約</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--text-tertiary);">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script>
+  const ppObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.pp-reveal, .pp-reveal-scale').forEach(el => ppObserver.observe(el));
+  const ppPerfObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.pp-perf-fill').forEach(bar => { bar.style.width = bar.dataset.width + '%'; });
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.pp-perf-chart').forEach(el => ppPerfObserver.observe(el));
+</script>
+</body>
+</html>

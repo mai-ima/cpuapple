@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ニュースルーム — AXIOM Silicon</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Hero ── */
+    .newsroom-hero {
+      min-height: 55svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-height) + 80px) 24px 80px;
+      background: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(110,64,201,0.16) 0%, transparent 65%), var(--bg);
+    }
+    .newsroom-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 20px;
+    }
+    .newsroom-title {
+      font-size: var(--type-hero);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .newsroom-title span {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .newsroom-desc {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ── Press releases ── */
+    .press-section {
+      padding: 80px 24px 120px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .press-section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .press-section-header h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .press-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .press-item {
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 32px;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+      border-radius: 0;
+      position: relative;
+    }
+    .press-item:first-child { border-top: 1px solid var(--border); }
+    @media (max-width: 640px) {
+      .press-item { grid-template-columns: 1fr; gap: 12px; }
+      .press-arrow { display: none; }
+    }
+    .press-item:hover .press-title { color: var(--accent-2); }
+    .press-item:hover .press-arrow { transform: translateX(4px); color: var(--accent-2); }
+
+    .press-date {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .press-date strong {
+      display: block;
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .press-body {}
+    .press-category {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+    .press-title {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .press-summary {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .press-arrow {
+      color: var(--text-tertiary);
+      transition: transform 0.2s var(--ease-out), color 0.2s;
+      flex-shrink: 0;
+    }
+
+    /* ── Featured (first item) ── */
+    .press-item-featured {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px 40px;
+      margin-bottom: 8px;
+      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .press-item-featured .press-date {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .featured-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gradient-accent);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .press-item-featured .press-title {
+      font-size: clamp(20px, 2.8vw, 30px);
+    }
+
+    /* ── Newsletter strip ── */
+    .newsletter-section {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .newsletter-inner { max-width: 540px; margin: 0 auto; }
+    .newsletter-inner h2 {
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+    .newsletter-inner p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    @media (max-width: 480px) { .newsletter-form { flex-direction: column; } }
+    .newsletter-input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 12px 20px;
+      font-size: 14px;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input::placeholder { color: var(--text-tertiary); }
+    .newsletter-input:focus { border-color: var(--accent-2); }
+    .newsletter-btn {
+      background: var(--gradient-accent);
+      color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .newsletter-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">
+        <div class="nav-logo-mark">AX</div>
+        <span>AXIOM</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../consumer/">コンシューマー</a>
+        <a href="../technology/">テクノロジー</a>
+        <a href="../about/">会社情報</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="../enterprise/" class="nav-enterprise-btn">法人のお客様へ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="newsroom-hero">
+    <p class="newsroom-eyebrow">ニュースルーム</p>
+    <h1 class="newsroom-title"><span>AXIOM Silicon<br>からのお知らせ。</span></h1>
+    <p class="newsroom-desc">最新プレスリリース・製品発表・資金調達情報をお届けします。</p>
+  </section>
+
+  <!-- Press releases -->
+  <section class="press-section">
+    <div class="press-section-header">
+      <h2>プレスリリース</h2>
+    </div>
+
+    <div class="press-list">
+
+      <!-- 1: Featured — AX GPU -->
+      <div class="press-item press-item-featured reveal">
+        <div class="press-date">
+          <strong>2026年5月</strong>
+          <span class="featured-badge">最新</span>
+        </div>
+        <div class="press-category">製品発表</div>
+        <div class="press-title">AX GPU G1 / G1 Pro 発表 — 2nm 採用独立 GPU で AI レンダリングの概念を塗り替える</div>
+        <p class="press-summary">AXIOM Silicon は2026年5月、同社初の独立型 GPU「AX GPU G1」および「AX GPU G1 Pro」を正式発表しました。TSMC N2 プロセスを採用した両製品は、Neural Engine との緊密な統合により、レンダリングと AI 推論を同一ダイ上で並列実行。G1 Pro は 76 TOPS の Neural Engine と 8,192 シェーダーコアを搭載し、プロフェッショナルクリエイターとゲーマー双方の要求に応えます。価格・発売日は今後発表予定。</p>
+      </div>
+
+      <!-- 2: AX Memory M1 -->
+      <a href="#" class="press-item reveal">
+        <div class="press-date">
+          <strong>2026年5月</strong>
+          <span>プレスリリース</span>
+        </div>
+        <div>
+          <div class="press-category">製品発表</div>
+          <div class="press-title">AX Memory M1 発表 — HBM4 採用で 6.4TB/s の帯域幅を達成</div>
+          <p class="press-summary">AXIOM Silicon は AX Memory M1 を発表。HBM4 規格に準拠した同メモリは、6.4TB/s のピーク帯域幅を実現し、AX DataCenter プラットフォームおよび AX GPU G1 Pro に統合されます。</p>
+        </div>
+        <div class="press-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- 3: AX Network N1 -->
+      <a href="#" class="press-item reveal">
+        <div class="press-date">
+          <strong>2026年3月</strong>
+          <span>プレスリリース</span>
+        </div>
+        <div>
+          <div class="press-category">製品発表</div>
+          <div class="press-title">AX Network N1 発表 — データセンター向けスマート NIC で AI ネットワーク処理を革新</div>
+          <p class="press-summary">AXIOM Silicon は AX Network N1 を発表。400GbE 対応のスマート NIC であり、オンチップでのパケット処理・暗号化・AI 推論を単一チップで実現。データセンターのネットワーク運用コストを大幅に削減します。</p>
+        </div>
+        <div class="press-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- 4: 2nm 量産開始 -->
+      <a href="#" class="press-item reveal">
+        <div class="press-date">
+          <strong>2025年10月</strong>
+          <span>プレスリリース</span>
+        </div>
+        <div>
+          <div class="press-category">技術・製造</div>
+          <div class="press-title">2nm プロセスノードの量産を開始 — TSMC N2 採用、業界最高トランジスタ密度を実現</div>
+          <p class="press-summary">AXIOM Silicon は TSMC との連携のもと、N2 プロセス（2nm 相当）での量産を2025年10月より正式に開始したと発表しました。1億6500万個/mm² のトランジスタ密度を達成し、X1 Ultra を皮切りに全製品ラインへ順次展開します。</p>
+        </div>
+        <div class="press-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- 5: シリーズB -->
+      <a href="#" class="press-item reveal">
+        <div class="press-date">
+          <strong>2025年6月</strong>
+          <span>プレスリリース</span>
+        </div>
+        <div>
+          <div class="press-category">資金調達</div>
+          <div class="press-title">シリーズ B ラウンドで300億円を調達 — 次世代 GPU および Mobile SoC の開発を加速</div>
+          <p class="press-summary">AXIOM Silicon は2025年6月、シリーズ B ラウンドで総額300億円の資金調達を完了したと発表しました。本ラウンドは国内外の主要 VC および戦略的投資家が参加。調達資金は AX GPU G1 シリーズの開発加速および AX Mobile M1（スマートフォン SoC）の設計・量産準備に充当されます。</p>
+        </div>
+        <div class="press-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <h2>最新情報を受け取る</h2>
+      <p>AXIOM Silicon の製品発表・技術アップデート・採用情報をメールでお届けします。</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="メールアドレスを入力" aria-label="メールアドレス">
+        <button class="newsletter-btn" type="button">登録する</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="nav-logo-mark">AX</div>
+            <span>AXIOM Silicon</span>
+          </div>
+          <p class="footer-brand-desc">日本発の半導体イノベーションで、次世代コンピューティングの未来を切り拓く。</p>
+        </div>
+        <div>
+          <div class="footer-col-title">テクノロジー</div>
+          <div class="footer-links">
+            <a href="../technology/">概要</a>
+            <a href="../technology/2nm/">2nmプロセス</a>
+            <a href="../technology/ultrafabric/">UltraFabric</a>
+            <a href="../technology/neural-engine/">Neural Engine</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">会社情報</div>
+          <div class="footer-links">
+            <a href="../about/">概要</a>
+            <a href="../about/leadership/">リーダーシップ</a>
+            <a href="../newsroom/">ニュースルーム</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">開発者</div>
+          <div class="footer-links">
+            <a href="../developers/">開発者向け</a>
+            <a href="https://github.com/axiom-silicon" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">法的情報</div>
+          <div class="footer-links">
+            <a href="../legal/privacy/">プライバシーポリシー</a>
+            <a href="../legal/terms/">利用規約</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="../legal/privacy/">プライバシー</a>
+          <a href="../legal/terms/">利用規約</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="モバイルナビゲーション">
+    <div class="bottom-nav-inner">
+      <a href="../" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>ホーム</span>
+      </a>
+      <a href="../consumer/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span>製品</span>
+      </a>
+      <a href="../technology/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+        <span>技術</span>
+      </a>
+      <a href="../about/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        <span>会社</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
