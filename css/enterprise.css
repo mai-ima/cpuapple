@@ -1,0 +1,280 @@
+/* =========================================================
+   AXIOM Enterprise — css/enterprise.css
+   Loaded AFTER css/style.css.
+   ========================================================= */
+
+/* Enterprise dark: navy palette */
+:root {
+  --bg:            #050d1a;
+  --bg-2:          #0a1628;
+  --bg-3:          #0d1f35;
+  --bg-card:       #0f2040;
+  --bg-card-hover: #142850;
+  --surface:       #1a3460;
+  --surface-2:     #1e3d72;
+  --border:        rgba(240,244,248,0.08);
+  --border-strong: rgba(240,244,248,0.15);
+  --text-primary:   #f0f4f8;
+  --text-secondary: #94a3b8;
+  --text-tertiary:  #64748b;
+  --shadow-glow:    0 0 60px rgba(6,182,212,0.2);
+  --shadow-glow-cyan: 0 0 60px rgba(6,182,212,0.25);
+  /* accent tokens unchanged — cyan works on navy */
+}
+
+[data-theme="light"] {
+  --bg:            #f0f4f8;
+  --bg-2:          #e2e8f0;
+  --bg-3:          #d1dce8;
+  --bg-card:       #ffffff;
+  --bg-card-hover: #f8fafc;
+  --surface:       #e2e8f0;
+  --surface-2:     #cbd5e1;
+  --border:        rgba(15,23,42,0.08);
+  --border-strong: rgba(15,23,42,0.15);
+  --text-primary:   #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary:  #64748b;
+  --shadow-glow:    0 0 60px rgba(6,182,212,0.1);
+}
+
+/* =========================================================
+   Enterprise hero
+   ========================================================= */
+.enterprise-hero {
+  background: var(--bg);
+}
+
+.enterprise-hero .hero-bg .orb-1 {
+  background: radial-gradient(circle, rgba(6,182,212,0.45) 0%, transparent 70%);
+}
+
+.enterprise-hero .hero-bg .orb-2 {
+  background: radial-gradient(circle, rgba(6,50,180,0.5) 0%, transparent 70%);
+}
+
+.enterprise-hero .hero-eyebrow {
+  color: var(--accent-cyan-2);
+  border-color: rgba(6,182,212,0.3);
+  background: rgba(6,182,212,0.08);
+}
+
+.enterprise-hero .hero-eyebrow-dot {
+  background: var(--accent-cyan-2);
+}
+
+.enterprise-hero .btn-primary {
+  background: linear-gradient(135deg, #06b6d4, #0ea5e9, #6e40c9);
+  box-shadow: 0 4px 24px rgba(6,182,212,0.35);
+}
+
+/* =========================================================
+   ROI Calculator
+   ========================================================= */
+.roi-section {
+  padding: 120px 0;
+  background: var(--bg-2);
+}
+
+.roi-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  padding: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.roi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #06b6d4, #6e40c9);
+}
+
+.roi-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.roi-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roi-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+}
+
+.roi-field input {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 15px;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+.roi-field input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+}
+
+.roi-result-wrap {
+  text-align: center;
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: rgba(6,182,212,0.06);
+  border: 1px solid rgba(6,182,212,0.2);
+  margin-bottom: 24px;
+}
+
+.roi-result-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+}
+
+.roi-result {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: var(--accent-cyan-2);
+  display: block;
+}
+
+.roi-result-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.roi-basis {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.roi-basis summary {
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 8px 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.roi-basis summary::-webkit-details-marker { display: none; }
+.roi-basis summary::before { content: '+'; font-weight: 800; }
+details[open] > .roi-basis-summary::before,
+details[open] .roi-basis summary::before { content: '\2212'; }
+
+.roi-basis-body {
+  padding: 12px 0;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.roi-basis-body p { margin-bottom: 4px; font-size: 13px; }
+
+/* =========================================================
+   Enterprise product cards (navy accent override)
+   ========================================================= */
+.product-card:hover {
+  border-color: rgba(6,182,212,0.3);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-cyan);
+}
+
+/* =========================================================
+   Case study grid
+   ========================================================= */
+.case-section {
+  padding: 120px 0;
+  background: var(--bg);
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  transition: transform 0.3s var(--ease-spring), border-color 0.3s;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6,182,212,0.3);
+}
+
+.case-industry {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+
+.case-company {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.case-result {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: var(--accent-cyan-2);
+}
+
+.case-result-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.case-detail {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.65;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 768px) {
+  .roi-form  { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .roi-card  { padding: 32px 24px; }
+}

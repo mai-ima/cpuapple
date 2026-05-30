@@ -100,7 +100,8 @@ html.setAttribute('data-theme', theme);
 updateThemeIcon();
 
 function updateThemeIcon() {
-  if (themeBtn) themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  /* アイコンは CSS ::before で描画。aria-label がアクセシブルな名前を提供。 */
+  if (themeBtn) themeBtn.textContent = '';
 }
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
