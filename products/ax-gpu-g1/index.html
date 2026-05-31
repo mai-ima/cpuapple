@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>AX GPU G1 — AXIOM Silicon</title>
+  <meta name="description" content="AXIOM AX GPU G1。48コアGPU、16GB GDDR7、80 TFLOPS。描く力を、解き放つ。">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/product-page.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236e40c9'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-weight='900' font-family='system-ui'>AX</text></svg>">
+  <style>
+    .nav-inner { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+    @media (pointer: coarse) { .btn { min-height: 44px; } }
+    .badge-new {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, #ec4899, #a855f7);
+      color: white; font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body class="pp-page">
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="scroll-progress" role="progressbar" aria-label="スクロール進捗"></div>
+
+<nav class="mobile-menu" role="navigation" aria-label="モバイルナビゲーション">
+  <button class="mobile-menu-close" aria-label="メニューを閉じる">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <a href="../../index.html">ホーム</a>
+  <a href="#specs">仕様</a>
+  <a href="#features">特徴</a>
+  <a href="#buy">購入</a>
+  <a href="../../consumer/">コンシューマー</a>
+  <a href="../../enterprise/">エンタープライズ</a>
+</nav>
+
+<header class="nav" id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="../../" class="nav-logo" aria-label="AXIOM ホーム">
+      <div class="nav-logo-mark" aria-hidden="true">AX</div>
+      <span>AXIOM</span>
+    </a>
+    <nav class="nav-links" aria-label="主要ナビゲーション">
+      <a href="../../consumer/">コンシューマー</a>
+      <a href="../../technology/">テクノロジー</a>
+      <a href="../../about/">会社情報</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.05 1.05M11.85 11.85l1.05 1.05M3.1 12.9l1.05-1.05M11.85 4.15l1.05-1.05" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="../../enterprise/" class="nav-enterprise-btn">法人のお客様へ</a>
+      <button class="nav-mobile-toggle" aria-label="メニューを開く" onclick="document.querySelector('.mobile-menu').classList.add('open')">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<section class="pp-hero" id="hero">
+  <div class="pp-hero-bg" aria-hidden="true">
+    <div class="pp-hero-orb pp-hero-orb-1"></div>
+    <div class="pp-hero-orb pp-hero-orb-2"></div>
+  </div>
+  <div class="pp-hero-inner container">
+    <div class="pp-chip-wrap pp-reveal-scale">
+      <div class="pp-chip-svg-outer">
+        <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AX GPU G1 チップ図">
+          <circle cx="160" cy="160" r="148" stroke="url(#g1Glow)" stroke-width="1.2" opacity="0.5" class="pp-chip-glow-ring"/>
+          <!-- PCB -->
+          <rect x="38" y="38" width="244" height="244" rx="20" fill="#080810"/>
+          <rect x="38" y="38" width="244" height="244" rx="20" stroke="url(#g1Border)" stroke-width="1.5"/>
+          <!-- Main die -->
+          <rect x="62" y="62" width="196" height="196" rx="12" fill="#0e0e1c"/>
+          <rect x="62" y="62" width="196" height="196" rx="12" stroke="url(#g1Accent)" stroke-width="1"/>
+          <!-- Shader clusters 3×4 -->
+          <g fill="rgba(236,72,153,0.18)" stroke="rgba(236,72,153,0.4)" stroke-width="0.7">
+            <rect x="74" y="74" width="44" height="36" rx="4"/>
+            <rect x="122" y="74" width="44" height="36" rx="4"/>
+            <rect x="170" y="74" width="44" height="36" rx="4"/>
+            <rect x="74" y="114" width="44" height="36" rx="4"/>
+            <rect x="122" y="114" width="44" height="36" rx="4"/>
+            <rect x="170" y="114" width="44" height="36" rx="4"/>
+            <rect x="74" y="154" width="44" height="36" rx="4"/>
+            <rect x="122" y="154" width="44" height="36" rx="4"/>
+            <rect x="170" y="154" width="44" height="36" rx="4"/>
+          </g>
+          <text x="160" y="130" text-anchor="middle" fill="#f472b6" font-size="7.5" font-weight="700" font-family="system-ui">GPU シェーダー 48コア</text>
+          <!-- RT core -->
+          <rect x="74" y="198" width="60" height="22" rx="4" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.4)" stroke-width="0.7"/>
+          <text x="104" y="212" text-anchor="middle" fill="#fbbf24" font-size="6.5" font-weight="700" font-family="system-ui">RTコア</text>
+          <!-- AI core -->
+          <rect x="140" y="198" width="74" height="22" rx="4" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.4)" stroke-width="0.7"/>
+          <text x="177" y="212" text-anchor="middle" fill="#818cf8" font-size="6.5" font-weight="700" font-family="system-ui">AI アクセラレータ</text>
+          <!-- GDDR7 -->
+          <rect x="74" y="228" width="140" height="18" rx="4" fill="rgba(6,182,212,0.18)" stroke="rgba(6,182,212,0.45)" stroke-width="0.7"/>
+          <text x="144" y="240" text-anchor="middle" fill="#22d3ee" font-size="6.5" font-weight="700" font-family="system-ui">GDDR7 16GB · 512 GB/s</text>
+          <!-- Pins -->
+          <g stroke="rgba(236,72,153,0.5)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="90" y1="38" x2="90" y2="54"/><line x1="114" y1="38" x2="114" y2="54"/>
+            <line x1="138" y1="38" x2="138" y2="54"/><line x1="160" y1="38" x2="160" y2="54"/>
+            <line x1="184" y1="38" x2="184" y2="54"/><line x1="208" y1="38" x2="208" y2="54"/>
+            <line x1="232" y1="38" x2="232" y2="54"/>
+          </g>
+          <g stroke="rgba(236,72,153,0.5)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="90" y1="282" x2="90" y2="266"/><line x1="114" y1="282" x2="114" y2="266"/>
+            <line x1="138" y1="282" x2="138" y2="266"/><line x1="160" y1="282" x2="160" y2="266"/>
+            <line x1="184" y1="282" x2="184" y2="266"/><line x1="208" y1="282" x2="208" y2="266"/>
+            <line x1="232" y1="282" x2="232" y2="266"/>
+          </g>
+          <g stroke="rgba(6,182,212,0.4)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="38" y1="98" x2="54" y2="98"/><line x1="38" y1="122" x2="54" y2="122"/>
+            <line x1="38" y1="146" x2="54" y2="146"/><line x1="38" y1="170" x2="54" y2="170"/>
+            <line x1="38" y1="194" x2="54" y2="194"/><line x1="38" y1="218" x2="54" y2="218"/>
+          </g>
+          <g stroke="rgba(6,182,212,0.4)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="282" y1="98" x2="266" y2="98"/><line x1="282" y1="122" x2="266" y2="122"/>
+            <line x1="282" y1="146" x2="266" y2="146"/><line x1="282" y1="170" x2="266" y2="170"/>
+            <line x1="282" y1="194" x2="266" y2="194"/><line x1="282" y1="218" x2="266" y2="218"/>
+          </g>
+          <defs>
+            <linearGradient id="g1Glow" x1="0" y1="0" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ec4899"/>
+              <stop offset="50%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#6366f1"/>
+            </linearGradient>
+            <linearGradient id="g1Border" x1="38" y1="38" x2="282" y2="282" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ec4899" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="0.3"/>
+            </linearGradient>
+            <linearGradient id="g1Accent" x1="62" y1="62" x2="258" y2="258" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f472b6" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="pp-hero-text">
+      <div class="badge-new" aria-label="新製品 GPU">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <polygon points="6,1 7.5,4.5 11.5,5 8.5,7.8 9.3,11.5 6,9.7 2.7,11.5 3.5,7.8 0.5,5 4.5,4.5" fill="currentColor"/>
+        </svg>
+        GPU
+      </div>
+      <p class="pp-eyebrow pp-reveal">AXIOM GPU シリーズ — AX GPU G1</p>
+      <h1 class="pp-headline pp-reveal pp-reveal-delay-1">
+        描く力を、<br><span class="grad">解き放つ。</span>
+      </h1>
+      <p class="pp-sub pp-reveal pp-reveal-delay-2">48コアGPU、16GB GDDR7、80 TFLOPS。2nmプロセス。</p>
+      <div class="pp-cta-group pp-reveal pp-reveal-delay-3">
+        <a href="#buy" class="btn btn-primary">購入する</a>
+        <a href="#specs" class="btn btn-secondary">仕様を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEY METRICS ═════════════════════════════════════ -->
+<section class="pp-metrics-section" id="metrics">
+  <div class="container">
+    <div class="pp-metrics">
+      <div class="pp-metric pp-reveal">
+        <span class="pp-metric-val counter" data-target="48" data-suffix="コア">48コア</span>
+        <span class="pp-metric-label">GPU</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-1">
+        <span class="pp-metric-val">80 TFLOPS</span>
+        <span class="pp-metric-label">演算性能</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-2">
+        <span class="pp-metric-val">512 GB/s</span>
+        <span class="pp-metric-label">メモリ帯域幅</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-3">
+        <span class="pp-metric-val counter" data-target="150" data-suffix="W">150W</span>
+        <span class="pp-metric-label">TDP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ════════════════════════════════════════ -->
+<section class="pp-feature-section" id="features">
+  <div class="container">
+    <div class="pp-feature-intro">
+      <span class="pp-section-eyebrow pp-reveal">主な特徴</span>
+      <h2 class="pp-section-title pp-reveal pp-reveal-delay-1">ゲームも。クリエイティブも。<br>全てを一枚で。</h2>
+      <p class="pp-section-body pp-reveal pp-reveal-delay-2">AX GPU G1は、AXIOM初の単体ディスクリートGPU。2nmプロセスで製造した48コアGPUが、レイトレーシング・AI超解像・4K120fpsを実現する。</p>
+    </div>
+    <div class="pp-feature-grid">
+      <div class="pp-feature-card pp-reveal">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">48コアGPU / 80 TFLOPS</h3>
+        <p class="pp-feature-body">48基のシェーダーコアが80 TFLOPSの演算性能を発揮。最新ゲームから動画編集まで、快適な体験を届ける。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M3 12h3M18 12h3M12 3v3M12 18v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">レイトレーシング</h3>
+        <p class="pp-feature-body">専用RTコアがハードウェアレイトレーシングを加速。リアルな光源・反射・影を、ソフトウェア処理なしでリアルタイムに描画する。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9.5 2a2.5 2.5 0 0 1 0 5H7a2 2 0 1 0 0 4h10a2 2 0 1 0 0-4h-2.5a2.5 2.5 0 0 1 0-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 11v6M9 17l3 3 3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">AI 超解像</h3>
+        <p class="pp-feature-body">AIアクセラレータが低解像度映像を高品質にアップスケール。低負荷で4K出力を実現し、フレームレートを大幅に向上させる。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">4K 120fps 対応</h3>
+        <p class="pp-feature-body">4K解像度で120fpsの滑らかな映像出力に対応。DisplayPort 2.1とHDMI 2.1を搭載し、最新の高リフレッシュレートモニターに接続できる。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">16GB GDDR7</h3>
+        <p class="pp-feature-body">16GBのGDDR7メモリが512 GB/sの帯域幅を提供。大容量テクスチャ・高解像度フレームバッファをストレスなく処理。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-3">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">2nmプロセス</h3>
+        <p class="pp-feature-body">最先端2nmプロセスで製造。同クラスのディスクリートGPUと比較して、優れた電力効率と発熱特性を実現する。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARCHITECTURE ═════════════════════════════════════ -->
+<section class="pp-feature-section" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="pp-split">
+      <div class="pp-split-visual pp-reveal-scale">
+        <div class="pp-arch-visual">
+          <div class="pp-arch-row">
+            <div class="pp-arch-block pp-arch-gpu">GPU シェーダークラスター<span class="pp-arch-block-label">48コア · 80 TFLOPS</span></div>
+          </div>
+          <div class="pp-arch-row pp-arch-row-2">
+            <div class="pp-arch-block pp-arch-ne">RTコア<span class="pp-arch-block-label">ハードウェアレイトレーシング</span></div>
+            <div class="pp-arch-block pp-arch-cpu">AIアクセラレータ<span class="pp-arch-block-label">超解像・フレーム生成</span></div>
+          </div>
+          <div class="pp-arch-row">
+            <div class="pp-arch-block pp-arch-mem">GDDR7<span class="pp-arch-block-label">16 GB · 512 GB/s</span></div>
+          </div>
+          <div class="pp-arch-row pp-arch-row-4">
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">PCIe 5<span class="pp-arch-block-label">x16</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">DP 2.1<span class="pp-arch-block-label">×3</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">HDMI 2.1<span class="pp-arch-block-label">×1</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">150W TDP<span class="pp-arch-block-label"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pp-split-text">
+        <span class="pp-section-eyebrow pp-reveal">GPU アーキテクチャ</span>
+        <h2 class="pp-reveal pp-reveal-delay-1" style="font-size: clamp(24px,3vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.1;">ゲームと制作の<br>新たな基準。</h2>
+        <p class="pp-reveal pp-reveal-delay-2" style="font-size:17px; color:var(--text-secondary); line-height:1.65;">AX GPU G1は、ゲーマーとクリエイターの両方が求める機能を一枚のカードに凝縮。RTコアによるリアルタイムレイトレーシング、AIアクセラレータによる超解像、そして4K120fps出力を150W TDPで実現する。</p>
+        <div class="pp-stat-callout pp-reveal pp-reveal-delay-3">
+          <span class="pp-stat-num counter" data-target="80" data-suffix="">80</span>
+          <span class="pp-stat-unit">TFLOPS</span>
+        </div>
+        <p class="pp-reveal pp-reveal-delay-3" style="font-size:14px; color:var(--text-tertiary);">単精度浮動小数点演算性能。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS TABLE ═══════════════════════════════════════ -->
+<section class="pp-specs-section" id="specs">
+  <div class="container">
+    <div class="pp-specs-header">
+      <span class="pp-section-eyebrow pp-reveal">スペック詳細</span>
+      <h2 class="pp-section-title pp-reveal pp-reveal-delay-1">全仕様</h2>
+    </div>
+    <div class="pp-reveal pp-reveal-delay-2">
+      <table class="pp-specs-table" aria-label="AX GPU G1 仕様表">
+        <thead>
+          <tr><th>項目</th><th>仕様</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pp-specs-group-header"><td colspan="2">演算性能</td></tr>
+          <tr><td>プロセスノード</td><td>2nm（第1世代AXIOM Silicon）</td></tr>
+          <tr><td>GPUコア数</td><td>48コア</td></tr>
+          <tr><td>FP32 演算性能</td><td>80 TFLOPS</td></tr>
+          <tr><td>レイトレーシング</td><td>専用RTコア搭載（ハードウェアアクセラレーション）</td></tr>
+          <tr><td>AI処理</td><td>専用AIアクセラレータ（超解像・フレーム生成）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">メモリ</td></tr>
+          <tr><td>メモリ容量</td><td>16 GB</td></tr>
+          <tr><td>メモリタイプ</td><td>GDDR7</td></tr>
+          <tr><td>メモリ帯域幅</td><td>512 GB/s</td></tr>
+          <tr><td>メモリバス幅</td><td>256bit</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">映像出力</td></tr>
+          <tr><td>最大解像度</td><td>8K 60Hz / 4K 120Hz</td></tr>
+          <tr><td>DisplayPort</td><td>DisplayPort 2.1 × 3</td></tr>
+          <tr><td>HDMI</td><td>HDMI 2.1 × 1</td></tr>
+          <tr><td>最大同時出力数</td><td>4画面</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">接続・電力</td></tr>
+          <tr><td>ホストインターフェース</td><td>PCIe 5.0 x16</td></tr>
+          <tr><td>TDP</td><td>150W</td></tr>
+          <tr><td>電源コネクタ</td><td>PCIe 16-pin（12VHPWR）× 1</td></tr>
+          <tr><td>推奨電源容量</td><td>650W以上</td></tr>
+          <tr><td>冷却方式</td><td>トリプルファン（アクティブ冷却）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">フォームファクタ</td></tr>
+          <tr><td>カード規格</td><td>FHFL（フルハイト・フルレングス）</td></tr>
+          <tr><td>スロット幅</td><td>2.5スロット</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUY ══════════════════════════════════════════════ -->
+<section class="pp-buy-section" id="buy">
+  <div class="container">
+    <div class="pp-buy-inner">
+      <div class="pp-buy-text">
+        <span class="pp-section-eyebrow pp-reveal">購入</span>
+        <h2 class="pp-buy-title pp-reveal pp-reveal-delay-1">AX GPU G1を、<br>今すぐ。</h2>
+        <div class="pp-reveal pp-reveal-delay-2">
+          <p class="pp-buy-price">¥79,800</p>
+          <p class="pp-buy-price-sub">税込価格。</p>
+        </div>
+        <p class="pp-buy-note pp-reveal pp-reveal-delay-3">AX GPU G1は、AXIOM認定パートナーおよびAXIOM Storeにてご購入いただけます。</p>
+      </div>
+      <div class="pp-buy-actions pp-reveal pp-reveal-delay-2">
+        <div class="pp-buy-card pp-buy-card-highlight">
+          <h3 class="pp-buy-card-title">AX GPU G1</h3>
+          <p class="pp-buy-card-desc">48コアGPU・16GB GDDR7・レイトレーシング対応。ゲームとクリエイティブの新標準。</p>
+          <ul class="pp-buy-list">
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              48コアGPU · 80 TFLOPS
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              16GB GDDR7（512 GB/s）
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              レイトレーシング・AI超解像
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              4K 120fps対応
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">購入する — ¥79,800</a>
+        </div>
+        <div class="pp-buy-card">
+          <h3 class="pp-buy-card-title">AX GPU G1 Pro</h3>
+          <p class="pp-buy-card-desc">96コア・32GB GDDR7・160 TFLOPS。プロクリエイター向けの上位モデル。</p>
+          <a href="../ax-gpu-g1-pro/" class="btn btn-outline" style="width:100%; justify-content:center;">G1 Pro を見る — ¥148,000</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELATED PRODUCTS ═════════════════════════════════ -->
+<section class="pp-related-section">
+  <div class="container">
+    <div class="pp-related-header">
+      <h2 class="pp-related-title pp-reveal">関連製品</h2>
+    </div>
+  </div>
+  <div class="pp-related-scroll">
+    <div class="pp-related-inner">
+      <a href="../ax-gpu-g1-pro/" class="pp-related-card pp-reveal">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(236,72,153,0.18)" stroke="rgba(236,72,153,0.4)" stroke-width="0.8"/>
+            <text x="24" y="26" text-anchor="middle" fill="#f472b6" font-size="6.5" font-weight="700" font-family="system-ui">G1 Pro</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">AX GPU G1 Pro</p>
+        <p class="pp-related-card-desc">96コア・160 TFLOPS。プロクリエイター向け上位モデル。</p>
+        <p class="pp-related-card-price">¥148,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../x1-pro/" class="pp-related-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(110,64,201,0.15)" stroke="rgba(110,64,201,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(110,64,201,0.2)" stroke="rgba(110,64,201,0.4)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#c084fc" font-size="9" font-weight="700" font-family="system-ui">Pro</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Pro</p>
+        <p class="pp-related-card-desc">統合型12コアCPU+20コアGPU。ノートPC・一体型PC向け。</p>
+        <p class="pp-related-card-price">¥178,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../x1-max/" class="pp-related-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.35)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#22d3ee" font-size="9" font-weight="700" font-family="system-ui">Max</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Max</p>
+        <p class="pp-related-card-desc">統合型16コアCPU+64コアGPU。プロワークステーション向け。</p>
+        <p class="pp-related-card-price">¥278,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../ax-datacenter/" class="pp-related-card pp-reveal pp-reveal-delay-3">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.3)" stroke-width="0.8"/>
+            <text x="24" y="26" text-anchor="middle" fill="#a855f7" font-size="6.5" font-weight="700" font-family="system-ui">DataCtr</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">AX DataCenter</p>
+        <p class="pp-related-card-desc">エンタープライズAI。320 TFLOPS FP32。</p>
+        <p class="pp-related-card-price">お問い合わせ</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOTTOM NAV ════════════════════════════════════════ -->
+<nav class="bottom-nav" aria-label="ページ内ナビゲーション">
+  <div class="bottom-nav-inner">
+    <a href="#hero" class="bottom-nav-item active" data-section="hero">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M3 9.5L11 3l8 6.5V19a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      ホーム
+    </a>
+    <a href="#specs" class="bottom-nav-item" data-section="specs">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7 8h8M7 12h8M7 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      仕様
+    </a>
+    <a href="#features" class="bottom-nav-item" data-section="features">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <polygon points="11,2 13.5,8.5 20.5,9 15.5,13.5 17.2,20.5 11,17 4.8,20.5 6.5,13.5 1.5,9 8.5,8.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      特徴
+    </a>
+    <a href="#buy" class="bottom-nav-item" data-section="buy">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-3-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="3" y1="6" x2="19" y2="6" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M14 10a2 2 0 0 1-4 0" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      購入
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer style="background:var(--bg-1); border-top:1px solid var(--border); padding:48px 0 32px;">
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; margin-bottom:32px;">
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">製品</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../x1-air/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Air</a>
+          <a href="../x1-pro/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Pro</a>
+          <a href="../ax-gpu-g1/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">AX GPU G1</a>
+          <a href="../ax-gpu-g1-pro/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">AX GPU G1 Pro</a>
+          <a href="../ax-datacenter/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">AX DataCenter</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">企業情報</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../../about/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">会社情報</a>
+          <a href="../../technology/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">テクノロジー</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">法的情報</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../../legal/privacy" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">プライバシーポリシー</a>
+          <a href="../../legal/terms" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">利用規約</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--text-tertiary);">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script>
+  const ppObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.pp-reveal, .pp-reveal-scale').forEach(el => ppObserver.observe(el));
+  const ppPerfObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.pp-perf-fill').forEach(bar => { bar.style.width = bar.dataset.width + '%'; });
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.pp-perf-chart').forEach(el => ppPerfObserver.observe(el));
+</script>
+</body>
+</html>
