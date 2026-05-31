@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>会社情報 — AXIOM Silicon</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Hero ── */
+    .about-hero {
+      min-height: 80svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-height) + 80px) 24px 80px;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(110,64,201,0.2) 0%, transparent 70%), var(--bg);
+      position: relative;
+    }
+    .about-hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 20px;
+    }
+    .about-hero-title {
+      font-size: var(--type-hero);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .about-hero-title span {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero-body {
+      font-size: clamp(17px, 2.2vw, 22px);
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.75;
+    }
+
+    /* ── Info strip ── */
+    .about-info {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .about-info-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+    @media (max-width: 768px) { .about-info-inner { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .about-info-inner { grid-template-columns: 1fr; } }
+    .about-info-item {}
+    .about-info-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+    }
+    .about-info-value {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    /* ── Values ── */
+    .about-values {
+      padding: 120px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-values-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .about-values-header h2 {
+      font-size: var(--type-title);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .about-values-header p {
+      color: var(--text-secondary);
+      font-size: 18px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } }
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .vi-1 { background: rgba(110,64,201,0.15); color: var(--accent-2); }
+    .vi-2 { background: rgba(6,182,212,0.15); color: var(--accent-cyan-2); }
+    .vi-3 { background: rgba(245,158,11,0.15); color: var(--gold-2); }
+    .value-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+    }
+    .value-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .value-desc {
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── Mission block ── */
+    .about-mission {
+      background: linear-gradient(135deg, rgba(110,64,201,0.15) 0%, rgba(6,182,212,0.1) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 120px 24px;
+      text-align: center;
+    }
+    .about-mission blockquote {
+      font-size: clamp(28px, 4.5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+    .about-mission blockquote span {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-mission p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── Links ── */
+    .about-links {
+      padding: 120px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .about-links h2 {
+      font-size: var(--type-title);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .about-link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 600px) { .about-link-grid { grid-template-columns: 1fr; } }
+    .about-link-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s var(--ease-out);
+    }
+    .about-link-card:hover {
+      border-color: var(--accent-2);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+    }
+    .about-link-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(110,64,201,0.15);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-2);
+      flex-shrink: 0;
+    }
+    .about-link-text {}
+    .about-link-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .about-link-desc { font-size: 14px; color: var(--text-secondary); }
+    .about-link-arrow {
+      margin-left: auto;
+      color: var(--text-tertiary);
+      transition: transform 0.25s var(--ease-out);
+    }
+    .about-link-card:hover .about-link-arrow { transform: translateX(4px); color: var(--accent-2); }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">AXIOM</a>
+      <div class="nav-links">
+        <a href="../consumer/">コンシューマー</a>
+        <a href="../enterprise/">エンタープライズ</a>
+        <a href="../memory/">メモリ</a>
+        <a href="../about/" class="active">会社情報</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle btn-icon" aria-label="テーマ切り替え" id="themeToggle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <p class="about-hero-eyebrow">AXIOM Silicon について</p>
+    <h1 class="about-hero-title"><span>シリコンの可能性を、<br>再定義する。</span></h1>
+    <p class="about-hero-body">2021年の創業以来、AXIOM Silicon は半導体設計の限界に挑み続けてきました。東京から世界へ——日本発のチップイノベーションで、次世代コンピューティングの未来を切り拓きます。</p>
+  </section>
+
+  <!-- Company info -->
+  <div class="about-info">
+    <div class="about-info-inner">
+      <div class="about-info-item">
+        <div class="about-info-label">設立</div>
+        <div class="about-info-value">2021年</div>
+      </div>
+      <div class="about-info-item">
+        <div class="about-info-label">所在地</div>
+        <div class="about-info-value">東京都渋谷区</div>
+      </div>
+      <div class="about-info-item">
+        <div class="about-info-label">代表</div>
+        <div class="about-info-value">山本 海斗</div>
+      </div>
+      <div class="about-info-item">
+        <div class="about-info-label">事業内容</div>
+        <div class="about-info-value">半導体設計・開発</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission -->
+  <section class="about-mission">
+    <blockquote>「テクノロジーとは、<span>人が夢見る未来</span>を形にする道具である。」</blockquote>
+    <p>AXIOM Silicon は、より速く、より効率的で、よりアクセスしやすい半導体技術によって、テクノロジーの民主化を推進します。私たちの設計するシリコンは、AI・クラウド・エッジコンピューティングのあらゆる場面で世界を動かしています。</p>
+  </section>
+
+  <!-- Values -->
+  <section class="about-values">
+    <div class="about-values-header">
+      <h2>私たちが大切にする3つの柱</h2>
+      <p>AXIOM Silicon を支える、揺るぎない価値観。</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon vi-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="value-num">01</div>
+        <div class="value-title">革新</div>
+        <p class="value-desc">現状維持は後退と同義。私たちは常に業界の一歩先を走り、2nm プロセスや UltraFabric など誰も実現していなかった技術を世に送り出してきました。イノベーションとは、不可能を可能に変えることです。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon vi-2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="value-num">02</div>
+        <div class="value-title">品質</div>
+        <p class="value-desc">一切の妥協を許さない設計哲学。シリコンから始まり、パッケージング、ファームウェア、SDK まで——すべてのレイヤーで最高水準の品質を追求します。AXIOM の製品は、信頼の代名詞です。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon vi-3">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div class="value-num">03</div>
+        <div class="value-title">開放性</div>
+        <p class="value-desc">閉じたエコシステムではなく、オープンな標準と協力関係を重視します。世界中の開発者、研究者、パートナー企業が AXIOM のプラットフォームで革新を起こせるよう、積極的にエコシステムを育てています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section class="about-links">
+    <h2>詳しく知る</h2>
+    <div class="about-link-grid">
+      <a href="history/" class="about-link-card">
+        <div class="about-link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="about-link-text">
+          <div class="about-link-title">沿革</div>
+          <div class="about-link-desc">2021年から現在までの歩み</div>
+        </div>
+        <div class="about-link-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+      <a href="leadership/" class="about-link-card">
+        <div class="about-link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="about-link-text">
+          <div class="about-link-title">リーダーシップ</div>
+          <div class="about-link-desc">経営チームの紹介</div>
+        </div>
+        <div class="about-link-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+      <a href="../newsroom/" class="about-link-card">
+        <div class="about-link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8L4 6v14a2 2 0 002 2z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+        </div>
+        <div class="about-link-text">
+          <div class="about-link-title">ニュースルーム</div>
+          <div class="about-link-desc">最新プレスリリース・ニュース</div>
+        </div>
+        <div class="about-link-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+      <a href="../developers/" class="about-link-card">
+        <div class="about-link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="about-link-text">
+          <div class="about-link-title">開発者向け</div>
+          <div class="about-link-desc">SDK・ドキュメント・サンプルコード</div>
+        </div>
+        <div class="about-link-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">AXIOM Silicon</div>
+      <p class="footer-copy">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="モバイルナビゲーション">
+    <div class="bottom-nav-inner">
+      <a href="../index.html" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>ホーム</span>
+      </a>
+      <a href="../consumer/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        <span>製品</span>
+      </a>
+      <a href="../technology/" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+        <span>技術</span>
+      </a>
+      <a href="../about/" class="bottom-nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        <span>会社</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

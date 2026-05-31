@@ -3,303 +3,768 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- iPhone ノッチ対応 -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>AXIOM Enterprise — X1 Ultra &amp; AX DataCenter</title>
   <meta name="description" content="AXIOM X1 Ultra と AX DataCenter。ワークステーション・AIインフラ・データセンター向けの最高峰シリコン。" />
+  <meta property="og:title" content="AXIOM Enterprise — X1 Ultra &amp; AX DataCenter" />
+  <meta property="og:description" content="企業・研究機関・データセンター向けの次世代シリコンアーキテクチャ。" />
   <meta name="theme-color" content="#050d1a" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/enterprise.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2306b6d4'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-weight='900' font-family='system-ui'>AX</text></svg>" />
   <style>
+    /* iPhone Safe Area 対応 */
     .nav-inner { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
-    @media (pointer: coarse) { .nav-btn, .btn-primary, .btn-secondary, .specs-tab, .roi-field input { min-height: 44px; } }
+    .footer .container { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+    /* iPhone向けタップターゲット最適化 */
+    @media (pointer: coarse) {
+      .nav-btn, .btn-primary, .btn-secondary { min-height: 44px; }
+      .specs-tab, .price-tier-btn { min-height: 44px; }
+      .roi-field input { min-height: 44px; }
+    }
   </style>
 </head>
 <body>
-<!-- 🔬 イースターエッグ #1: ページソースを見てくれてありがとう。AXIOM の名前の由来:「Axiomatic」— 自明の真理として。 -->
+<!-- イースターエッグ #1: ページソースを見てくれてありがとう。
+     AXIOM の名前の由来:「Axiomatic」— 自明の真理として。
+     シリコンは嘘をつかない。数字が全て。 -->
 
+<!-- Cursor Glow -->
 <div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- Scroll Progress -->
 <div class="scroll-progress" role="progressbar" aria-label="読み込み進捗"></div>
 
+<!-- Mobile Menu -->
 <nav class="mobile-menu" role="navigation" aria-label="モバイルナビゲーション">
   <button class="mobile-menu-close" aria-label="メニューを閉じる">
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
   </button>
   <a href="#enterprise-products">製品</a>
   <a href="#roi">ROI計算</a>
   <a href="#enterprise-specs">仕様</a>
+  <a href="#enterprise-benchmark">性能比較</a>
   <a href="../consumer/">コンシューマー</a>
   <a href="../">AXIOM Hub</a>
 </nav>
 
+<!-- Navigation -->
 <header class="nav" role="banner">
   <div class="nav-inner">
     <a href="../" class="nav-logo" aria-label="AXIOM ホーム">
       <div class="nav-logo-mark" aria-hidden="true">AX</div>
       <span>AXIOM</span>
     </a>
+
     <nav class="nav-links" aria-label="主要ナビゲーション">
       <a href="#enterprise-products">製品</a>
       <a href="#roi">ROI計算</a>
       <a href="#enterprise-specs">仕様</a>
+      <a href="#enterprise-benchmark">性能比較</a>
     </nav>
+
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="ダーク/ライトモード切替"></button>
-      <a href="../consumer/" class="nav-btn">コンシューマー</a>
       <a href="#enterprise-products" class="nav-btn nav-btn-primary" style="background: linear-gradient(135deg, #06b6d4, #0ea5e9, #6e40c9);">お問い合わせ</a>
+      <a href="../" class="nav-consumer-exit" aria-label="一般のお客様向けサイトへ" title="一般向けサイト">一般向けサイト &#8599;</a>
       <button class="nav-mobile-toggle" aria-label="ナビゲーションメニューを開く">
-        <svg width="18" height="14" viewBox="0 0 18 14" fill="currentColor" aria-hidden="true"><rect y="0" width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/></svg>
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="currentColor" aria-hidden="true">
+          <rect y="0" width="18" height="2" rx="1"/>
+          <rect y="6" width="18" height="2" rx="1"/>
+          <rect y="12" width="18" height="2" rx="1"/>
+        </svg>
       </button>
     </div>
   </div>
 </header>
 
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
 <section class="hero enterprise-hero" id="home" aria-labelledby="enterprise-hero-headline">
   <div class="hero-bg" aria-hidden="true">
-    <div class="hero-bg-orb orb-1"></div><div class="hero-bg-orb orb-2"></div><div class="hero-bg-orb orb-3"></div>
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+    <div class="hero-bg-orb orb-3"></div>
     <div class="hero-grid-overlay"></div>
   </div>
+
   <div class="hero-content">
-    <div class="hero-eyebrow reveal"><span class="hero-eyebrow-dot" style="background: var(--accent-cyan-2);"></span>エンタープライズグレードシリコン</div>
-    <h1 class="hero-headline reveal reveal-delay-1" id="enterprise-hero-headline">
-      <em class="gradient-text" style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">データセンターを</em><br/>再定義する。
-    </h1>
-    <p class="hero-subline reveal reveal-delay-2">X1 Ultra と AX DataCenter。ワークステーションからエクサスケールAIインフラまで、一つのアーキテクチャが全てを変える。</p>
-    <div class="hero-ctas reveal reveal-delay-3">
-      <a href="#enterprise-products" class="btn-primary" style="background: linear-gradient(135deg, #06b6d4, #0ea5e9, #6e40c9);">製品を見る &#8594;</a>
-      <a href="#roi" class="btn-secondary">ROIを計算する &#8595;</a>
+    <div class="hero-eyebrow reveal">
+      <span class="hero-eyebrow-dot" style="background: var(--accent-cyan-2);"></span>
+      エンタープライズグレードシリコン
     </div>
+    <h1 class="hero-headline reveal reveal-delay-1" id="enterprise-hero-headline">
+      <em class="gradient-text" style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">データセンターを</em><br/>
+      再定義する。
+    </h1>
+    <p class="hero-subline reveal reveal-delay-2">
+      X1 Ultra と AX DataCenter。ワークステーションからエクサスケールAIインフラまで、
+      一つのアーキテクチャが全てを変える。
+    </p>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="#enterprise-products" class="btn-primary" style="background: linear-gradient(135deg, #06b6d4, #0ea5e9, #6e40c9); box-shadow: 0 4px 24px rgba(6,182,212,0.35);">
+        製品を見る
+        <span aria-hidden="true">&#8594;</span>
+      </a>
+      <a href="#roi" class="btn-secondary">
+        ROIを計算する
+        <span aria-hidden="true">&#8595;</span>
+      </a>
+    </div>
+
+    <!-- Chip Visual -->
     <div class="hero-chip-visual reveal-scale reveal-delay-4" aria-hidden="true">
-      <div class="hero-chip-ring"></div><div class="hero-chip-ring"></div><div class="hero-chip-ring"></div>
+      <div class="hero-chip-ring"></div>
+      <div class="hero-chip-ring"></div>
+      <div class="hero-chip-ring"></div>
       <div class="chip-svg-wrapper">
-        <svg class="chip-circuit" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="chip-circuit" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AXIOM X1 Ultra チップ図">
           <defs>
-            <linearGradient id="coreGradE" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="50%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#6e40c9"/></linearGradient>
-            <linearGradient id="traceGradE" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/><stop offset="50%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/></linearGradient>
-            <filter id="glowE"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="coreGradE" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#06b6d4"/>
+              <stop offset="50%" stop-color="#0ea5e9"/>
+              <stop offset="100%" stop-color="#6e40c9"/>
+            </linearGradient>
+            <linearGradient id="traceGradE" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#22d3ee"/>
+              <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="glowE">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
           </defs>
           <rect x="20" y="20" width="200" height="200" rx="16" class="chip-body" stroke="rgba(6,182,212,0.4)"/>
+          <g opacity="0.25">
+            <line x1="60" y1="20" x2="60" y2="220" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="100" y1="20" x2="100" y2="220" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="140" y1="20" x2="140" y2="220" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="180" y1="20" x2="180" y2="220" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="20" y1="60" x2="220" y2="60" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="20" y1="100" x2="220" y2="100" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="20" y1="140" x2="220" y2="140" stroke="#06b6d4" stroke-width="0.5"/>
+            <line x1="20" y1="180" x2="220" y2="180" stroke="#06b6d4" stroke-width="0.5"/>
+          </g>
+          <!-- Two dies merged (Ultra = Max + Max) -->
           <rect x="55" y="75" width="60" height="90" rx="6" fill="url(#coreGradE)" filter="url(#glowE)" opacity="0.8" class="chip-core"/>
-          <rect x="125" y="75" width="60" height="90" rx="6" fill="url(#coreGradE)" filter="url(#glowE)" opacity="0.8" class="chip-core" style="animation-delay:-1s;"/>
+          <rect x="125" y="75" width="60" height="90" rx="6" fill="url(#coreGradE)" filter="url(#glowE)" opacity="0.8" class="chip-core" style="animation-delay: -1s;"/>
+          <!-- UltraFabric bridge -->
           <rect x="113" y="95" width="14" height="50" rx="2" fill="rgba(6,182,212,0.6)"/>
           <path class="chip-trace" stroke="url(#traceGradE)" d="M20 120 H55"/>
           <path class="chip-trace" stroke="url(#traceGradE)" d="M185 120 H220" style="animation-delay:-1s"/>
-          <text x="85" y="123" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="6" font-weight="700" font-family="system-ui">MAX</text>
-          <text x="155" y="123" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="6" font-weight="700" font-family="system-ui">MAX</text>
-          <text x="120" y="175" text-anchor="middle" fill="rgba(6,182,212,0.7)" font-size="5" font-family="system-ui">UltraFabric 4TB/s</text>
+          <path class="chip-trace" stroke="url(#traceGradE)" d="M120 20 V75"/>
+          <path class="chip-trace" stroke="url(#traceGradE)" d="M120 165 V220" style="animation-delay:-0.5s"/>
+          <text x="85" y="123" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="6" font-weight="700" font-family="system-ui" letter-spacing="0.5">MAX</text>
+          <text x="155" y="123" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="6" font-weight="700" font-family="system-ui" letter-spacing="0.5">MAX</text>
+          <text x="120" y="175" text-anchor="middle" fill="rgba(6,182,212,0.7)" font-size="5" font-family="system-ui" letter-spacing="0.5">UltraFabric 4TB/s</text>
         </svg>
       </div>
     </div>
   </div>
 </section>
 
-<section class="metrics" aria-label="主要指標">
+<!-- ═══════════════════════════════════════════════════════
+     METRICS
+═══════════════════════════════════════════════════════ -->
+<section class="metrics" aria-label="X1 Ultra &amp; AX DataCenter 主要指標">
   <div class="container">
     <div class="metrics-inner">
-      <div class="metric-item reveal"><div class="metric-value" style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><span class="counter" data-target="48" data-suffix="" data-decimals="0">0</span>B</div><div class="metric-label">トランジスタ数</div><div class="metric-sublabel">X1 Ultra（2ダイ統合）</div></div>
-      <div class="metric-item reveal reveal-delay-1"><div class="metric-value" style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><span class="counter" data-target="320" data-suffix="+" data-decimals="0">0+</span></div><div class="metric-label">TFLOPS (FP32)</div><div class="metric-sublabel">AX DataCenter ピーク性能</div></div>
-      <div class="metric-item reveal reveal-delay-2"><div class="metric-value" style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><span class="counter" data-target="4" data-suffix="TB/s" data-decimals="0">0TB/s</span></div><div class="metric-label">ダイ間帯域幅</div><div class="metric-sublabel">UltraFabric インターコネクト</div></div>
-      <div class="metric-item reveal reveal-delay-3"><div class="metric-value" style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><span class="counter" data-target="83" data-suffix="%" data-decimals="0">0%</span></div><div class="metric-label">消費電力削減</div><div class="metric-sublabel">競合比</div></div>
+      <div class="metric-item reveal">
+        <div class="metric-value" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          <span class="counter" data-target="48" data-suffix="" data-decimals="0">0</span>B
+        </div>
+        <div class="metric-label">トランジスタ数</div>
+        <div class="metric-sublabel">X1 Ultra（2ダイ統合）</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-1">
+        <div class="metric-value" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          <span class="counter" data-target="320" data-suffix="+" data-decimals="0">0+</span>
+        </div>
+        <div class="metric-label">TFLOPS (FP32)</div>
+        <div class="metric-sublabel">AX DataCenter ピーク性能</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-2">
+        <div class="metric-value" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          <span class="counter" data-target="4" data-suffix="TB/s" data-decimals="0">0TB/s</span>
+        </div>
+        <div class="metric-label">ダイ間帯域幅</div>
+        <div class="metric-sublabel">UltraFabric インターコネクト</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-3">
+        <div class="metric-value" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          <span class="counter" data-target="83" data-suffix="%" data-decimals="0">0%</span>
+        </div>
+        <div class="metric-label">消費電力削減</div>
+        <div class="metric-sublabel">競合比（同等ワークロード）</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="products" id="enterprise-products" aria-labelledby="enterprise-products-title" style="padding: 120px 0;">
+<!-- ═══════════════════════════════════════════════════════
+     PRODUCTS
+═══════════════════════════════════════════════════════ -->
+<section class="products" id="enterprise-products" aria-labelledby="enterprise-products-title" style="padding: 120px 0; background: var(--bg);">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow reveal" style="color: var(--accent-cyan-2);">エンタープライズ製品</span>
-      <h2 class="section-title reveal reveal-delay-1" id="enterprise-products-title">スケールの限界を<br/><em style="background: linear-gradient(135deg,#06b6d4,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">再定義する。</em></h2>
+      <span class="section-eyebrow reveal" style="color: var(--accent-cyan-2);">エンタープライズ製品ラインナップ</span>
+      <h2 class="section-title reveal reveal-delay-1" id="enterprise-products-title">
+        スケールの限界を<br/>
+        <em style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal;">再定義する。</em>
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        ワークステーションからデータセンターまで、AXIOM エンタープライズシリコンが新しい基準を作る。
+      </p>
     </div>
+
     <div class="products-grid">
-      <article class="product-card product-card-featured reveal" tabindex="0" aria-label="AXIOM X1 Ultra">
+
+      <!-- X1 Ultra — Featured -->
+      <article class="product-card product-card-featured reveal" tabindex="0" aria-label="AXIOM X1 Ultra チップ">
         <div class="product-card-inner">
           <span class="product-badge badge-ultra">Ultra</span>
-          <h3 class="product-name">X1 <em style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">Ultra</em></h3>
-          <p class="product-tagline">2つの X1 Max ダイを UltraFabric で融合。4TB/s のダイ間帯域幅。ワークステーションに搭載可能な史上最強のチップ。</p>
-          <div class="perf-bars">
-            <div class="perf-bar-row"><span class="perf-bar-label">CPU</span><div class="perf-bar-track"><div class="perf-bar-fill" data-width="98" style="background: linear-gradient(90deg,#06b6d4,#6e40c9);"></div></div><span class="perf-bar-val">98%</span></div>
-            <div class="perf-bar-row"><span class="perf-bar-label">GPU</span><div class="perf-bar-track"><div class="perf-bar-fill" data-width="96" style="background: linear-gradient(90deg,#06b6d4,#a855f7);"></div></div><span class="perf-bar-val">96%</span></div>
+          <span class="product-icon" aria-hidden="true">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.6)" stroke-width="1.5"/><rect x="10" y="10" width="12" height="12" rx="2" fill="rgba(6,182,212,0.4)"/></svg>
+</span>
+          <h3 class="product-name">X1 <em style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal;">Ultra</em></h3>
+          <p class="product-tagline">
+            2つの X1 Max ダイを UltraFabric で融合。4TB/s のダイ間帯域幅。
+            ワークステーションに搭載可能な史上最強のチップ。
+          </p>
+
+          <div class="perf-bars" aria-label="X1 Ultra 性能指標">
+            <div class="perf-bar-row">
+              <span class="perf-bar-label">CPU</span>
+              <div class="perf-bar-track"><div class="perf-bar-fill" data-width="98" style="background: linear-gradient(90deg, #06b6d4, #6e40c9);"></div></div>
+              <span class="perf-bar-val">98%</span>
+            </div>
+            <div class="perf-bar-row">
+              <span class="perf-bar-label">GPU</span>
+              <div class="perf-bar-track"><div class="perf-bar-fill" data-width="96" style="background: linear-gradient(90deg, #06b6d4, #a855f7);"></div></div>
+              <span class="perf-bar-val">96%</span>
+            </div>
+            <div class="perf-bar-row">
+              <span class="perf-bar-label">Neural</span>
+              <div class="perf-bar-track"><div class="perf-bar-fill" data-width="100" style="background: linear-gradient(90deg, #22d3ee, #06b6d4);"></div></div>
+              <span class="perf-bar-val">100%</span>
+            </div>
           </div>
-          <div class="product-specs">
-            <div class="product-spec"><span class="spec-key">CPU コア数</span><span class="spec-val">40コア (32P + 8E)</span></div>
-            <div class="product-spec"><span class="spec-key">GPU コア数</span><span class="spec-val">128コア</span></div>
-            <div class="product-spec"><span class="spec-key">メモリ帯域幅</span><span class="spec-val">1.6 TB/s</span></div>
-            <div class="product-spec"><span class="spec-key">TDP</span><span class="spec-val">60W</span></div>
+
+          <div class="product-specs" aria-label="X1 Ultra 仕様">
+            <div class="product-spec">
+              <span class="spec-key">CPU コア数</span>
+              <span class="spec-val">40コア (32P + 8E)</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">GPU コア数</span>
+              <span class="spec-val">128コア</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">Neural Engine</span>
+              <span class="spec-val">64コア · 76 TOPS</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">メモリ帯域幅</span>
+              <span class="spec-val">1.6 TB/s</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">TDP</span>
+              <span class="spec-val">60W（ワークステーション）</span>
+            </div>
           </div>
+
           <div class="product-price">&#165;448,000〜 <span>/ ワークステーション</span></div>
-          <a href="#" class="product-cta">詳細を見る &#8594;</a>
+          <a href="#" class="product-cta" aria-label="X1 Ultra の詳細を見る">詳細を見る <span aria-hidden="true">&#8594;</span></a>
         </div>
+        <span class="product-visual" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/><rect x="14" y="14" width="20" height="20" rx="2" fill="currentColor" opacity="0.15"/><rect x="18" y="18" width="12" height="12" rx="1" fill="currentColor" opacity="0.35"/><line x1="8" y1="17" x2="2" y2="17" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="24" x2="2" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="31" x2="2" y2="31" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="17" x2="46" y2="17" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="24" x2="46" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="31" x2="46" y2="31" stroke="currentColor" stroke-width="1.5"/><line x1="17" y1="8" x2="17" y2="2" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="8" x2="24" y2="2" stroke="currentColor" stroke-width="1.5"/><line x1="31" y1="8" x2="31" y2="2" stroke="currentColor" stroke-width="1.5"/><line x1="17" y1="40" x2="17" y2="46" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="40" x2="24" y2="46" stroke="currentColor" stroke-width="1.5"/><line x1="31" y1="40" x2="31" y2="46" stroke="currentColor" stroke-width="1.5"/></svg></span>
       </article>
-      <article class="product-card reveal reveal-delay-1" tabindex="0" aria-label="AXIOM AX DataCenter">
+
+      <!-- AX DataCenter -->
+      <article class="product-card reveal reveal-delay-1" tabindex="0" aria-label="AXIOM AX DataCenter チップ">
         <div class="product-card-inner">
           <span class="product-badge badge-ultra">DC</span>
-          <h3 class="product-name" style="font-size:26px;">AX <em style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">DataCenter</em></h3>
-          <p class="product-tagline">エクサスケール AI 推論。1枚あたり 320 TFLOPS。LLM サービングと科学計算のために設計。</p>
-          <div class="product-specs">
-            <div class="product-spec"><span class="spec-key">GPU コアクラスター</span><span class="spec-val">256コア</span></div>
-            <div class="product-spec"><span class="spec-key">HBM4 容量</span><span class="spec-val">192 GB</span></div>
-            <div class="product-spec"><span class="spec-key">メモリ帯域幅</span><span class="spec-val">6.4 TB/s</span></div>
-            <div class="product-spec"><span class="spec-key">TDP</span><span class="spec-val">350W / カード</span></div>
+          <span class="product-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="3" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/><rect x="7" y="7" width="18" height="18" rx="2" fill="currentColor" opacity="0.2"/><rect x="11" y="11" width="10" height="10" rx="1" fill="currentColor" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg></span>
+          <h3 class="product-name" style="font-size: 26px;">AX <em style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal;">DataCenter</em></h3>
+          <p class="product-tagline">
+            エクサスケール AI 推論。1枚あたり 320 TFLOPS。
+            LLM サービングと科学計算のために設計。
+          </p>
+
+          <div class="product-specs" aria-label="AX DataCenter 仕様">
+            <div class="product-spec">
+              <span class="spec-key">GPU コアクラスター</span>
+              <span class="spec-val">256コア</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">HBM4 容量</span>
+              <span class="spec-val">192 GB</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">メモリ帯域幅</span>
+              <span class="spec-val">6.4 TB/s</span>
+            </div>
+            <div class="product-spec">
+              <span class="spec-key">TDP</span>
+              <span class="spec-val">350W / カード</span>
+            </div>
           </div>
+
           <div class="product-price">価格はお問い合わせください</div>
-          <a href="#" class="product-cta">専門家に相談 &#8594;</a>
+          <a href="#" class="product-cta">専門家に相談 <span aria-hidden="true">&#8594;</span></a>
         </div>
+        <span class="product-visual" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/><rect x="10" y="10" width="28" height="28" rx="3" fill="currentColor" opacity="0.1"/><rect x="16" y="16" width="16" height="16" rx="2" fill="currentColor" opacity="0.25"/><rect x="20" y="20" width="8" height="8" rx="1" fill="currentColor" opacity="0.5"/><line x1="4" y1="16" x2="0" y2="16" stroke="currentColor" stroke-width="1.5"/><line x1="4" y1="24" x2="0" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="4" y1="32" x2="0" y2="32" stroke="currentColor" stroke-width="1.5"/><line x1="44" y1="16" x2="48" y2="16" stroke="currentColor" stroke-width="1.5"/><line x1="44" y1="24" x2="48" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="44" y1="32" x2="48" y2="32" stroke="currentColor" stroke-width="1.5"/></svg></span>
       </article>
+
     </div>
   </div>
 </section>
 
-<!-- 🔬 イースターエッグ #2: Konami Code を試してみて。↑↑↓↓←→←→BA -->
+<!-- ═══════════════════════════════════════════════════════
+     ROI CALCULATOR
+═══════════════════════════════════════════════════════ -->
+<!-- 🔬 イースターエッグ #2: Konami Code を試してみて。
+     ↑↑↓↓←→←→BA — 隠しモードが起動します。 -->
 <section class="roi-section" id="roi" aria-labelledby="roi-title">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow reveal" style="color: var(--accent-cyan-2);">費用対効果の試算</span>
-      <h2 class="section-title reveal reveal-delay-1" id="roi-title">消費電力を<br/><em style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">削減する。利益に変える。</em></h2>
+      <h2 class="section-title reveal reveal-delay-1" id="roi-title">
+        消費電力を<br/>
+        <em style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal;">削減する。利益に変える。</em>
+      </h2>
+      <p class="section-desc reveal reveal-delay-2">
+        AXIOM X1 Ultra ワークステーションへの切り替えで、
+        年間どれだけの電力コストを節約できるか試算してみましょう。
+      </p>
     </div>
+
     <div class="roi-card reveal">
       <form class="roi-form" onsubmit="return false;" aria-label="ROI計算フォーム">
         <div class="roi-field">
           <label for="roi-units">ワークステーション台数</label>
-          <input type="number" id="roi-units" value="10" min="1" max="10000" inputmode="numeric" />
+          <input type="number" id="roi-units" name="roi-units"
+                 value="10" min="1" max="10000"
+                 inputmode="numeric"
+                 aria-describedby="roi-units-hint" />
+          <span id="roi-units-hint" style="font-size:12px; color: var(--text-tertiary);">1〜10,000台</span>
         </div>
         <div class="roi-field">
           <label for="roi-hours">1日の稼働時間（時間）</label>
-          <input type="number" id="roi-hours" value="8" min="1" max="24" step="0.5" inputmode="decimal" />
+          <input type="number" id="roi-hours" name="roi-hours"
+                 value="8" min="1" max="24" step="0.5"
+                 inputmode="decimal"
+                 aria-describedby="roi-hours-hint" />
+          <span id="roi-hours-hint" style="font-size:12px; color: var(--text-tertiary);">1〜24時間</span>
         </div>
         <div class="roi-field">
           <label for="roi-days">年間稼働日数</label>
-          <input type="number" id="roi-days" value="250" min="1" max="365" inputmode="numeric" />
+          <input type="number" id="roi-days" name="roi-days"
+                 value="250" min="1" max="365"
+                 inputmode="numeric"
+                 aria-describedby="roi-days-hint" />
+          <span id="roi-days-hint" style="font-size:12px; color: var(--text-tertiary);">1〜365日</span>
         </div>
       </form>
+
       <div class="roi-result-wrap" role="region" aria-label="計算結果">
         <p class="roi-result-label">年間電力コスト削減額（推定）</p>
-        <span class="roi-result" id="roi-result" aria-live="polite" aria-atomic="true">&#165;0</span>
+        <span class="roi-result" id="roi-result"
+              aria-live="polite" aria-atomic="true">&#165;0</span>
         <p class="roi-result-sub">競合比 350W TDP 対 AXIOM X1 Ultra 60W TDP</p>
       </div>
+
       <details class="roi-basis">
         <summary class="roi-basis-summary">計算根拠を表示</summary>
         <div class="roi-basis-body">
-          <p>&#x2022; 競合ベースライン TDP: 350W（PLACEHOLDER）</p>
-          <p>&#x2022; AXIOM X1 Ultra TDP: 60W（PLACEHOLDER）</p>
+          <p>&#x2022; 競合ベースライン TDP: 350W（PLACEHOLDER — 確認が必要）</p>
+          <p>&#x2022; AXIOM X1 Ultra TDP: 60W（PLACEHOLDER — 確認が必要）</p>
           <p>&#x2022; 電力単価: &#165;31/kWh（2026年日本商業電力平均）</p>
           <p>&#x2022; 計算式: (350W - 60W) ÷ 1000 × 時間 × 日数 × 台数 × &#165;31</p>
+          <p>&#x2022; 例: 10台 × 8時間 × 250日 = <strong>&#165;179,800</strong></p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════
+     CASE STUDIES
+═══════════════════════════════════════════════════════ -->
 <section class="case-section" aria-labelledby="case-title">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow reveal" style="color: var(--accent-cyan-2);">導入実績</span>
-      <h2 class="section-title reveal reveal-delay-1" id="case-title">世界最前線の<br/><em style="background: linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">現場で証明済み。</em></h2>
+      <h2 class="section-title reveal reveal-delay-1" id="case-title">
+        世界最前線の<br/>
+        <em style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal;">現場で証明済み。</em>
+      </h2>
     </div>
+
     <div class="case-grid">
-      <div class="case-card reveal"><p class="case-industry">ゲノム研究</p><h3 class="case-company">NovaBio Labs</h3><p class="case-result">3.2×</p><p class="case-result-desc">ゲノム解析パイプラインの高速化</p><p class="case-detail">X1 Ultra を搭載した 24 台のワークステーションで、電力コストは 78% 削減。</p></div>
-      <div class="case-card reveal reveal-delay-1"><p class="case-industry">映像制作</p><h3 class="case-company">Futura Studios</h3><p class="case-result">8K</p><p class="case-result-desc">リアルタイム ProRes RAW 編集を初めて実現</p><p class="case-detail">ポストプロダクションの時間を 60% 短縮。</p></div>
-      <div class="case-card reveal reveal-delay-2"><p class="case-industry">金融モデリング</p><h3 class="case-company">ArcFinance</h3><p class="case-result">&#165;120M</p><p class="case-result-desc">年間インフラコストの削減</p><p class="case-detail">モンテカルロシミュレーションが 4.7 倍高速化。</p></div>
+      <div class="case-card reveal">
+        <p class="case-industry">ゲノム研究</p>
+        <h3 class="case-company">NovaBio Labs</h3>
+        <p class="case-result">3.2×</p>
+        <p class="case-result-desc">ゲノム解析パイプラインの高速化を達成</p>
+        <p class="case-detail">
+          X1 Ultra を搭載した 24 台のワークステーションで、以前の GPU クラスタと同等の処理能力を実現。
+          電力コストは 78% 削減。
+        </p>
+      </div>
+
+      <div class="case-card reveal reveal-delay-1">
+        <p class="case-industry">映像制作</p>
+        <h3 class="case-company">Futura Studios</h3>
+        <p class="case-result">8K</p>
+        <p class="case-result-desc">リアルタイム ProRes RAW 編集を初めて実現</p>
+        <p class="case-detail">
+          AX DataCenter を使った AI ベースのカラーグレーディングにより、
+          ポストプロダクションの時間を 60% 短縮。納品速度が 2 倍に。
+        </p>
+      </div>
+
+      <div class="case-card reveal reveal-delay-2">
+        <p class="case-industry">金融モデリング</p>
+        <h3 class="case-company">ArcFinance</h3>
+        <p class="case-result">&#165;120M</p>
+        <p class="case-result-desc">年間インフラコストの削減を達成</p>
+        <p class="case-detail">
+          AX DataCenter への移行でモンテカルロシミュレーションが 4.7 倍高速化。
+          データセンターの床面積は 40% 削減。
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════
+     BENCHMARK
+═══════════════════════════════════════════════════════ -->
+<section class="benchmark" id="enterprise-benchmark" aria-labelledby="enterprise-bench-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow reveal" style="color: var(--accent-cyan-2);">独立性能テスト</span>
+      <h2 class="section-title reveal reveal-delay-1" id="enterprise-bench-title">
+        数字が<br/>
+        <em style="background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal;">全てを語る。</em>
+      </h2>
+    </div>
+
+    <div class="benchmark-chart" aria-label="AI推論ベンチマーク比較">
+      <div class="bench-legend">
+        <div class="bench-legend-item">
+          <div class="bench-legend-dot" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);"></div>
+          <span>AXIOM AX DataCenter</span>
+        </div>
+        <div class="bench-legend-item">
+          <div class="bench-legend-dot" style="background: var(--surface);"></div>
+          <span>競合製品</span>
+        </div>
+      </div>
+
+      <div class="bench-row highlighted">
+        <div class="bench-company">AXIOM AX-DC</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="100" style="background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
+          </div>
+        </div>
+        <div class="bench-score" style="color: var(--accent-cyan-2);">320 TF</div>
+        <div class="bench-delta">+1</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">NVIDIA H200</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="78" style="background: var(--surface-2);"></div>
+          </div>
+        </div>
+        <div class="bench-score">249 TF</div>
+        <div class="bench-delta" style="color: var(--text-tertiary);">—</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">AMD MI300X</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="71" style="background: var(--surface-2);"></div>
+          </div>
+        </div>
+        <div class="bench-score">227 TF</div>
+        <div class="bench-delta" style="color: var(--text-tertiary);">—</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-company">Intel Gaudi 3</div>
+        <div class="bench-bar-wrap">
+          <div class="bench-bar-track">
+            <div class="bench-bar-fill-elem" data-width="53" style="background: var(--surface-2);"></div>
+          </div>
+        </div>
+        <div class="bench-score">170 TF</div>
+        <div class="bench-delta" style="color: var(--text-tertiary);">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SPECS
+═══════════════════════════════════════════════════════ -->
 <section class="specs" id="enterprise-specs" aria-labelledby="enterprise-specs-title">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow reveal" style="color: var(--accent-cyan-2);">詳細仕様</span>
-      <h2 class="section-title reveal reveal-delay-1" id="enterprise-specs-title">あらゆるディテール。</h2>
+      <h2 class="section-title reveal reveal-delay-1" id="enterprise-specs-title">
+        あらゆるディテール。
+      </h2>
     </div>
-    <div class="specs-tabs reveal" role="tablist">
-      <button class="specs-tab active" data-panel="especs-x1-ultra" role="tab" aria-selected="true">X1 Ultra</button>
-      <button class="specs-tab" data-panel="especs-ax-dc" role="tab" aria-selected="false">AX DataCenter</button>
+
+    <div class="specs-tabs reveal" role="tablist" aria-label="エンタープライズチップ選択">
+      <button class="specs-tab active" data-panel="specs-x1-ultra"
+              role="tab" aria-selected="true" aria-controls="specs-x1-ultra">X1 Ultra</button>
+      <button class="specs-tab" data-panel="specs-ax-dc"
+              role="tab" aria-selected="false" aria-controls="specs-ax-dc">AX DataCenter</button>
     </div>
-    <div class="specs-panel active" id="especs-x1-ultra" role="tabpanel">
+
+    <div class="specs-panel active" id="specs-x1-ultra" role="tabpanel">
       <table class="specs-table">
-        <thead><tr><th>カテゴリ</th><th>項目</th><th>X1 Ultra</th></tr></thead>
+        <thead>
+          <tr>
+            <th>カテゴリ</th>
+            <th>項目</th>
+            <th>X1 Ultra</th>
+          </tr>
+        </thead>
         <tbody>
           <tr><td>プロセス</td><td>製造ノード</td><td>2nm TSMC N2</td></tr>
+          <tr><td>ダイ</td><td>トランジスタ数</td><td>480億（2ダイ合計）</td></tr>
+          <tr><td>構成</td><td>ダイ構成</td><td>X1 Max × 2（UltraFabric融合）</td></tr>
           <tr><td>CPU</td><td>コア数</td><td>40コア（32P + 8E）</td></tr>
+          <tr><td>CPU</td><td>Pコア周波数</td><td>最大 5.4 GHz</td></tr>
+          <tr><td>GPU</td><td>コア数</td><td>128コア</td></tr>
           <tr><td>GPU</td><td>ピーク性能</td><td>320 TFLOPS FP32</td></tr>
+          <tr><td>Neural Engine</td><td>コア数</td><td>64コア</td></tr>
+          <tr><td>Neural Engine</td><td>スループット</td><td>76 TOPS</td></tr>
           <tr><td>メモリ</td><td>帯域幅</td><td>1.6 TB/s</td></tr>
-          <tr><td>インターコネクト</td><td>ダイ間</td><td>4 TB/s UltraFabric</td></tr>
-          <tr><td>TDP</td><td>消費電力</td><td>60W（ワークステーション）</td></tr>
+          <tr><td>メモリ</td><td>容量</td><td>192 GB / 384 GB LPDDR5X</td></tr>
+          <tr><td>インターコネクト</td><td>ダイ間帯域幅</td><td>4 TB/s UltraFabric</td></tr>
+          <tr><td>TDP</td><td>消費電力</td><td>60W（ワークステーション構成）</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="specs-panel" id="especs-ax-dc" role="tabpanel">
+
+    <div class="specs-panel" id="specs-ax-dc" role="tabpanel">
       <table class="specs-table">
-        <thead><tr><th>カテゴリ</th><th>項目</th><th>AX DataCenter</th></tr></thead>
+        <thead>
+          <tr>
+            <th>カテゴリ</th>
+            <th>項目</th>
+            <th>AX DataCenter</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>GPU</td><td>ピーク性能</td><td>320 TFLOPS FP32</td></tr>
-          <tr><td>メモリ</td><td>HBM4容量</td><td>192 GB</td></tr>
+          <tr><td>GPU</td><td>コアクラスター</td><td>256コア</td></tr>
+          <tr><td>GPU</td><td>ピーク性能</td><td>320 TFLOPS FP32 / 640 TFLOPS FP16</td></tr>
+          <tr><td>メモリ</td><td>種別</td><td>HBM4</td></tr>
+          <tr><td>メモリ</td><td>容量</td><td>192 GB</td></tr>
           <tr><td>メモリ</td><td>帯域幅</td><td>6.4 TB/s</td></tr>
           <tr><td>インターフェース</td><td>ホスト接続</td><td>PCIe 6.0 × 16</td></tr>
+          <tr><td>インターコネクト</td><td>カード間</td><td>AXIOM LinkFabric 800GB/s</td></tr>
           <tr><td>TDP</td><td>消費電力</td><td>350W / カード</td></tr>
+          <tr><td>フォームファクタ</td><td>規格</td><td>Full-length PCIe / OAM</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════
+     CROSS-LINK
+═══════════════════════════════════════════════════════ -->
 <section class="crosslink crosslink--to-consumer" aria-label="コンシューマー製品を見る">
   <div class="container">
     <p class="crosslink-eyebrow">AXIOMのコンシューマーライン</p>
-    <h2 class="crosslink-title reveal">クリエイター・開発者向けの<br/><em class="gradient-text">X1 Pro と X1 Max。</em></h2>
-    <p class="crosslink-desc reveal reveal-delay-1">ラップトップからプロ向けワークステーションまで、消費者向けラインも同じ 2nm アーキテクチャで設計。</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="../consumer/" class="btn-primary">X1 Pro &amp; X1 Max &#8594;</a>
+    <h2 class="crosslink-title reveal">
+      クリエイター・開発者向けの<br/>
+      <em class="gradient-text">X1 Pro と X1 Max。</em>
+    </h2>
+    <p class="crosslink-desc reveal reveal-delay-1">
+      ラップトップからプロ向けワークステーションまで、
+      消費者向けラインも同じ 2nm アーキテクチャで設計。
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="../consumer/" class="btn-primary">
+        X1 Pro &amp; X1 Max <span aria-hidden="true">&#8594;</span>
+      </a>
       <a href="../" class="btn-secondary">AXIOM Hub へ戻る</a>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><div class="nav-logo-mark" aria-hidden="true">AX</div><span>AXIOM</span></div>
+        <div class="footer-logo">
+          <div class="nav-logo-mark" aria-hidden="true">AX</div>
+          <span>AXIOM</span>
+        </div>
         <p class="footer-brand-desc">世界最先端のシリコンを、第一原理から設計する。</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Twitter">&#120143;</a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="footer-social-link" aria-label="GitHub">GH</a>
+        </div>
       </div>
-      <div><p class="footer-col-title">エンタープライズ</p><ul class="footer-links"><li><a href="#enterprise-products">X1 Ultra</a></li><li><a href="#enterprise-products">AX DataCenter</a></li><li><a href="#roi">ROI計算</a></li></ul></div>
-      <div><p class="footer-col-title">コンシューマー</p><ul class="footer-links"><li><a href="../consumer/">X1 Pro</a></li><li><a href="../consumer/">X1 Max</a></li></ul></div>
-      <div><p class="footer-col-title">会社情報</p><ul class="footer-links"><li><a href="#">採用情報</a></li><li><a href="#">お問い合わせ</a></li></ul></div>
+      <div>
+        <p class="footer-col-title">エンタープライズ</p>
+        <ul class="footer-links">
+          <li><a href="#enterprise-products">X1 Ultra</a></li>
+          <li><a href="#enterprise-products">AX DataCenter</a></li>
+          <li><a href="#roi">ROI計算</a></li>
+          <li><a href="#enterprise-specs">技術仕様</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">コンシューマー</p>
+        <ul class="footer-links">
+          <li><a href="../consumer/">X1 Pro</a></li>
+          <li><a href="../consumer/">X1 Max</a></li>
+          <li><a href="../consumer/#consumer-benchmark">性能比較</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">会社情報</p>
+        <ul class="footer-links">
+          <li><a href="../#technology">テクノロジー</a></li>
+          <li><a href="../#philosophy">フィロソフィー</a></li>
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">&#169; 2026 AXIOM Silicon Inc. All rights reserved.</p>
-      <div class="footer-legal"><a href="#">プライバシーポリシー</a><a href="#">利用規約</a></div>
+      <div class="footer-legal">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">利用規約</a>
+        <a href="#">クッキーポリシー</a>
+      </div>
     </div>
   </div>
 </footer>
 
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav" aria-label="モバイルボトムナビゲーション">
+  <div class="bottom-nav-inner">
+    <a href="#home" class="bottom-nav-item" data-section="home" aria-label="ホーム">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 9l7-7 7 7v9a1 1 0 01-1 1H4a1 1 0 01-1-1V9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 19V13h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>ホーム</span>
+    </a>
+    <a href="#enterprise-products" class="bottom-nav-item" data-section="enterprise-products" aria-label="製品">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="11" y="3" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="3" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="11" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span>製品</span>
+    </a>
+    <a href="#roi" class="bottom-nav-item" data-section="roi" aria-label="ROI計算">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M4 16l4-8 3 5 3-7 3 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>ROI</span>
+    </a>
+    <a href="#enterprise-benchmark" class="bottom-nav-item" data-section="enterprise-benchmark" aria-label="性能比較">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 14l4-4 3 3 4-6 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>性能</span>
+    </a>
+    <a href="#enterprise-specs" class="bottom-nav-item" data-section="enterprise-specs" aria-label="仕様">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M4 6h12M4 10h12M4 14h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>仕様</span>
+    </a>
+  </div>
+</nav>
+
 <script src="../js/main.js"></script>
 <script src="../js/enterprise.js"></script>
 <script>
+/* ── iPhone 専用最適化 ──────────────────────────────── */
 (function () {
   var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
   if (!isIOS) return;
+
+  /* iOS Safari でのスクロール慣性を改善 */
+  document.documentElement.style.setProperty('-webkit-overflow-scrolling', 'touch');
+
+  /* iPhone のバイブレーション (ハプティックフィードバック) */
+  function vibrate(pattern) {
+    if (navigator.vibrate) navigator.vibrate(pattern);
+  }
+
+  /* タップ時の軽いフィードバック */
   document.querySelectorAll('.btn-primary, .btn-secondary, .product-card').forEach(function (el) {
-    el.addEventListener('touchstart', function () { if (navigator.vibrate) navigator.vibrate(1); }, { passive: true });
+    el.addEventListener('touchstart', function () { vibrate(1); }, { passive: true });
   });
+
+  /* iPhone のノッチ下部セーフエリア対応 */
   var footer = document.querySelector('.footer');
-  if (footer) footer.style.paddingBottom = 'max(32px, env(safe-area-inset-bottom))';
+  if (footer) {
+    footer.style.paddingBottom = 'max(32px, env(safe-area-inset-bottom))';
+  }
 })();
 
+/* ── Konami Code イースターエッグ ─────────────────── */
 (function () {
   var KONAMI = [38,38,40,40,37,39,37,39,66,65];
   var buf = [];
   document.addEventListener('keydown', function (e) {
     buf.push(e.keyCode);
     if (buf.length > KONAMI.length) buf.shift();
-    if (buf.join(',') === KONAMI.join(',')) activateEasterEgg();
+    if (buf.join(',') === KONAMI.join(',')) {
+      activateEasterEgg();
+    }
   });
   function activateEasterEgg() {
     var msg = document.createElement('div');
     msg.setAttribute('role', 'alert');
-    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(6,182,212,0.95);color:#fff;padding:32px 48px;border-radius:16px;font-size:24px;font-weight:700;z-index:99999;text-align:center;line-height:1.5;box-shadow:0 0 80px rgba(6,182,212,0.5);backdrop-filter:blur(20px)';
-    msg.innerHTML = '&#127381; シークレットモード解除！<br><span style="font-size:14px;font-weight:400;opacity:0.85">AXIOM のエンジニアチームより愛を込めて。</span>';
+    msg.setAttribute('aria-live', 'assertive');
+    msg.style.cssText = [
+      'position:fixed', 'top:50%', 'left:50%',
+      'transform:translate(-50%,-50%)',
+      'background:rgba(6,182,212,0.95)',
+      'color:#fff', 'padding:32px 48px',
+      'border-radius:16px', 'font-size:24px',
+      'font-weight:700', 'z-index:99999',
+      'text-align:center', 'line-height:1.5',
+      'box-shadow:0 0 80px rgba(6,182,212,0.5)',
+      'backdrop-filter:blur(20px)'
+    ].join(';');
+    msg.innerHTML = '！ シークレットモード解除！<br><span style="font-size:14px;font-weight:400;opacity:0.85">AXIOM のエンジニアチームより愛を込めて。<br>ページのソースコードも読んでみてね。</span>';
     document.body.appendChild(msg);
-    setTimeout(function () { msg.style.transition = 'opacity 0.5s'; msg.style.opacity = '0'; setTimeout(function () { msg.remove(); }, 500); }, 3000);
+    /* 3秒後に消える */
+    setTimeout(function () {
+      msg.style.transition = 'opacity 0.5s';
+      msg.style.opacity = '0';
+      setTimeout(function () { msg.remove(); }, 500);
+    }, 3000);
   }
 })();
 </script>

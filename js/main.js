@@ -95,13 +95,24 @@ document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el))
 // ── Theme Toggle ──────────────────────────────────────────
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeToggle');
-let theme = localStorage.getItem('axiom-theme') || 'dark';
+
+// システム設定を優先、次にlocalStorage
+function getInitialTheme() {
+  const saved = localStorage.getItem('axiom-theme');
+  if (saved) return saved;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+let theme = getInitialTheme();
 html.setAttribute('data-theme', theme);
 updateThemeIcon();
 
 function updateThemeIcon() {
   /* アイコンは CSS ::before で描画。aria-label がアクセシブルな名前を提供。 */
-  if (themeBtn) themeBtn.textContent = '';
+  if (themeBtn) {
+    themeBtn.textContent = '';
+    themeBtn.setAttribute('aria-label', theme === 'dark' ? 'ライトモードに切替' : 'ダークモードに切替');
+  }
 }
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
@@ -111,6 +122,15 @@ if (themeBtn) {
     updateThemeIcon();
   });
 }
+
+// システム設定変更を追従（ユーザーが手動変更していない場合のみ）
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+  if (!localStorage.getItem('axiom-theme')) {
+    theme = e.matches ? 'light' : 'dark';
+    html.setAttribute('data-theme', theme);
+    updateThemeIcon();
+  }
+});
 
 // ── Specs Tabs ────────────────────────────────────────────
 document.querySelectorAll('.specs-tab').forEach(tab => {
@@ -278,3 +298,29 @@ mobileClose?.addEventListener('click', () => mobileMenu?.classList.remove('open'
 mobileMenu?.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
+
+// ── Bottom Nav Active State ───────────────────────────────
+(function initBottomNav() {
+  const bottomNav = document.querySelector('.bottom-nav');
+  if (!bottomNav) return;
+  const items = bottomNav.querySelectorAll('.bottom-nav-item[data-section]');
+  if (!items.length) return;
+
+  const sections = Array.from(items).map(item => {
+    const id = item.dataset.section;
+    return { item, el: document.getElementById(id) };
+  }).filter(s => s.el);
+
+  function updateActive() {
+    const scrollY = window.scrollY + window.innerHeight / 3;
+    let current = sections[0];
+    sections.forEach(s => {
+      if (s.el.offsetTop <= scrollY) current = s;
+    });
+    items.forEach(item => item.classList.remove('active'));
+    if (current) current.item.classList.add('active');
+  }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+})();

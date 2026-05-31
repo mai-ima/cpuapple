@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>AX DataCenter — AXIOM Silicon</title>
+  <meta name="description" content="AXIOM AX DataCenter。256コアGPUクラスター、192GB HBM4、320 TFLOPS FP32。エクサスケールを、手の届く場所へ。">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/product-page.css">
+  <link rel="stylesheet" href="../../css/enterprise.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236e40c9'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-weight='900' font-family='system-ui'>AX</text></svg>">
+  <style>
+    .nav-inner { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+    @media (pointer: coarse) { .btn { min-height: 44px; } }
+  </style>
+</head>
+<body class="pp-page">
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="scroll-progress" role="progressbar" aria-label="スクロール進捗"></div>
+
+<nav class="mobile-menu" role="navigation" aria-label="モバイルナビゲーション">
+  <button class="mobile-menu-close" aria-label="メニューを閉じる">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <a href="../../index.html">ホーム</a>
+  <a href="#specs">仕様</a>
+  <a href="#features">特徴</a>
+  <a href="#contact">お問い合わせ</a>
+  <a href="../../consumer/">コンシューマー</a>
+  <a href="../../enterprise/">エンタープライズ</a>
+</nav>
+
+<header class="nav" id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="../../" class="nav-logo" aria-label="AXIOM ホーム">
+      <div class="nav-logo-mark" aria-hidden="true">AX</div>
+      <span>AXIOM</span>
+    </a>
+    <nav class="nav-links" aria-label="主要ナビゲーション">
+      <a href="../../consumer/">コンシューマー</a>
+      <a href="../../technology/">テクノロジー</a>
+      <a href="../../about/">会社情報</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.05 1.05M11.85 11.85l1.05 1.05M3.1 12.9l1.05-1.05M11.85 4.15l1.05-1.05" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="../../enterprise/" class="nav-enterprise-btn">法人のお客様へ</a>
+      <button class="nav-mobile-toggle" aria-label="メニューを開く" onclick="document.querySelector('.mobile-menu').classList.add('open')">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<section class="pp-hero" id="hero">
+  <div class="pp-hero-bg" aria-hidden="true">
+    <div class="pp-hero-orb pp-hero-orb-1"></div>
+    <div class="pp-hero-orb pp-hero-orb-2"></div>
+  </div>
+  <div class="pp-hero-inner container">
+    <div class="pp-chip-wrap pp-reveal-scale">
+      <div class="pp-chip-svg-outer">
+        <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AX DataCenter チップ図">
+          <circle cx="160" cy="160" r="148" stroke="url(#dcGlow)" stroke-width="1.2" opacity="0.5" class="pp-chip-glow-ring"/>
+          <!-- PCB -->
+          <rect x="36" y="36" width="248" height="248" rx="22" fill="#080810"/>
+          <rect x="36" y="36" width="248" height="248" rx="22" stroke="url(#dcBorder)" stroke-width="2"/>
+          <!-- Die area -->
+          <rect x="60" y="60" width="200" height="200" rx="12" fill="#0e0e1c"/>
+          <rect x="60" y="60" width="200" height="200" rx="12" stroke="url(#dcAccent)" stroke-width="1.2"/>
+          <!-- GPU cluster 4×4 grid -->
+          <g fill="rgba(168,85,247,0.18)" stroke="rgba(168,85,247,0.4)" stroke-width="0.7">
+            <rect x="72" y="72" width="38" height="28" rx="3"/>
+            <rect x="114" y="72" width="38" height="28" rx="3"/>
+            <rect x="156" y="72" width="38" height="28" rx="3"/>
+            <rect x="198" y="72" width="38" height="28" rx="3"/>
+            <rect x="72" y="104" width="38" height="28" rx="3"/>
+            <rect x="114" y="104" width="38" height="28" rx="3"/>
+            <rect x="156" y="104" width="38" height="28" rx="3"/>
+            <rect x="198" y="104" width="38" height="28" rx="3"/>
+            <rect x="72" y="136" width="38" height="28" rx="3"/>
+            <rect x="114" y="136" width="38" height="28" rx="3"/>
+            <rect x="156" y="136" width="38" height="28" rx="3"/>
+            <rect x="198" y="136" width="38" height="28" rx="3"/>
+            <rect x="72" y="168" width="38" height="28" rx="3"/>
+            <rect x="114" y="168" width="38" height="28" rx="3"/>
+            <rect x="156" y="168" width="38" height="28" rx="3"/>
+            <rect x="198" y="168" width="38" height="28" rx="3"/>
+          </g>
+          <text x="160" y="122" text-anchor="middle" fill="#a855f7" font-size="7" font-weight="700" font-family="system-ui">GPU クラスター 256コア</text>
+          <!-- HBM4 -->
+          <rect x="72" y="204" width="164" height="20" rx="4" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.5)" stroke-width="0.8"/>
+          <text x="154" y="217" text-anchor="middle" fill="#22d3ee" font-size="6.5" font-weight="700" font-family="system-ui">HBM4 192GB · 6.4 TB/s</text>
+          <!-- I/O -->
+          <rect x="72" y="232" width="164" height="16" rx="4" fill="rgba(80,80,100,0.2)" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+          <text x="154" y="243" text-anchor="middle" fill="#a1a1a6" font-size="6" font-weight="700" font-family="system-ui">PCIe 6.0 · NVLink · 350W</text>
+          <!-- Pins -->
+          <g stroke="rgba(168,85,247,0.5)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="88" y1="36" x2="88" y2="52"/><line x1="112" y1="36" x2="112" y2="52"/>
+            <line x1="136" y1="36" x2="136" y2="52"/><line x1="160" y1="36" x2="160" y2="52"/>
+            <line x1="184" y1="36" x2="184" y2="52"/><line x1="208" y1="36" x2="208" y2="52"/>
+            <line x1="232" y1="36" x2="232" y2="52"/>
+          </g>
+          <g stroke="rgba(168,85,247,0.5)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="88" y1="284" x2="88" y2="268"/><line x1="112" y1="284" x2="112" y2="268"/>
+            <line x1="136" y1="284" x2="136" y2="268"/><line x1="160" y1="284" x2="160" y2="268"/>
+            <line x1="184" y1="284" x2="184" y2="268"/><line x1="208" y1="284" x2="208" y2="268"/>
+            <line x1="232" y1="284" x2="232" y2="268"/>
+          </g>
+          <g stroke="rgba(6,182,212,0.4)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="36" y1="100" x2="52" y2="100"/><line x1="36" y1="124" x2="52" y2="124"/>
+            <line x1="36" y1="148" x2="52" y2="148"/><line x1="36" y1="172" x2="52" y2="172"/>
+            <line x1="36" y1="196" x2="52" y2="196"/><line x1="36" y1="220" x2="52" y2="220"/>
+          </g>
+          <g stroke="rgba(6,182,212,0.4)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="284" y1="100" x2="268" y2="100"/><line x1="284" y1="124" x2="268" y2="124"/>
+            <line x1="284" y1="148" x2="268" y2="148"/><line x1="284" y1="172" x2="268" y2="172"/>
+            <line x1="284" y1="196" x2="268" y2="196"/><line x1="284" y1="220" x2="268" y2="220"/>
+          </g>
+          <defs>
+            <linearGradient id="dcGlow" x1="0" y1="0" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#a855f7"/>
+              <stop offset="50%" stop-color="#06b6d4"/>
+              <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+            <linearGradient id="dcBorder" x1="36" y1="36" x2="284" y2="284" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#a855f7" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.3"/>
+            </linearGradient>
+            <linearGradient id="dcAccent" x1="60" y1="60" x2="260" y2="260" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#a855f7" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="pp-hero-text">
+      <p class="pp-eyebrow pp-reveal">AXIOM AX DataCenter</p>
+      <h1 class="pp-headline pp-reveal pp-reveal-delay-1">
+        エクサスケールを、<br><span class="grad">手の届く場所へ。</span>
+      </h1>
+      <p class="pp-sub pp-reveal pp-reveal-delay-2">256コアGPUクラスター、192GB HBM4、320 TFLOPS FP32。</p>
+      <div class="pp-cta-group pp-reveal pp-reveal-delay-3">
+        <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+        <a href="#specs" class="btn btn-secondary">仕様を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEY METRICS ═════════════════════════════════════ -->
+<section class="pp-metrics-section" id="metrics">
+  <div class="container">
+    <div class="pp-metrics">
+      <div class="pp-metric pp-reveal">
+        <span class="pp-metric-val">320 TFLOPS</span>
+        <span class="pp-metric-label">FP32 演算性能</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-1">
+        <span class="pp-metric-val">192 GB</span>
+        <span class="pp-metric-label">HBM4 メモリ</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-2">
+        <span class="pp-metric-val">6.4 TB/s</span>
+        <span class="pp-metric-label">メモリ帯域幅</span>
+      </div>
+      <div class="pp-metric pp-reveal pp-reveal-delay-3">
+        <span class="pp-metric-val counter" data-target="350" data-suffix="W">350W</span>
+        <span class="pp-metric-label">TDP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ════════════════════════════════════════ -->
+<section class="pp-feature-section" id="features">
+  <div class="container">
+    <div class="pp-feature-intro">
+      <span class="pp-section-eyebrow pp-reveal">主な特徴</span>
+      <h2 class="pp-section-title pp-reveal pp-reveal-delay-1">データセンターの常識を、<br>AXIOM が塗り替える。</h2>
+      <p class="pp-section-body pp-reveal pp-reveal-delay-2">AX DataCenterは、大規模AIトレーニング・推論・HPC ワークロードを単一カードで完結させる。エクサスケール演算を、現実のラックに。</p>
+    </div>
+    <div class="pp-feature-grid">
+      <div class="pp-feature-card pp-reveal">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">256コア GPUクラスター</h3>
+        <p class="pp-feature-body">256基のシェーダーコアを単一チップに集積。320 TFLOPS FP32の演算性能が、大規模AIモデルのトレーニングを高速化する。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">192GB HBM4</h3>
+        <p class="pp-feature-body">最新のHBM4テクノロジーで192GBの大容量メモリを搭載。6.4 TB/sの帯域幅が演算ユニットにデータを途切れなく供給する。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">PCIe 6.0</h3>
+        <p class="pp-feature-body">PCIe 6.0インターフェースにより、ホストCPUとの通信帯域幅を従来世代の2倍以上に拡大。ボトルネックのないデータパイプラインを構築。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">320 TFLOPS FP32</h3>
+        <p class="pp-feature-body">単精度浮動小数点演算で320 TFLOPSを達成。AIトレーニング・物理シミュレーション・CFD解析を高速に実行。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">エンタープライズ管理</h3>
+        <p class="pp-feature-body">AXIOM Management Suite対応。リモートモニタリング・電力制御・ファームウェア更新をクラウドから一元管理できる。</p>
+      </div>
+      <div class="pp-feature-card pp-reveal pp-reveal-delay-3">
+        <div class="pp-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <h3 class="pp-feature-title">マルチノード対応</h3>
+        <p class="pp-feature-body">NVLinkプロトコル互換の高速インターコネクトにより、複数カードをクラスタリング。ペタスケール規模のAIインフラを柔軟に構築できる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARCHITECTURE ═════════════════════════════════════ -->
+<section class="pp-feature-section" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="pp-split">
+      <div class="pp-split-visual pp-reveal-scale">
+        <div class="pp-arch-visual">
+          <div class="pp-arch-row">
+            <div class="pp-arch-block pp-arch-gpu">GPU クラスター<span class="pp-arch-block-label">256コア · 320 TFLOPS FP32</span></div>
+          </div>
+          <div class="pp-arch-row">
+            <div class="pp-arch-block pp-arch-mem">HBM4<span class="pp-arch-block-label">192 GB · 6.4 TB/s</span></div>
+          </div>
+          <div class="pp-arch-row pp-arch-row-2">
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">PCIe 6.0<span class="pp-arch-block-label">x16</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">NVLink<span class="pp-arch-block-label">高速クラスター</span></div>
+          </div>
+          <div class="pp-arch-row pp-arch-row-2">
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">電力管理<span class="pp-arch-block-label">350W TDP</span></div>
+            <div class="pp-arch-block pp-arch-io" style="font-size:10px">BMC<span class="pp-arch-block-label">リモート管理</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pp-split-text">
+        <span class="pp-section-eyebrow pp-reveal">データセンターアーキテクチャ</span>
+        <h2 class="pp-reveal pp-reveal-delay-1" style="font-size: clamp(24px,3vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.1;">HBM4が、<br>演算を飢えさせない。</h2>
+        <p class="pp-reveal pp-reveal-delay-2" style="font-size:17px; color:var(--text-secondary); line-height:1.65;">192GB HBM4メモリを256コアのGPUクラスターと緊密に統合。6.4 TB/sのメモリ帯域幅が演算ユニットにデータを常に供給し、320 TFLOPSのピーク性能を維持し続ける。</p>
+        <div class="pp-stat-callout pp-reveal pp-reveal-delay-3">
+          <span class="pp-stat-num">6.4</span>
+          <span class="pp-stat-unit">TB/s 帯域幅</span>
+        </div>
+        <p class="pp-reveal pp-reveal-delay-3" style="font-size:14px; color:var(--text-tertiary);">HBM4世代最高水準のメモリ帯域幅。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS TABLE ═══════════════════════════════════════ -->
+<section class="pp-specs-section" id="specs">
+  <div class="container">
+    <div class="pp-specs-header">
+      <span class="pp-section-eyebrow pp-reveal">スペック詳細</span>
+      <h2 class="pp-section-title pp-reveal pp-reveal-delay-1">全仕様</h2>
+    </div>
+    <div class="pp-reveal pp-reveal-delay-2">
+      <table class="pp-specs-table" aria-label="AX DataCenter 仕様表">
+        <thead>
+          <tr><th>項目</th><th>仕様</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pp-specs-group-header"><td colspan="2">演算性能</td></tr>
+          <tr><td>FP32 演算性能</td><td>320 TFLOPS</td></tr>
+          <tr><td>FP16 演算性能</td><td>640 TFLOPS</td></tr>
+          <tr><td>BF16 演算性能</td><td>640 TFLOPS</td></tr>
+          <tr><td>INT8 演算性能</td><td>1,280 TOPS</td></tr>
+          <tr><td>GPUコア数</td><td>256コア（クラスター構成）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">メモリ</td></tr>
+          <tr><td>メモリ容量</td><td>192 GB</td></tr>
+          <tr><td>メモリタイプ</td><td>HBM4</td></tr>
+          <tr><td>メモリ帯域幅</td><td>6.4 TB/s</td></tr>
+          <tr><td>ECC</td><td>対応（セカンダリECC含む）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">接続・I/O</td></tr>
+          <tr><td>ホストインターフェース</td><td>PCIe 6.0 x16（双方向 512 GB/s）</td></tr>
+          <tr><td>クラスターインターコネクト</td><td>NVLink互換 高速インターコネクト</td></tr>
+          <tr><td>管理インターフェース</td><td>BMC（IPMI 2.0）、OOBネットワーク</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">電力・冷却</td></tr>
+          <tr><td>TDP</td><td>350W</td></tr>
+          <tr><td>最大電力</td><td>400W</td></tr>
+          <tr><td>電源コネクタ</td><td>PCIe 16-pin（12VHPWR）× 2</td></tr>
+          <tr><td>冷却方式</td><td>アクティブ空冷 / 液冷オプション対応</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">フォームファクタ</td></tr>
+          <tr><td>カード規格</td><td>FHFL（フルハイト・フルレングス）</td></tr>
+          <tr><td>スロット幅</td><td>2スロット（液冷時3スロット）</td></tr>
+          <tr><td>動作温度</td><td>0〜35℃（データセンター環境）</td></tr>
+
+          <tr class="pp-specs-group-header"><td colspan="2">ソフトウェア</td></tr>
+          <tr><td>対応フレームワーク</td><td>PyTorch、TensorFlow、JAX、ONNX Runtime</td></tr>
+          <tr><td>管理ソフトウェア</td><td>AXIOM Management Suite（クラウド対応）</td></tr>
+          <tr><td>ドライバー対応OS</td><td>Linux（RHEL / Ubuntu）、Windows Server 2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / CTA ═════════════════════════════════════ -->
+<section class="pp-buy-section" id="contact">
+  <div class="container">
+    <div class="pp-buy-inner">
+      <div class="pp-buy-text">
+        <span class="pp-section-eyebrow pp-reveal">法人向け販売</span>
+        <h2 class="pp-buy-title pp-reveal pp-reveal-delay-1">AX DataCenterを、<br>貴社のインフラへ。</h2>
+        <div class="pp-reveal pp-reveal-delay-2">
+          <p class="pp-buy-price">お問い合わせ</p>
+          <p class="pp-buy-price-sub">数量・構成により見積もりを提供いたします。</p>
+        </div>
+        <p class="pp-buy-note pp-reveal pp-reveal-delay-3">AX DataCenterはエンタープライズ向け製品です。導入支援・保守サポート・SLAについては法人営業チームまでご相談ください。</p>
+      </div>
+      <div class="pp-buy-actions pp-reveal pp-reveal-delay-2">
+        <div class="pp-buy-card pp-buy-card-highlight">
+          <h3 class="pp-buy-card-title">販売・導入のご相談</h3>
+          <p class="pp-buy-card-desc">専任の法人営業担当者が、貴社のワークロードに最適な構成と導入計画をご提案します。</p>
+          <ul class="pp-buy-list">
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              専任エンジニアによる導入支援
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              24時間365日 保守サポート
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              大量購入時の特別価格
+            </li>
+            <li class="pp-buy-list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              カスタムファームウェア対応
+            </li>
+          </ul>
+          <a href="../../enterprise/" class="btn btn-primary" style="width:100%; justify-content:center;">法人窓口へ問い合わせる</a>
+        </div>
+        <div class="pp-buy-card">
+          <h3 class="pp-buy-card-title">評価機の貸し出し</h3>
+          <p class="pp-buy-card-desc">導入前に実機で性能を評価できる評価機貸し出しプログラムをご用意しています。</p>
+          <a href="../../enterprise/" class="btn btn-outline" style="width:100%; justify-content:center;">評価プログラムの詳細</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELATED PRODUCTS ═════════════════════════════════ -->
+<section class="pp-related-section">
+  <div class="container">
+    <div class="pp-related-header">
+      <h2 class="pp-related-title pp-reveal">関連製品</h2>
+    </div>
+  </div>
+  <div class="pp-related-scroll">
+    <div class="pp-related-inner">
+      <a href="../x1-ultra/" class="pp-related-card pp-reveal">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="700" font-family="system-ui">Ultra</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Ultra</p>
+        <p class="pp-related-card-desc">40コアCPU・128コアGPU。2×X1 Max統合ダイ。</p>
+        <p class="pp-related-card-price">¥448,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../x1-max/" class="pp-related-card pp-reveal pp-reveal-delay-1">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.35)" stroke-width="0.8"/>
+            <text x="24" y="28" text-anchor="middle" fill="#22d3ee" font-size="9" font-weight="700" font-family="system-ui">Max</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">X1 Max</p>
+        <p class="pp-related-card-desc">16コアCPU・64コアGPU。プロワークステーション向け。</p>
+        <p class="pp-related-card-price">¥278,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../ax-gpu-g1-pro/" class="pp-related-card pp-reveal pp-reveal-delay-2">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(236,72,153,0.1)" stroke="rgba(236,72,153,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(236,72,153,0.15)" stroke="rgba(236,72,153,0.3)" stroke-width="0.8"/>
+            <text x="24" y="26" text-anchor="middle" fill="#f472b6" font-size="6.5" font-weight="700" font-family="system-ui">G1 Pro</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">AX GPU G1 Pro</p>
+        <p class="pp-related-card-desc">96コアGPU・160 TFLOPS。プロクリエイター向け単体GPU。</p>
+        <p class="pp-related-card-price">¥148,000〜</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="../../enterprise/" class="pp-related-card pp-reveal pp-reveal-delay-3">
+        <div class="pp-related-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="rgba(99,102,241,0.1)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+            <rect x="10" y="10" width="28" height="28" rx="4" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="0.8"/>
+            <text x="24" y="26" text-anchor="middle" fill="#818cf8" font-size="6.5" font-weight="700" font-family="system-ui">Enterprise</text>
+          </svg>
+        </div>
+        <p class="pp-related-card-name">エンタープライズ</p>
+        <p class="pp-related-card-desc">法人向け導入支援・SLA・カスタム設計サービス。</p>
+        <p class="pp-related-card-price">お問い合わせ</p>
+        <span class="pp-related-card-arrow">詳細を見る <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOTTOM NAV ════════════════════════════════════════ -->
+<nav class="bottom-nav" aria-label="ページ内ナビゲーション">
+  <div class="bottom-nav-inner">
+    <a href="#hero" class="bottom-nav-item active" data-section="hero">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M3 9.5L11 3l8 6.5V19a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      ホーム
+    </a>
+    <a href="#specs" class="bottom-nav-item" data-section="specs">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7 8h8M7 12h8M7 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      仕様
+    </a>
+    <a href="#features" class="bottom-nav-item" data-section="features">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <polygon points="11,2 13.5,8.5 20.5,9 15.5,13.5 17.2,20.5 11,17 4.8,20.5 6.5,13.5 1.5,9 8.5,8.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      特徴
+    </a>
+    <a href="#contact" class="bottom-nav-item" data-section="contact">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M4 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M2 6l9 6 9-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      お問い合わせ
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer style="background:var(--bg-1); border-top:1px solid var(--border); padding:48px 0 32px;">
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; margin-bottom:32px;">
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">製品</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../x1-air/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Air</a>
+          <a href="../x1-pro/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Pro</a>
+          <a href="../x1-max/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Max</a>
+          <a href="../x1-ultra/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">X1 Ultra</a>
+          <a href="../ax-datacenter/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">AX DataCenter</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">企業情報</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../../about/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">会社情報</a>
+          <a href="../../technology/" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">テクノロジー</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:12px;">法的情報</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="../../legal/privacy" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">プライバシーポリシー</a>
+          <a href="../../legal/terms" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">利用規約</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--text-tertiary);">Copyright &copy; 2026 AXIOM Silicon, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script>
+  const ppObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.pp-reveal, .pp-reveal-scale').forEach(el => ppObserver.observe(el));
+  const ppPerfObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.pp-perf-fill').forEach(bar => { bar.style.width = bar.dataset.width + '%'; });
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.pp-perf-chart').forEach(el => ppPerfObserver.observe(el));
+</script>
+</body>
+</html>
